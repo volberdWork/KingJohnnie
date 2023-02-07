@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BD19AF132992FEAD00F4A9B7 /* GameLoaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD19AF122992FEAD00F4A9B7 /* GameLoaderViewController.swift */; };
+		BD19AF162993038000F4A9B7 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = BD19AF152993038000F4A9B7 /* Lottie */; };
 		BDED154E2992F61200E2F03A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDED154D2992F61200E2F03A /* AppDelegate.swift */; };
 		BDED15502992F61200E2F03A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDED154F2992F61200E2F03A /* SceneDelegate.swift */; };
 		BDED15522992F61200E2F03A /* SelectGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDED15512992F61200E2F03A /* SelectGameViewController.swift */; };
@@ -33,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD19AF162993038000F4A9B7 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +96,9 @@
 			dependencies = (
 			);
 			name = KingJohnnie;
+			packageProductDependencies = (
+				BD19AF152993038000F4A9B7 /* Lottie */,
+			);
 			productName = KingJohnnie;
 			productReference = BDED154A2992F61200E2F03A /* KingJohnnie.app */;
 			productType = "com.apple.product-type.application";
@@ -122,6 +127,9 @@
 				Base,
 			);
 			mainGroup = BDED15412992F61200E2F03A;
+			packageReferences = (
+				BD19AF142993038000F4A9B7 /* XCRemoteSwiftPackageReference "lottie-spm" */,
+			);
 			productRefGroup = BDED154B2992F61200E2F03A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -370,6 +378,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BD19AF142993038000F4A9B7 /* XCRemoteSwiftPackageReference "lottie-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-spm.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BD19AF152993038000F4A9B7 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BD19AF142993038000F4A9B7 /* XCRemoteSwiftPackageReference "lottie-spm" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BDED15422992F61200E2F03A /* Project object */;
 }
