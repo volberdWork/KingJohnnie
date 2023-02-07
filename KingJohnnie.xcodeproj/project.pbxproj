@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		BD19AF132992FEAD00F4A9B7 /* GameLoaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD19AF122992FEAD00F4A9B7 /* GameLoaderViewController.swift */; };
 		BD19AF162993038000F4A9B7 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = BD19AF152993038000F4A9B7 /* Lottie */; };
+		BD19AF1F29930C3300F4A9B7 /* 92298-loading.json in Resources */ = {isa = PBXBuildFile; fileRef = BD19AF1E29930C3300F4A9B7 /* 92298-loading.json */; };
 		BDED154E2992F61200E2F03A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDED154D2992F61200E2F03A /* AppDelegate.swift */; };
 		BDED15502992F61200E2F03A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDED154F2992F61200E2F03A /* SceneDelegate.swift */; };
 		BDED15522992F61200E2F03A /* SelectGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDED15512992F61200E2F03A /* SelectGameViewController.swift */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		BD19AF122992FEAD00F4A9B7 /* GameLoaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLoaderViewController.swift; sourceTree = "<group>"; };
+		BD19AF1E29930C3300F4A9B7 /* 92298-loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "92298-loading.json"; sourceTree = "<group>"; };
 		BDED154A2992F61200E2F03A /* KingJohnnie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KingJohnnie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDED154D2992F61200E2F03A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BDED154F2992F61200E2F03A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -50,6 +52,14 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		BD19AF172993043100F4A9B7 /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				BD19AF1E29930C3300F4A9B7 /* 92298-loading.json */,
+			);
+			path = Lottie;
+			sourceTree = "<group>";
+		};
 		BDED15412992F61200E2F03A = {
 			isa = PBXGroup;
 			children = (
@@ -69,6 +79,7 @@
 		BDED154C2992F61200E2F03A /* KingJohnnie */ = {
 			isa = PBXGroup;
 			children = (
+				BD19AF172993043100F4A9B7 /* Lottie */,
 				BDED154D2992F61200E2F03A /* AppDelegate.swift */,
 				BD19AF112992FE8A00F4A9B7 /* Controllers */,
 				BDED154F2992F61200E2F03A /* SceneDelegate.swift */,
@@ -147,6 +158,7 @@
 				BDED155A2992F61400E2F03A /* LaunchScreen.storyboard in Resources */,
 				BDED15572992F61400E2F03A /* Assets.xcassets in Resources */,
 				BDED15552992F61200E2F03A /* Main.storyboard in Resources */,
+				BD19AF1F29930C3300F4A9B7 /* 92298-loading.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
