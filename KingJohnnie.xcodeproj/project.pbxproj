@@ -12,6 +12,7 @@
 		BD19AF1F29930C3300F4A9B7 /* 92298-loading.json in Resources */ = {isa = PBXBuildFile; fileRef = BD19AF1E29930C3300F4A9B7 /* 92298-loading.json */; };
 		BD19AF2129930CAB00F4A9B7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD19AF2029930CAB00F4A9B7 /* Constants.swift */; };
 		BD19AF2329930FC500F4A9B7 /* MainGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD19AF2229930FC500F4A9B7 /* MainGameViewController.swift */; };
+		BD19AF252993152300F4A9B7 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD19AF242993152300F4A9B7 /* SettingsViewController.swift */; };
 		BDED154E2992F61200E2F03A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDED154D2992F61200E2F03A /* AppDelegate.swift */; };
 		BDED15502992F61200E2F03A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDED154F2992F61200E2F03A /* SceneDelegate.swift */; };
 		BDED15522992F61200E2F03A /* SelectGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDED15512992F61200E2F03A /* SelectGameViewController.swift */; };
@@ -25,6 +26,7 @@
 		BD19AF1E29930C3300F4A9B7 /* 92298-loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "92298-loading.json"; sourceTree = "<group>"; };
 		BD19AF2029930CAB00F4A9B7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BD19AF2229930FC500F4A9B7 /* MainGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainGameViewController.swift; sourceTree = "<group>"; };
+		BD19AF242993152300F4A9B7 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		BDED154A2992F61200E2F03A /* KingJohnnie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KingJohnnie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDED154D2992F61200E2F03A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BDED154F2992F61200E2F03A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +55,7 @@
 				BDED15512992F61200E2F03A /* SelectGameViewController.swift */,
 				BD19AF122992FEAD00F4A9B7 /* GameLoaderViewController.swift */,
 				BD19AF2229930FC500F4A9B7 /* MainGameViewController.swift */,
+				BD19AF242993152300F4A9B7 /* SettingsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 			files = (
 				BD19AF2129930CAB00F4A9B7 /* Constants.swift in Sources */,
 				BDED15522992F61200E2F03A /* SelectGameViewController.swift in Sources */,
+				BD19AF252993152300F4A9B7 /* SettingsViewController.swift in Sources */,
 				BD19AF132992FEAD00F4A9B7 /* GameLoaderViewController.swift in Sources */,
 				BD19AF2329930FC500F4A9B7 /* MainGameViewController.swift in Sources */,
 				BDED154E2992F61200E2F03A /* AppDelegate.swift in Sources */,

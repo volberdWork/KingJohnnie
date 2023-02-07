@@ -1,11 +1,13 @@
 import UIKit
 
-class MainGameViewController: UIViewController {
-    
+class SettingsViewController: UIViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
-      
+
+        
     }
- 
     
+
+
 }
