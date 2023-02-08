@@ -1,4 +1,5 @@
 import UIKit
+import MessageUI
 
 class SettingsViewController: UIViewController {
 
@@ -18,6 +19,12 @@ class SettingsViewController: UIViewController {
         self.backgraundImage.contentMode = .scaleAspectFill
     }
     
+    @objc func notificationSwitchTapped(sender: UISwitch) {
+        UIDevice.vibrate()
+        NotificationManager.requestNotifications()
+        
+        
+    }
 
 
 }

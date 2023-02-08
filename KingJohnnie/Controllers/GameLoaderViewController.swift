@@ -17,7 +17,17 @@ class GameLoaderViewController: UIViewController {
         loadingAnimation.loopMode = .repeatBackwards(3.0)
         loadingAnimation.contentMode = .scaleAspectFill
         loadingAnimation.play()
+        openSecondControllerAfterTwoSeconds()
         
+    }
+    
+    private func openSecondControllerAfterTwoSeconds() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            let main = UIStoryboard(name: "Main", bundle: nil)
+            if let vc = main.instantiateViewController(withIdentifier: "ActiveGameViewController") as? ActiveGameViewController  {
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        }
     }
     
     private func setupView(){

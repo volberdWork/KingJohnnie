@@ -194,7 +194,7 @@
                         <barButtonItem key="leftBarButtonItem" image="gearIcon" id="gtb-W6-J0X">
                             <connections>
                                 <action selector="settingButtonPressed:" destination="BYZ-38-t0r" id="qYz-sE-9N7"/>
-                                <segue destination="KcS-zr-6Fk" kind="modal" id="wiT-GQ-TCo"/>
+                                <segue destination="KcS-zr-6Fk" kind="push" id="svr-Jk-FI5"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -214,20 +214,28 @@
             <objects>
                 <viewController storyboardIdentifier="SettingsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="KcS-zr-6Fk" customClass="SettingsViewController" customModule="KingJohnnie" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RDh-vp-BOc">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yI6-y5-zCY">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                             </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ISN-WG-Uoh">
+                                <rect key="frame" x="0.0" y="91" width="390" height="719"/>
+                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fKu-E2-KcW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="fKu-E2-KcW" firstAttribute="trailing" secondItem="ISN-WG-Uoh" secondAttribute="trailing" id="1HX-7z-CBV"/>
+                            <constraint firstItem="fKu-E2-KcW" firstAttribute="bottom" secondItem="ISN-WG-Uoh" secondAttribute="bottom" id="3Do-mz-YfE"/>
                             <constraint firstItem="yI6-y5-zCY" firstAttribute="top" secondItem="RDh-vp-BOc" secondAttribute="top" id="St9-yz-Imy"/>
                             <constraint firstItem="fKu-E2-KcW" firstAttribute="trailing" secondItem="yI6-y5-zCY" secondAttribute="trailing" id="iVd-XA-Gwk"/>
+                            <constraint firstItem="ISN-WG-Uoh" firstAttribute="top" secondItem="fKu-E2-KcW" secondAttribute="top" id="mP6-Mp-LKF"/>
                             <constraint firstAttribute="bottom" secondItem="yI6-y5-zCY" secondAttribute="bottom" id="mYI-MY-jhL"/>
                             <constraint firstItem="yI6-y5-zCY" firstAttribute="leading" secondItem="fKu-E2-KcW" secondAttribute="leading" id="rrh-xS-SJj"/>
+                            <constraint firstItem="ISN-WG-Uoh" firstAttribute="leading" secondItem="fKu-E2-KcW" secondAttribute="leading" id="vmS-27-UO6"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="BXK-B6-C3D"/>
@@ -239,10 +247,10 @@
             </objects>
             <point key="canvasLocation" x="140" y="656.87203791469187"/>
         </scene>
-        <!--View Controller-->
+        <!--Terms View Controller-->
         <scene sceneID="wXb-vc-bXF">
             <objects>
-                <viewController id="07V-OV-y1N" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TermsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="07V-OV-y1N" customClass="TermsViewController" customModule="KingJohnnie" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fJT-IW-gDC">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -250,23 +258,28 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wcb-nd-mMW">
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u2e-Bn-QXe">
-                                <rect key="frame" x="16" y="117" width="358" height="693"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="e64-1M-QTW">
+                                <rect key="frame" x="16" y="63" width="358" height="731"/>
+                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3Gc-NM-42R"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="wcb-nd-mMW" firstAttribute="top" secondItem="fJT-IW-gDC" secondAttribute="top" id="1Vr-Uh-Te9"/>
+                            <constraint firstItem="e64-1M-QTW" firstAttribute="leading" secondItem="3Gc-NM-42R" secondAttribute="leading" constant="16" id="6Gj-QT-HSS"/>
                             <constraint firstItem="wcb-nd-mMW" firstAttribute="leading" secondItem="3Gc-NM-42R" secondAttribute="leading" id="ETC-t6-SGa"/>
+                            <constraint firstItem="e64-1M-QTW" firstAttribute="top" secondItem="3Gc-NM-42R" secondAttribute="top" constant="16" id="Jga-IW-01C"/>
+                            <constraint firstItem="3Gc-NM-42R" firstAttribute="trailing" secondItem="e64-1M-QTW" secondAttribute="trailing" constant="16" id="NK4-XY-PGl"/>
                             <constraint firstAttribute="bottom" secondItem="wcb-nd-mMW" secondAttribute="bottom" id="QB2-Gb-Ako"/>
                             <constraint firstItem="wcb-nd-mMW" firstAttribute="trailing" secondItem="3Gc-NM-42R" secondAttribute="trailing" id="TmC-Er-xf7"/>
+                            <constraint firstItem="3Gc-NM-42R" firstAttribute="bottom" secondItem="e64-1M-QTW" secondAttribute="bottom" constant="16" id="mSG-cl-0cz"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Mox-N6-oAt"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n9c-vq-Fyf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -409,6 +422,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PBa-5L-Mvt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1463" y="-2"/>
+        </scene>
+        <!--Active Game View Controller-->
+        <scene sceneID="ZYg-eY-uI4">
+            <objects>
+                <viewController storyboardIdentifier="ActiveGameViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="pwx-P1-uDt" customClass="ActiveGameViewController" customModule="KingJohnnie" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pj9-eN-p5W">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DMa-tb-DPb">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="akK-Mw-6mn"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="DMa-tb-DPb" secondAttribute="bottom" id="7ok-ro-DBd"/>
+                            <constraint firstItem="DMa-tb-DPb" firstAttribute="top" secondItem="pj9-eN-p5W" secondAttribute="top" id="8ra-De-ZMW"/>
+                            <constraint firstItem="DMa-tb-DPb" firstAttribute="leading" secondItem="akK-Mw-6mn" secondAttribute="leading" id="C4g-Po-n53"/>
+                            <constraint firstItem="DMa-tb-DPb" firstAttribute="trailing" secondItem="akK-Mw-6mn" secondAttribute="trailing" id="cpl-eY-JUh"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundImage" destination="DMa-tb-DPb" id="49U-Ea-iAx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gcS-RO-KZt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2129.2307692307691" y="-2.1327014218009479"/>
         </scene>
     </scenes>
     <resources>

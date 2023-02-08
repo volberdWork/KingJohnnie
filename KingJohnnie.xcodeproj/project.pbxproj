@@ -18,6 +18,10 @@
 		BD19AF322993CEC800F4A9B7 /* SelectGameCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD19AF312993CEC800F4A9B7 /* SelectGameCollectionViewCell.swift */; };
 		BD19AF352993D96200F4A9B7 /* Phosphate.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BD19AF342993D96200F4A9B7 /* Phosphate.ttf */; };
 		BD19AF372993E45100F4A9B7 /* LevelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD19AF362993E45100F4A9B7 /* LevelCollectionViewCell.swift */; };
+		BD19AF392993FC0600F4A9B7 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD19AF382993FC0600F4A9B7 /* Extensions.swift */; };
+		BD19AF3B2993FE5800F4A9B7 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD19AF3A2993FE5800F4A9B7 /* NotificationManager.swift */; };
+		BD19AF4629944E2400F4A9B7 /* ActiveGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD19AF4529944E2400F4A9B7 /* ActiveGameViewController.swift */; };
+		BD19AF48299451FE00F4A9B7 /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD19AF47299451FE00F4A9B7 /* TermsViewController.swift */; };
 		BDED154E2992F61200E2F03A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDED154D2992F61200E2F03A /* AppDelegate.swift */; };
 		BDED15502992F61200E2F03A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDED154F2992F61200E2F03A /* SceneDelegate.swift */; };
 		BDED15522992F61200E2F03A /* SelectGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDED15512992F61200E2F03A /* SelectGameViewController.swift */; };
@@ -37,6 +41,10 @@
 		BD19AF312993CEC800F4A9B7 /* SelectGameCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGameCollectionViewCell.swift; sourceTree = "<group>"; };
 		BD19AF342993D96200F4A9B7 /* Phosphate.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Phosphate.ttf; sourceTree = "<group>"; };
 		BD19AF362993E45100F4A9B7 /* LevelCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelCollectionViewCell.swift; sourceTree = "<group>"; };
+		BD19AF382993FC0600F4A9B7 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		BD19AF3A2993FE5800F4A9B7 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		BD19AF4529944E2400F4A9B7 /* ActiveGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveGameViewController.swift; sourceTree = "<group>"; };
+		BD19AF47299451FE00F4A9B7 /* TermsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsViewController.swift; sourceTree = "<group>"; };
 		BDED154A2992F61200E2F03A /* KingJohnnie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KingJohnnie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDED154D2992F61200E2F03A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BDED154F2992F61200E2F03A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +71,8 @@
 			isa = PBXGroup;
 			children = (
 				BDED15512992F61200E2F03A /* SelectGameViewController.swift */,
+				BD19AF47299451FE00F4A9B7 /* TermsViewController.swift */,
+				BD19AF4529944E2400F4A9B7 /* ActiveGameViewController.swift */,
 				BD19AF122992FEAD00F4A9B7 /* GameLoaderViewController.swift */,
 				BD19AF2229930FC500F4A9B7 /* MainGameViewController.swift */,
 				BD19AF242993152300F4A9B7 /* SettingsViewController.swift */,
@@ -100,6 +110,7 @@
 		BD19AF2829939DCA00F4A9B7 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				BD19AF382993FC0600F4A9B7 /* Extensions.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -108,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				BD19AF2029930CAB00F4A9B7 /* Constants.swift */,
+				BD19AF3A2993FE5800F4A9B7 /* NotificationManager.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -247,8 +259,12 @@
 				BD19AF372993E45100F4A9B7 /* LevelCollectionViewCell.swift in Sources */,
 				BD19AF2129930CAB00F4A9B7 /* Constants.swift in Sources */,
 				BDED15522992F61200E2F03A /* SelectGameViewController.swift in Sources */,
+				BD19AF48299451FE00F4A9B7 /* TermsViewController.swift in Sources */,
 				BD19AF252993152300F4A9B7 /* SettingsViewController.swift in Sources */,
+				BD19AF3B2993FE5800F4A9B7 /* NotificationManager.swift in Sources */,
 				BD19AF132992FEAD00F4A9B7 /* GameLoaderViewController.swift in Sources */,
+				BD19AF4629944E2400F4A9B7 /* ActiveGameViewController.swift in Sources */,
+				BD19AF392993FC0600F4A9B7 /* Extensions.swift in Sources */,
 				BD19AF2329930FC500F4A9B7 /* MainGameViewController.swift in Sources */,
 				BDED154E2992F61200E2F03A /* AppDelegate.swift in Sources */,
 				BD19AF322993CEC800F4A9B7 /* SelectGameCollectionViewCell.swift in Sources */,
