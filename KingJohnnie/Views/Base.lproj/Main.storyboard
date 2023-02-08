@@ -43,8 +43,9 @@
                                     <constraint firstAttribute="height" constant="42" id="n65-wB-zjS"/>
                                     <constraint firstAttribute="width" constant="198" id="q1x-ED-cIG"/>
                                 </constraints>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Details"/>
                                 <connections>
                                     <action selector="detailsButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="W9h-VF-Fnx"/>
                                 </connections>
@@ -297,27 +298,42 @@
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="nYb-PW-76h">
                                 <rect key="frame" x="0.0" y="638" width="390" height="50"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="MdF-B8-kiO"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="LDQ-97-eA3">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="LDQ-97-eA3">
                                     <size key="itemSize" width="46" height="48"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="V4e-5U-IeT">
-                                        <rect key="frame" x="0.0" y="0.0" width="46" height="48"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="LevelCollectionViewCell" id="V4e-5U-IeT" customClass="LevelCollectionViewCell" customModule="KingJohnnie" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="1" width="46" height="48"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="gT8-Tz-YOH">
                                             <rect key="frame" x="0.0" y="0.0" width="46" height="48"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DGS-bo-uzS">
+                                                    <rect key="frame" x="0.0" y="0.0" width="46" height="48"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="DGS-bo-uzS" firstAttribute="leading" secondItem="gT8-Tz-YOH" secondAttribute="leading" id="eR0-24-ADy"/>
+                                                <constraint firstItem="DGS-bo-uzS" firstAttribute="top" secondItem="gT8-Tz-YOH" secondAttribute="top" id="iiy-1D-GeY"/>
+                                                <constraint firstAttribute="bottom" secondItem="DGS-bo-uzS" secondAttribute="bottom" id="lKs-Rh-bUl"/>
+                                                <constraint firstAttribute="trailing" secondItem="DGS-bo-uzS" secondAttribute="trailing" id="sjZ-nH-Fgn"/>
+                                            </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="46" height="48"/>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="6ql-vc-5SQ" id="te2-1w-K4b"/>
+                                    <outlet property="delegate" destination="6ql-vc-5SQ" id="dWT-w4-u6q"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="mgg-hA-cah"/>
@@ -336,6 +352,7 @@
                     </view>
                     <connections>
                         <outlet property="backgraundImage" destination="bk0-ew-Oae" id="GR2-OD-URh"/>
+                        <outlet property="collectionView" destination="nYb-PW-76h" id="YHc-39-xfN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wno-7a-2Gc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
