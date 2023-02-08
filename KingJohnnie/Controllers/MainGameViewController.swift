@@ -17,6 +17,14 @@ class MainGameViewController: UIViewController {
         self.backgraundImage.image = UIImage(named: image)
         self.backgraundImage.contentMode = .scaleAspectFill
     }
+    func openVC(){
+        let main = UIStoryboard(name: "Main", bundle: nil)
+        if let vc = main.instantiateViewController(withIdentifier: "GameLoaderViewController") as? GameLoaderViewController  {
+            navigationController?.pushViewController(vc, animated: true)
+        }
+    }
     
-    
+    @IBAction func playButtonPressed(_ sender: UIButton) {
+        openVC()
+    }
 }
