@@ -68,6 +68,15 @@
 			path = Lottie;
 			sourceTree = "<group>";
 		};
+		BD19AF2629938AAE00F4A9B7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BDED15532992F61200E2F03A /* Main.storyboard */,
+				BDED15582992F61400E2F03A /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		BDED15412992F61200E2F03A = {
 			isa = PBXGroup;
 			children = (
@@ -89,11 +98,10 @@
 			children = (
 				BD19AF172993043100F4A9B7 /* Lottie */,
 				BDED154D2992F61200E2F03A /* AppDelegate.swift */,
+				BD19AF2629938AAE00F4A9B7 /* Views */,
 				BD19AF112992FE8A00F4A9B7 /* Controllers */,
 				BDED154F2992F61200E2F03A /* SceneDelegate.swift */,
-				BDED15532992F61200E2F03A /* Main.storyboard */,
 				BDED15562992F61400E2F03A /* Assets.xcassets */,
-				BDED15582992F61400E2F03A /* LaunchScreen.storyboard */,
 				BDED155B2992F61400E2F03A /* Info.plist */,
 				BD19AF2029930CAB00F4A9B7 /* Constants.swift */,
 			);

@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -85,6 +86,39 @@
             </objects>
             <point key="canvasLocation" x="140" y="656.87203791469187"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="wXb-vc-bXF">
+            <objects>
+                <viewController id="07V-OV-y1N" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fJT-IW-gDC">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="setingsScreenImage" translatesAutoresizingMaskIntoConstraints="NO" id="wcb-nd-mMW">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u2e-Bn-QXe">
+                                <rect key="frame" x="16" y="117" width="358" height="693"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="3Gc-NM-42R"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="wcb-nd-mMW" firstAttribute="top" secondItem="fJT-IW-gDC" secondAttribute="top" id="1Vr-Uh-Te9"/>
+                            <constraint firstItem="wcb-nd-mMW" firstAttribute="leading" secondItem="3Gc-NM-42R" secondAttribute="leading" id="ETC-t6-SGa"/>
+                            <constraint firstAttribute="bottom" secondItem="wcb-nd-mMW" secondAttribute="bottom" id="QB2-Gb-Ako"/>
+                            <constraint firstItem="wcb-nd-mMW" firstAttribute="trailing" secondItem="3Gc-NM-42R" secondAttribute="trailing" id="TmC-Er-xf7"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n9c-vq-Fyf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="807.69230769230762" y="656.87203791469187"/>
+        </scene>
         <!--Main Game View Controller-->
         <scene sceneID="5Lq-nW-2qq">
             <objects>
@@ -92,13 +126,62 @@
                     <view key="view" contentMode="scaleToFill" id="BcX-ts-WrT">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainWinScreenImage" translatesAutoresizingMaskIntoConstraints="NO" id="bk0-ew-Oae">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hhV-hv-cuv">
+                                <rect key="frame" x="96" y="728" width="198" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="sUa-5B-efC"/>
+                                    <constraint firstAttribute="width" constant="198" id="tbU-ge-NF6"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="nYb-PW-76h">
+                                <rect key="frame" x="0.0" y="638" width="390" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="MdF-B8-kiO"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="LDQ-97-eA3">
+                                    <size key="itemSize" width="46" height="49"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="V4e-5U-IeT">
+                                        <rect key="frame" x="0.0" y="0.0" width="46" height="49"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="gT8-Tz-YOH">
+                                            <rect key="frame" x="0.0" y="0.0" width="46" height="49"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="46" height="49"/>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="mgg-hA-cah"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="bk0-ew-Oae" secondAttribute="bottom" id="99M-XH-6o5"/>
+                            <constraint firstItem="bk0-ew-Oae" firstAttribute="leading" secondItem="mgg-hA-cah" secondAttribute="leading" id="JhX-jq-w7O"/>
+                            <constraint firstItem="hhV-hv-cuv" firstAttribute="top" secondItem="nYb-PW-76h" secondAttribute="bottom" constant="40" id="Mmi-Xf-5Jx"/>
+                            <constraint firstItem="nYb-PW-76h" firstAttribute="leading" secondItem="mgg-hA-cah" secondAttribute="leading" id="cpV-M5-w2v"/>
+                            <constraint firstItem="mgg-hA-cah" firstAttribute="bottom" secondItem="hhV-hv-cuv" secondAttribute="bottom" constant="40" id="fzL-Zt-BIZ"/>
+                            <constraint firstItem="bk0-ew-Oae" firstAttribute="top" secondItem="BcX-ts-WrT" secondAttribute="top" id="geK-5f-sB7"/>
+                            <constraint firstItem="hhV-hv-cuv" firstAttribute="centerX" secondItem="BcX-ts-WrT" secondAttribute="centerX" id="nmO-lb-bpQ"/>
+                            <constraint firstItem="bk0-ew-Oae" firstAttribute="trailing" secondItem="mgg-hA-cah" secondAttribute="trailing" id="qqo-yN-7Px"/>
+                            <constraint firstItem="mgg-hA-cah" firstAttribute="trailing" secondItem="nYb-PW-76h" secondAttribute="trailing" id="ydN-D6-cU8"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wno-7a-2Gc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="808" y="-2"/>
+            <point key="canvasLocation" x="807.69230769230762" y="-2.1327014218009479"/>
         </scene>
         <!--Game Loader View Controller-->
         <scene sceneID="ecZ-lj-gNU">
@@ -153,6 +236,7 @@
         <image name="gearIcon" width="20" height="20"/>
         <image name="loadingBackground" width="262" height="568"/>
         <image name="mainGameScreenImage" width="262" height="568"/>
+        <image name="mainWinScreenImage" width="262" height="568"/>
         <image name="setingsScreenImage" width="262" height="568"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
