@@ -34,9 +34,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainGameScreenImage" translatesAutoresizingMaskIntoConstraints="NO" id="DpE-pY-taq">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DpE-pY-taq">
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ya-eR-vDM">
+                                <rect key="frame" x="96" y="728" width="198" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="n65-wB-zjS"/>
+                                    <constraint firstAttribute="width" constant="198" id="q1x-ED-cIG"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="detailsButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="W9h-VF-Fnx"/>
+                                </connections>
+                            </button>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" translatesAutoresizingMaskIntoConstraints="NO" id="2kz-c3-T9V">
+                                <rect key="frame" x="119.33333333333333" y="662" width="151.66666666666669" height="26"/>
+                                <color key="pageIndicatorTintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </pageControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -44,7 +60,11 @@
                             <constraint firstItem="DpE-pY-taq" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="3em-Hk-dc7"/>
                             <constraint firstItem="DpE-pY-taq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="8yn-l8-LlP"/>
                             <constraint firstAttribute="bottom" secondItem="DpE-pY-taq" secondAttribute="bottom" id="Ebb-T4-j8v"/>
+                            <constraint firstItem="6Ya-eR-vDM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IqR-jQ-V70"/>
+                            <constraint firstItem="6Ya-eR-vDM" firstAttribute="top" secondItem="2kz-c3-T9V" secondAttribute="bottom" constant="40" id="fXp-ch-1FC"/>
                             <constraint firstItem="DpE-pY-taq" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="gqb-F3-hcg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="6Ya-eR-vDM" secondAttribute="bottom" constant="40" id="kpV-lV-9Bf"/>
+                            <constraint firstItem="2kz-c3-T9V" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mHt-Wq-frS"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="jJP-9i-FbA">
@@ -57,6 +77,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="backgroundImage" destination="DpE-pY-taq" id="6zY-md-iga"/>
+                        <outlet property="detailsButton" destination="6Ya-eR-vDM" id="ydQ-Gb-avA"/>
+                        <outlet property="pageControl" destination="2kz-c3-T9V" id="1iA-ru-Tvr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -71,7 +93,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="setingsScreenImage" translatesAutoresizingMaskIntoConstraints="NO" id="yI6-y5-zCY">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yI6-y5-zCY">
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
                             </imageView>
                         </subviews>
@@ -85,6 +107,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="BXK-B6-C3D"/>
+                    <connections>
+                        <outlet property="backgraundImage" destination="yI6-y5-zCY" id="pOm-Gk-dmn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bjQ-c7-YT4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -98,7 +123,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="setingsScreenImage" translatesAutoresizingMaskIntoConstraints="NO" id="wcb-nd-mMW">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wcb-nd-mMW">
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u2e-Bn-QXe">
@@ -182,6 +207,9 @@
                             <constraint firstItem="mgg-hA-cah" firstAttribute="trailing" secondItem="nYb-PW-76h" secondAttribute="trailing" id="ydN-D6-cU8"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="backgraundImage" destination="bk0-ew-Oae" id="GR2-OD-URh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wno-7a-2Gc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -195,7 +223,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loadingBackground" translatesAutoresizingMaskIntoConstraints="NO" id="WzU-Aq-shO">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WzU-Aq-shO">
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h9d-TI-ywx">
@@ -238,9 +266,6 @@
     </scenes>
     <resources>
         <image name="gearIcon" width="20" height="20"/>
-        <image name="loadingBackground" width="262" height="568"/>
-        <image name="mainGameScreenImage" width="262" height="568"/>
-        <image name="setingsScreenImage" width="262" height="568"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

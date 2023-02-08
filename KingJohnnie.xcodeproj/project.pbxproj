@@ -77,6 +77,28 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		BD19AF2729939DBE00F4A9B7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BD19AF2829939DCA00F4A9B7 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		BD19AF2929939DE000F4A9B7 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				BD19AF2029930CAB00F4A9B7 /* Constants.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		BDED15412992F61200E2F03A = {
 			isa = PBXGroup;
 			children = (
@@ -96,14 +118,16 @@
 		BDED154C2992F61200E2F03A /* KingJohnnie */ = {
 			isa = PBXGroup;
 			children = (
+				BD19AF2929939DE000F4A9B7 /* Helpers */,
+				BD19AF2829939DCA00F4A9B7 /* Extension */,
+				BD19AF2729939DBE00F4A9B7 /* Models */,
 				BD19AF172993043100F4A9B7 /* Lottie */,
-				BDED154D2992F61200E2F03A /* AppDelegate.swift */,
 				BD19AF2629938AAE00F4A9B7 /* Views */,
 				BD19AF112992FE8A00F4A9B7 /* Controllers */,
+				BDED154D2992F61200E2F03A /* AppDelegate.swift */,
 				BDED154F2992F61200E2F03A /* SceneDelegate.swift */,
 				BDED15562992F61400E2F03A /* Assets.xcassets */,
 				BDED155B2992F61400E2F03A /* Info.plist */,
-				BD19AF2029930CAB00F4A9B7 /* Constants.swift */,
 			);
 			path = KingJohnnie;
 			sourceTree = "<group>";
