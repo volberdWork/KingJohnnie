@@ -35,7 +35,8 @@ class SelectGameViewController: UIViewController {
     
     
     private func congigurePageControl(){
-        self.pageControl.transform = CGAffineTransform(scaleX: 2, y: 2)
+        self.pageControl.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
+       
     }
     
     private func backgraundImageConfige(image: String){
