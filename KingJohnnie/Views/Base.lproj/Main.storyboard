@@ -330,7 +330,21 @@
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DGS-bo-uzS">
                                                     <rect key="frame" x="0.0" y="0.0" width="46" height="48"/>
+                                                    <subviews>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a2G-SV-Bxe">
+                                                            <rect key="frame" x="0.0" y="1" width="46" height="46"/>
+                                                            <color key="backgroundColor" systemColor="systemBrownColor"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="46" id="Byt-mG-alG"/>
+                                                                <constraint firstAttribute="width" constant="46" id="fXz-93-xfO"/>
+                                                            </constraints>
+                                                        </view>
+                                                    </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstItem="a2G-SV-Bxe" firstAttribute="centerX" secondItem="DGS-bo-uzS" secondAttribute="centerX" id="Epq-nM-CC1"/>
+                                                        <constraint firstItem="a2G-SV-Bxe" firstAttribute="centerY" secondItem="DGS-bo-uzS" secondAttribute="centerY" id="ypy-ZT-YPL"/>
+                                                    </constraints>
                                                 </view>
                                             </subviews>
                                             <constraints>
@@ -459,6 +473,9 @@
         <image name="starLevelIcon" width="11.666666984558105" height="14.333333015441895"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBrownColor">
+            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
