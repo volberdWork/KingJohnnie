@@ -4,13 +4,13 @@ class MainGameViewController: UIViewController {
     
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var backgraundImage: UIImageView!
-    
+    var currentSelected: Int? = 0
     var array: [Int] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        for i in 0...100{
+        for i in 0...99{
             self.array.append(i)
         }
     }
@@ -44,11 +44,24 @@ extension MainGameViewController : UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LevelCollectionViewCell", for: indexPath) as! LevelCollectionViewCell
-    
+        cell.levelLable.text = "Level \(indexPath.row + 1 )"
+        if indexPath.row == self.currentSelected{
+            cell.configureView()
+        } else{
+            cell.clearCongigureView()
+        }
         return cell
     }
     
     
+}
+
+extension MainGameViewController : UICollectionViewDelegate{
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        currentSelected = indexPath.row
+        print(currentSelected)
+        collectionView.reloadData()
+    }
 }
 
 

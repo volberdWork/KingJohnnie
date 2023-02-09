@@ -333,14 +333,33 @@
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a2G-SV-Bxe">
                                                             <rect key="frame" x="0.0" y="1" width="46" height="46"/>
-                                                            <color key="backgroundColor" systemColor="systemBrownColor"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Level 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x3S-Fu-F0X">
+                                                                    <rect key="frame" x="0.0" y="28" width="46" height="18"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="18" id="tLu-bA-yQe"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="openLockImage" translatesAutoresizingMaskIntoConstraints="NO" id="mc6-Wf-ykI">
+                                                                    <rect key="frame" x="2" y="2" width="42" height="24"/>
+                                                                </imageView>
+                                                            </subviews>
                                                             <constraints>
+                                                                <constraint firstAttribute="trailing" secondItem="x3S-Fu-F0X" secondAttribute="trailing" id="8Al-vI-kEc"/>
                                                                 <constraint firstAttribute="height" constant="46" id="Byt-mG-alG"/>
+                                                                <constraint firstItem="x3S-Fu-F0X" firstAttribute="leading" secondItem="a2G-SV-Bxe" secondAttribute="leading" id="bfa-Ih-1Ta"/>
+                                                                <constraint firstAttribute="bottom" secondItem="x3S-Fu-F0X" secondAttribute="bottom" id="eUF-g2-TH5"/>
                                                                 <constraint firstAttribute="width" constant="46" id="fXz-93-xfO"/>
+                                                                <constraint firstAttribute="trailing" secondItem="mc6-Wf-ykI" secondAttribute="trailing" constant="2" id="kMb-cG-hL6"/>
+                                                                <constraint firstItem="mc6-Wf-ykI" firstAttribute="leading" secondItem="a2G-SV-Bxe" secondAttribute="leading" constant="2" id="kxc-SW-gEz"/>
+                                                                <constraint firstItem="x3S-Fu-F0X" firstAttribute="top" secondItem="mc6-Wf-ykI" secondAttribute="bottom" constant="2" id="nFO-6K-9ZB"/>
+                                                                <constraint firstItem="mc6-Wf-ykI" firstAttribute="top" secondItem="a2G-SV-Bxe" secondAttribute="top" constant="2" id="zQ2-Nz-8zp"/>
                                                             </constraints>
                                                         </view>
                                                     </subviews>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
                                                         <constraint firstItem="a2G-SV-Bxe" firstAttribute="centerX" secondItem="DGS-bo-uzS" secondAttribute="centerX" id="Epq-nM-CC1"/>
                                                         <constraint firstItem="a2G-SV-Bxe" firstAttribute="centerY" secondItem="DGS-bo-uzS" secondAttribute="centerY" id="ypy-ZT-YPL"/>
@@ -355,6 +374,11 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="46" height="48"/>
+                                        <connections>
+                                            <outlet property="centralView" destination="a2G-SV-Bxe" id="zss-Kk-KeQ"/>
+                                            <outlet property="levelLable" destination="x3S-Fu-F0X" id="KpZ-uW-9U1"/>
+                                            <outlet property="lockImage" destination="mc6-Wf-ykI" id="gHY-vG-25m"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
@@ -470,12 +494,10 @@
     <resources>
         <image name="blureView" width="220.66667175292969" height="214"/>
         <image name="gearIcon" width="20" height="20"/>
+        <image name="openLockImage" width="10.666666984558105" height="14"/>
         <image name="starLevelIcon" width="11.666666984558105" height="14.333333015441895"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBrownColor">
-            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
