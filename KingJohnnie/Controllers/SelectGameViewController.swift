@@ -7,15 +7,23 @@ class SelectGameViewController: UIViewController {
     
     @IBOutlet var collectionView: UICollectionView!
     
-    var collectionArray: [SelectGameCellModel] = [SelectGameCellModel(gameName: "Lion King", owerview: "Improve a lion inside yourself,  ability to hold the info in the mind temporarly "),
-                                                  SelectGameCellModel(gameName: "Lion Fad", owerview: "Improve a lion inside yourself,  ability to hold the info in the mind temporarly "),
-                                                  SelectGameCellModel(gameName: "SDF ewE", owerview: "Improve a lion inside yourself,  ability to hold the info in the mind temporarly "),
-                                                  SelectGameCellModel(gameName: "SEWWE", owerview: "dfgherwecds"),
-                                                  SelectGameCellModel(gameName: "qasdcw", owerview: "qwdcs3qad"),]
+    var collectionArray: [SelectGameCellModel] = [SelectGameCellModel(gameName: "Lion King", owerview: "Improve a lion inside yourself,  ability to hold the info in the mind temporarly ", levelStars: 3),
+                                                  SelectGameCellModel(gameName: "Lion Fad", owerview: "Improve a lion inside yourself,  ability to hold the info in the mind temporarly ", levelStars: 2),
+                                                  SelectGameCellModel(gameName: "SDF ewE", owerview: "Improve a lion inside yourself,  ability to hold the info in the mind temporarly ", levelStars: 5),
+                                                  SelectGameCellModel(gameName: "SEWWE", owerview: "dfgherwecds", levelStars: 4),
+                                                  SelectGameCellModel(gameName: "qasdcw", owerview: "qwdcs3qad", levelStars: 1),]
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        
+        detailsButton.titleLabel?.text = "DETAILS"
+        detailsButton.titleLabel?.font = UIFont(name: Constants.FontsStrings.InterBold, size: 17)
         
     }
     
@@ -24,6 +32,7 @@ class SelectGameViewController: UIViewController {
         backgraundImageConfige(image: Constants.Images.mainGameScreenImage)
         congigurePageControl()
         confiureButton()
+        
     }
     
     private func confiureButton(){
@@ -74,6 +83,8 @@ class SelectGameViewController: UIViewController {
     
     @IBAction func detailsButtonPressed(_ sender: UIButton) {
         openMaiGamenController()
+        sender.titleLabel?.text = "DETAILS"
+        sender.titleLabel?.font = UIFont(name: Constants.FontsStrings.InterBold, size: 17)
     }
     
     @IBAction func settingButtonPressed(_ sender: UIBarButtonItem) {

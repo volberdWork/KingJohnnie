@@ -6,6 +6,7 @@
 	<array>
 		<string>Phosphate.ttf</string>
 		<string>Inter-Medium.otf</string>
+		<string>Inter-Bold.ttf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

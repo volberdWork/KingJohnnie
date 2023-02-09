@@ -20,11 +20,15 @@ enum Constants {
         static let logo = "logo"
         static let setingsScreenImage = "setingsScreenImage"
         static let activeGameImage = "activeGameImage"
+        static let starGrayLevelIcon = "starGrayLevelIcon"
+        static let starOrangeLevelIcon = "starOrangeLevelIcon"
+        static let activeGameScreen = "activeGameScreen"
         
     }
     
     enum FontsStrings{
         static let PhosphatePro = "PhosphatePro-Inline"
         static let InterMedium = "Inter-Medium"
+        static let InterBold = "Inter-Bold"
     }
 }

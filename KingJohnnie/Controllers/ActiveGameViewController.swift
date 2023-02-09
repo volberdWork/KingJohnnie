@@ -9,7 +9,7 @@ class ActiveGameViewController: UIViewController {
     }
     
     private func setupView(){
-        backgraundImageConfige(image: Constants.Images.activeGameImage)
+        backgraundImageConfige(image: Constants.Images.activeGameScreen)
     }
     
     private func backgraundImageConfige(image: String){
