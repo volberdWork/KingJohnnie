@@ -7,7 +7,12 @@ class SelectGameViewController: UIViewController {
     
     @IBOutlet var collectionView: UICollectionView!
     
-    var collectionArray = ["ss","ssd"]
+    var collectionArray: [SelectGameCellModel] = [SelectGameCellModel(gameName: "Lion King", owerview: "Improve a lion inside yourself,  ability to hold the info in the mind temporarly "),
+                                                  SelectGameCellModel(gameName: "Lion Fad", owerview: "Improve a lion inside yourself,  ability to hold the info in the mind temporarly "),
+                                                  SelectGameCellModel(gameName: "SDF ewE", owerview: "Improve a lion inside yourself,  ability to hold the info in the mind temporarly "),
+                                                  SelectGameCellModel(gameName: "SEWWE", owerview: "dfgherwecds"),
+                                                  SelectGameCellModel(gameName: "qasdcw", owerview: "qwdcs3qad"),]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
@@ -25,7 +30,7 @@ class SelectGameViewController: UIViewController {
         self.collectionView.backgroundColor = .clear
         self.detailsButton.layer.cornerRadius = 10
         self.detailsButton.layer.borderWidth = 0.5
-        var whiteColor = CGColor(red: 255, green: 255, blue: 255, alpha: 1)
+        let whiteColor = CGColor(red: 255, green: 255, blue: 255, alpha: 1)
         self.detailsButton.layer.borderColor = whiteColor
         
     }
@@ -85,7 +90,7 @@ extension SelectGameViewController: UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SelectGameCollectionViewCell", for: indexPath) as! SelectGameCollectionViewCell
-    
+        cell.configure(model: collectionArray[indexPath.row])
         return cell
     }
     

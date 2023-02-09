@@ -22,4 +22,9 @@ enum Constants {
         static let activeGameImage = "activeGameImage"
         
     }
+    
+    enum FontsStrings{
+        static let PhosphatePro = "PhosphatePro-Inline"
+        static let InterMedium = "Inter-Medium"
+    }
 }

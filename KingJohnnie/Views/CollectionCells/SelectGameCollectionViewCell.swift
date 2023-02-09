@@ -2,7 +2,25 @@ import UIKit
 
 class SelectGameCollectionViewCell: UICollectionViewCell {
  
-    private func configure(model: SelectGameCellModel){
+    
+    
+    @IBOutlet var gameNameLabel: UILabel!
+    
+    @IBOutlet var owerViewLabel: UILabel!
+    
+    @IBOutlet var levelLabel: UILabel!
+    
+    
+     func configure(model: SelectGameCellModel){
+        
+        gameNameLabel.text = model.gameName
+        gameNameLabel.font = UIFont(name: Constants.FontsStrings.PhosphatePro, size: 45)
+        owerViewLabel.text = model.owerview
+        levelLabel.text = "Difficulty:"
+         owerViewLabel.font = UIFont(name: Constants.FontsStrings.InterMedium, size: 15)
+         owerViewLabel.textColor = Constants.Colors.whiteColor
+        
+        
       
     }
     
@@ -12,6 +30,5 @@ class SelectGameCollectionViewCell: UICollectionViewCell {
 struct SelectGameCellModel{
     var gameName: String
     var owerview: String
-    var difficultLevel : String
-    var levelStars: Int
+    var levelStars: Int?
 }

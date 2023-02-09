@@ -2,6 +2,8 @@ import UIKit
 
 class MainGameViewController: UIViewController {
     
+    @IBOutlet var gameNameLabel: UILabel!
+    @IBOutlet var playButton: UIButton!
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var backgraundImage: UIImageView!
     var currentSelected: Int? = 0
@@ -18,6 +20,13 @@ class MainGameViewController: UIViewController {
     private func setupView(){
         backgraundImageConfige(image: Constants.Images.mainWinScreenImage)
         self.collectionView.backgroundColor = .clear
+        playButton.backgroundColor = Constants.Colors.orangeColor
+        playButton.layer.cornerRadius = 10
+        gameNameLabel.text = "Lion Light"
+        gameNameLabel.font = UIFont(name: Constants.FontsStrings.PhosphatePro, size: 50)
+
+        
+        
     }
     
     private func backgraundImageConfige(image: String){
@@ -59,7 +68,6 @@ extension MainGameViewController : UICollectionViewDataSource{
 extension MainGameViewController : UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         currentSelected = indexPath.row
-        print(currentSelected)
         collectionView.reloadData()
     }
 }

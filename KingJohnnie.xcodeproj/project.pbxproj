@@ -16,12 +16,13 @@
 		BD19AF2D2993C69200F4A9B7 /* 90705-simple-loading.json in Resources */ = {isa = PBXBuildFile; fileRef = BD19AF2C2993C69200F4A9B7 /* 90705-simple-loading.json */; };
 		BD19AF2F2993C6C400F4A9B7 /* 95076-loading-dots.json in Resources */ = {isa = PBXBuildFile; fileRef = BD19AF2E2993C6C400F4A9B7 /* 95076-loading-dots.json */; };
 		BD19AF322993CEC800F4A9B7 /* SelectGameCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD19AF312993CEC800F4A9B7 /* SelectGameCollectionViewCell.swift */; };
-		BD19AF352993D96200F4A9B7 /* Phosphate.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BD19AF342993D96200F4A9B7 /* Phosphate.ttf */; };
 		BD19AF372993E45100F4A9B7 /* LevelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD19AF362993E45100F4A9B7 /* LevelCollectionViewCell.swift */; };
 		BD19AF392993FC0600F4A9B7 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD19AF382993FC0600F4A9B7 /* Extensions.swift */; };
 		BD19AF3B2993FE5800F4A9B7 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD19AF3A2993FE5800F4A9B7 /* NotificationManager.swift */; };
 		BD19AF4629944E2400F4A9B7 /* ActiveGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD19AF4529944E2400F4A9B7 /* ActiveGameViewController.swift */; };
 		BD19AF48299451FE00F4A9B7 /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD19AF47299451FE00F4A9B7 /* TermsViewController.swift */; };
+		BD19AF4A299513CB00F4A9B7 /* Phosphate.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BD19AF49299513CB00F4A9B7 /* Phosphate.ttf */; };
+		BD19AF4C29951B7000F4A9B7 /* Inter-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = BD19AF4B29951B7000F4A9B7 /* Inter-Medium.otf */; };
 		BDED154E2992F61200E2F03A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDED154D2992F61200E2F03A /* AppDelegate.swift */; };
 		BDED15502992F61200E2F03A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDED154F2992F61200E2F03A /* SceneDelegate.swift */; };
 		BDED15522992F61200E2F03A /* SelectGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDED15512992F61200E2F03A /* SelectGameViewController.swift */; };
@@ -39,12 +40,13 @@
 		BD19AF2C2993C69200F4A9B7 /* 90705-simple-loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "90705-simple-loading.json"; sourceTree = "<group>"; };
 		BD19AF2E2993C6C400F4A9B7 /* 95076-loading-dots.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "95076-loading-dots.json"; sourceTree = "<group>"; };
 		BD19AF312993CEC800F4A9B7 /* SelectGameCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGameCollectionViewCell.swift; sourceTree = "<group>"; };
-		BD19AF342993D96200F4A9B7 /* Phosphate.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Phosphate.ttf; sourceTree = "<group>"; };
 		BD19AF362993E45100F4A9B7 /* LevelCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelCollectionViewCell.swift; sourceTree = "<group>"; };
 		BD19AF382993FC0600F4A9B7 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		BD19AF3A2993FE5800F4A9B7 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		BD19AF4529944E2400F4A9B7 /* ActiveGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveGameViewController.swift; sourceTree = "<group>"; };
 		BD19AF47299451FE00F4A9B7 /* TermsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsViewController.swift; sourceTree = "<group>"; };
+		BD19AF49299513CB00F4A9B7 /* Phosphate.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Phosphate.ttf; sourceTree = "<group>"; };
+		BD19AF4B29951B7000F4A9B7 /* Inter-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Medium.otf"; sourceTree = "<group>"; };
 		BDED154A2992F61200E2F03A /* KingJohnnie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KingJohnnie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDED154D2992F61200E2F03A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BDED154F2992F61200E2F03A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -136,7 +138,8 @@
 		BD19AF332993D94300F4A9B7 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				BD19AF342993D96200F4A9B7 /* Phosphate.ttf */,
+				BD19AF49299513CB00F4A9B7 /* Phosphate.ttf */,
+				BD19AF4B29951B7000F4A9B7 /* Inter-Medium.otf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -240,8 +243,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD19AF2F2993C6C400F4A9B7 /* 95076-loading-dots.json in Resources */,
-				BD19AF352993D96200F4A9B7 /* Phosphate.ttf in Resources */,
+				BD19AF4A299513CB00F4A9B7 /* Phosphate.ttf in Resources */,
 				BD19AF2D2993C69200F4A9B7 /* 90705-simple-loading.json in Resources */,
+				BD19AF4C29951B7000F4A9B7 /* Inter-Medium.otf in Resources */,
 				BDED155A2992F61400E2F03A /* LaunchScreen.storyboard in Resources */,
 				BDED15572992F61400E2F03A /* Assets.xcassets in Resources */,
 				BDED15552992F61200E2F03A /* Main.storyboard in Resources */,

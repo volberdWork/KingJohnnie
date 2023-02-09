@@ -18,6 +18,13 @@ class GameLoaderViewController: UIViewController {
         loadingAnimation.contentMode = .scaleAspectFill
         loadingAnimation.play()
         openSecondControllerAfterTwoSeconds()
+        for family in UIFont.familyNames {
+            print("\(family)")
+
+            for name in UIFont.fontNames(forFamilyName: family) {
+                print("   \(name)")
+            }
+        }
         
     }
     
