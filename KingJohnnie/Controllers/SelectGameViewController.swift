@@ -6,12 +6,12 @@ class SelectGameViewController: UIViewController {
     @IBOutlet var backgroundImage: UIImageView!
     
     @IBOutlet var collectionView: UICollectionView!
+    var numberOfItemCollectionView = 0
     
     var collectionArray: [SelectGameCellModel] = [SelectGameCellModel(gameName: "Lion King", owerview: "Improve a lion inside yourself,  ability to hold the info in the mind temporarly ", levelStars: 3),
                                                   SelectGameCellModel(gameName: "Lion Fad", owerview: "Improve a lion inside yourself,  ability to hold the info in the mind temporarly ", levelStars: 2),
                                                   SelectGameCellModel(gameName: "SDF ewE", owerview: "Improve a lion inside yourself,  ability to hold the info in the mind temporarly ", levelStars: 5),
-                                                  SelectGameCellModel(gameName: "SEWWE", owerview: "dfgherwecds", levelStars: 4),
-                                                  SelectGameCellModel(gameName: "qasdcw", owerview: "qwdcs3qad", levelStars: 1),]
+                                                  SelectGameCellModel(gameName: "SEWWE", owerview: "dfgherwecds", levelStars: 4)]
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -24,6 +24,9 @@ class SelectGameViewController: UIViewController {
         
         detailsButton.titleLabel?.text = "DETAILS"
         detailsButton.titleLabel?.font = UIFont(name: Constants.FontsStrings.InterBold, size: 17)
+        pageControl.numberOfPages = self.collectionArray.count
+       
+        
         
     }
     
@@ -32,6 +35,7 @@ class SelectGameViewController: UIViewController {
         backgraundImageConfige(image: Constants.Images.mainGameScreenImage)
         congigurePageControl()
         confiureButton()
+        
         
     }
     
@@ -100,8 +104,12 @@ extension SelectGameViewController: UICollectionViewDataSource{
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        pageControl.currentPage = indexPath.row
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SelectGameCollectionViewCell", for: indexPath) as! SelectGameCollectionViewCell
         cell.configure(model: collectionArray[indexPath.row])
+       
+        
         return cell
     }
     
