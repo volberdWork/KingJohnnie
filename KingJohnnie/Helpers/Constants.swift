@@ -23,6 +23,8 @@ enum Constants {
         static let starGrayLevelIcon = "starGrayLevelIcon"
         static let starOrangeLevelIcon = "starOrangeLevelIcon"
         static let activeGameScreen = "activeGameScreen"
+        static let winImage = "winImage"
+        static let homeButtonImage = "homeButtonImage"
         
     }
     

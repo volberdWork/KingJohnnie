@@ -24,6 +24,8 @@
 		BD19AF4A299513CB00F4A9B7 /* Phosphate.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BD19AF49299513CB00F4A9B7 /* Phosphate.ttf */; };
 		BD19AF4C29951B7000F4A9B7 /* Inter-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = BD19AF4B29951B7000F4A9B7 /* Inter-Medium.otf */; };
 		BD19AF502995309E00F4A9B7 /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BD19AF4F2995309E00F4A9B7 /* Inter-Bold.ttf */; };
+		BD19AF542995823C00F4A9B7 /* WinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD19AF532995823C00F4A9B7 /* WinViewController.swift */; };
+		BD19AF562995827000F4A9B7 /* LossViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD19AF552995827000F4A9B7 /* LossViewController.swift */; };
 		BDED154E2992F61200E2F03A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDED154D2992F61200E2F03A /* AppDelegate.swift */; };
 		BDED15502992F61200E2F03A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDED154F2992F61200E2F03A /* SceneDelegate.swift */; };
 		BDED15522992F61200E2F03A /* SelectGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDED15512992F61200E2F03A /* SelectGameViewController.swift */; };
@@ -49,6 +51,8 @@
 		BD19AF49299513CB00F4A9B7 /* Phosphate.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Phosphate.ttf; sourceTree = "<group>"; };
 		BD19AF4B29951B7000F4A9B7 /* Inter-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Medium.otf"; sourceTree = "<group>"; };
 		BD19AF4F2995309E00F4A9B7 /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.ttf"; sourceTree = "<group>"; };
+		BD19AF532995823C00F4A9B7 /* WinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinViewController.swift; sourceTree = "<group>"; };
+		BD19AF552995827000F4A9B7 /* LossViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LossViewController.swift; sourceTree = "<group>"; };
 		BDED154A2992F61200E2F03A /* KingJohnnie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KingJohnnie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDED154D2992F61200E2F03A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BDED154F2992F61200E2F03A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +79,8 @@
 			isa = PBXGroup;
 			children = (
 				BDED15512992F61200E2F03A /* SelectGameViewController.swift */,
+				BD19AF552995827000F4A9B7 /* LossViewController.swift */,
+				BD19AF532995823C00F4A9B7 /* WinViewController.swift */,
 				BD19AF47299451FE00F4A9B7 /* TermsViewController.swift */,
 				BD19AF4529944E2400F4A9B7 /* ActiveGameViewController.swift */,
 				BD19AF122992FEAD00F4A9B7 /* GameLoaderViewController.swift */,
@@ -275,7 +281,9 @@
 				BD19AF392993FC0600F4A9B7 /* Extensions.swift in Sources */,
 				BD19AF2329930FC500F4A9B7 /* MainGameViewController.swift in Sources */,
 				BDED154E2992F61200E2F03A /* AppDelegate.swift in Sources */,
+				BD19AF542995823C00F4A9B7 /* WinViewController.swift in Sources */,
 				BD19AF322993CEC800F4A9B7 /* SelectGameCollectionViewCell.swift in Sources */,
+				BD19AF562995827000F4A9B7 /* LossViewController.swift in Sources */,
 				BDED15502992F61200E2F03A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
