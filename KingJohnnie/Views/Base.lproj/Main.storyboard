@@ -812,11 +812,12 @@ Remember the sequence of lighting items, then tap the items in the same sequence
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J1A-K3-Efb">
-                                <rect key="frame" x="270.66666666666669" y="690.66666666666663" width="39.333333333333314" height="29.333333333333371"/>
+                                <rect key="frame" x="268.66666666666669" y="686.66666666666663" width="41.333333333333314" height="33.333333333333371"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="pleyButtonImage"/>
+                                <buttonConfiguration key="configuration" style="plain" image="replyIcon"/>
                                 <connections>
                                     <action selector="playButtonPressed:" destination="inI-lM-91Q" eventType="touchUpInside" id="w9Q-Ha-Mra"/>
+                                    <action selector="replayAgainButtonPressed:" destination="aux-VO-IYE" eventType="touchUpInside" id="uOV-y3-0Zn"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V8G-qj-i1R">
@@ -824,6 +825,7 @@ Remember the sequence of lighting items, then tap the items in the same sequence
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="homeButtonImage"/>
                                 <connections>
+                                    <action selector="homeButtonPressed:" destination="aux-VO-IYE" eventType="touchUpInside" id="cCb-9d-T8j"/>
                                     <action selector="homeButtonPressed:" destination="inI-lM-91Q" eventType="touchUpInside" id="ezQ-qG-M60"/>
                                 </connections>
                             </button>
@@ -866,6 +868,7 @@ Remember the sequence of lighting items, then tap the items in the same sequence
         <image name="homeButtonImage" width="16.666666030883789" height="16"/>
         <image name="openLockImage" width="10.666666984558105" height="14"/>
         <image name="pleyButtonImage" width="15.333333015441895" height="15.333333015441895"/>
+        <image name="replyIcon" width="17.333333969116211" height="19.333333969116211"/>
         <image name="starLevelIcon" width="11.666666984558105" height="14.333333015441895"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

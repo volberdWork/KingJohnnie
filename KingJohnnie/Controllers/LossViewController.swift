@@ -29,5 +29,11 @@ class LossViewController: UIViewController {
     
     
 
-
+    @IBAction func homeButtonPressed(_ sender: UIButton) {
+        print("Home")
+    }
+    
+    @IBAction func replayAgainButtonPressed(_ sender: UIButton) {
+        print("Replay")
+    }
 }
