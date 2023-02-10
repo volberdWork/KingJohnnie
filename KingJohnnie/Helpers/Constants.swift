@@ -14,7 +14,7 @@ enum Constants {
     enum Images {
         static let loaderBackground = "loaderBackground"
         static let loadingBackground = "loadingBackground"
-        static let loseScreenImage = "loseScreenImage"
+        static let loseScreenImage = "lossScreenImage"
         static let mainWinScreenImage = "mainWinScreenImage"
         static let mainGameScreenImage = "mainGameScreenImage"
         static let logo = "logo"
@@ -25,6 +25,7 @@ enum Constants {
         static let activeGameScreen = "activeGameScreen"
         static let winImage = "winImage"
         static let homeButtonImage = "homeButtonImage"
+        static let losseImage = "losseImage"
         
     }
     

@@ -1,29 +1,33 @@
-//
-//  LossViewController.swift
-//  KingJohnnie
-//
-//  Created by newAccount on 09.02.2023.
-//
-
 import UIKit
 
 class LossViewController: UIViewController {
-
+    
+    @IBOutlet var beckgraundImage: UIImageView!
+    
+    @IBOutlet var timeLabel: UILabel!
+    @IBOutlet var incorrectAnswersLabel: UILabel!
+    @IBOutlet var statusImage: UIImageView!
+    
+    @IBOutlet var correctAnswersLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setupView(model: WinModel())
     }
     
+    
+    private func setupView(model: WinModel){
+        self.beckgraundImage.image = UIImage(named: Constants.Images.loseScreenImage)
+        self.beckgraundImage.contentMode = .scaleAspectFill
+        self.statusImage.image = UIImage(named: Constants.Images.losseImage)
+        statusImage.contentMode = .redraw
+        self.timeLabel.text = model.time ?? "0:00"
+        self.correctAnswersLabel.text = "\(model.correctAnswer ?? 0)"
+        self.incorrectAnswersLabel.text = "\(model.incorrectAnswers ?? 0)"
+       
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
     }
-    */
+    
+    
+
 
 }
