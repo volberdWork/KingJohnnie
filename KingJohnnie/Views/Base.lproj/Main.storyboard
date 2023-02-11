@@ -213,7 +213,7 @@
                         <barButtonItem key="leftBarButtonItem" image="gearIcon" id="gtb-W6-J0X">
                             <connections>
                                 <action selector="settingButtonPressed:" destination="BYZ-38-t0r" id="qYz-sE-9N7"/>
-                                <segue destination="KcS-zr-6Fk" kind="show" id="COc-VS-hwu"/>
+                                <segue destination="KcS-zr-6Fk" kind="push" id="iBd-yq-1HI"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -228,7 +228,7 @@
             </objects>
             <point key="canvasLocation" x="140" y="-2.1327014218009479"/>
         </scene>
-        <!--Settings View Controller-->
+        <!--Settings-->
         <scene sceneID="JR8-rd-xbm">
             <objects>
                 <viewController storyboardIdentifier="SettingsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="KcS-zr-6Fk" customClass="SettingsViewController" customModule="KingJohnnie" customModuleProvider="target" sceneMemberID="viewController">
@@ -261,7 +261,9 @@
                             <constraint firstItem="ISN-WG-Uoh" firstAttribute="leading" secondItem="fKu-E2-KcW" secondAttribute="leading" id="vmS-27-UO6"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="BXK-B6-C3D"/>
+                    <navigationItem key="navigationItem" title="Settings" id="BXK-B6-C3D">
+                        <barButtonItem key="backBarButtonItem" title=" " id="4jk-yd-1hB"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="backgraundImage" destination="yI6-y5-zCY" id="pOm-Gk-dmn"/>
                         <outlet property="tableView" destination="ISN-WG-Uoh" id="Swq-h0-36L"/>

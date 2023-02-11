@@ -34,4 +34,17 @@ class SettingsTableViewCell: UITableViewCell {
         
     }
     
+    func configure(model: SettingsList){
+       settingsNameLabel.text = model.nameText
+       iconButtonImage.image = UIImage(named: model.leftImageName)
+       disclosureIcon.image = UIImage(named: model.rightImageName)
+       if model.switchIsHidden{
+           settingsSwitch.isHidden = true
+       } else{
+           settingsSwitch.isHidden = false
+       }
+   }
+    
+   
+    
 }
