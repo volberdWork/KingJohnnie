@@ -5,6 +5,7 @@ class SettingsViewController: UIViewController {
     
     @IBOutlet var tableView: UITableView!
     @IBOutlet var backgraundImage: UIImageView!
+   
     var settingsList: [SettingsList] = [
         SettingsList(leftImageName: Constants.Images.icons.profileIcon, nameText: SettingsList.ButtonNameLabel.profile, rightImageName: Constants.Images.icons.arrowIcon, switchIsHidden: true),
         SettingsList(leftImageName: Constants.Images.icons.notificationIcon, nameText: SettingsList.ButtonNameLabel.notification, rightImageName: Constants.Images.icons.arrowIcon, switchIsHidden: true),
@@ -21,6 +22,7 @@ class SettingsViewController: UIViewController {
         self.title = "Settings"
         setupView()
         tableView.register(UINib(nibName: "SettingsTableViewCell", bundle: nil), forCellReuseIdentifier: SettingsTableViewCell.reuseIdentifier)
+     
     }
     
     func openTermsController(){
@@ -28,6 +30,24 @@ class SettingsViewController: UIViewController {
         if let vc = main.instantiateViewController(withIdentifier: "TermsViewController") as? TermsViewController  {
             navigationController?.pushViewController(vc, animated: true)
         }
+    }
+    
+    func openProfileController(){
+        let main = UIStoryboard(name: "Main", bundle: nil)
+        if let vc = main.instantiateViewController(withIdentifier: "ProfileViewController") as? ProfileViewController  {
+            navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
+    
+    
+    func performNotificationSettings() {
+        UIImpactFeedbackGenerator(style: .light).impactOccurred()
+        
+        if let appSettings = URL(string: UIApplication.openSettingsURLString), UIApplication.shared.canOpenURL(appSettings) {
+            UIApplication.shared.open(appSettings)
+        }
+        
     }
     
     private func setupView(){
@@ -45,6 +65,18 @@ class SettingsViewController: UIViewController {
         NotificationManager.requestNotifications()
         
         
+    }
+    
+    @objc func vibrationSwitchTapped(sender: UISwitch) {
+        if sender.isOn {
+            sender.thumbTintColor = .yellow
+            UserDefaults.standard.set(true, forKey: "vibrations")
+            print(UserDefaults.standard.set(true, forKey: "vibrations"))
+            UIDevice.vibrate()
+        } else {
+            sender.thumbTintColor = .yellow.withAlphaComponent(0.5)
+            UserDefaults.standard.set(false, forKey: "vibrations")
+        }
     }
     
     

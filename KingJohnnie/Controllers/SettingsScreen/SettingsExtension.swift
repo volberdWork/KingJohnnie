@@ -11,6 +11,8 @@ extension SettingsViewController : UITableViewDataSource{
         let buttonIndex = indexPath.row
         let cell = tableView.dequeueReusableCell(withIdentifier: SettingsTableViewCell.reuseIdentifier, for: indexPath) as! SettingsTableViewCell
         cell.backgroundColor = .clear
+        
+        
         cell.configure(model: settingsList[indexPath.row])
         return cell
         
@@ -24,8 +26,8 @@ extension SettingsViewController: UITableViewDelegate{
         var selectedButton = indexPath.row
         
         switch selectedButton{
-        case 0 : print(selectedButton)
-        case 1 : print(selectedButton)
+        case 0 : openProfileController()
+        case 1 : performNotificationSettings()
         case 2 : return
         case 3 : return
         case 4 : openTermsController()

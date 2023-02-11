@@ -240,7 +240,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ISN-WG-Uoh">
-                                <rect key="frame" x="0.0" y="171" width="390" height="639"/>
+                                <rect key="frame" x="0.0" y="141" width="390" height="669"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="KcS-zr-6Fk" id="HNt-zd-nbK"/>
@@ -256,7 +256,7 @@
                             <constraint firstItem="yI6-y5-zCY" firstAttribute="top" secondItem="RDh-vp-BOc" secondAttribute="top" id="St9-yz-Imy"/>
                             <constraint firstItem="fKu-E2-KcW" firstAttribute="trailing" secondItem="yI6-y5-zCY" secondAttribute="trailing" id="iVd-XA-Gwk"/>
                             <constraint firstAttribute="bottom" secondItem="yI6-y5-zCY" secondAttribute="bottom" id="mYI-MY-jhL"/>
-                            <constraint firstItem="ISN-WG-Uoh" firstAttribute="top" secondItem="fKu-E2-KcW" secondAttribute="top" constant="80" id="oKR-fw-3VM"/>
+                            <constraint firstItem="ISN-WG-Uoh" firstAttribute="top" secondItem="fKu-E2-KcW" secondAttribute="top" constant="50" id="oKR-fw-3VM"/>
                             <constraint firstItem="yI6-y5-zCY" firstAttribute="leading" secondItem="fKu-E2-KcW" secondAttribute="leading" id="rrh-xS-SJj"/>
                             <constraint firstItem="ISN-WG-Uoh" firstAttribute="leading" secondItem="fKu-E2-KcW" secondAttribute="leading" id="vmS-27-UO6"/>
                         </constraints>
@@ -313,6 +313,48 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n9c-vq-Fyf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="807.69230769230762" y="656.87203791469187"/>
+        </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="KdM-f8-0wV">
+            <objects>
+                <viewController storyboardIdentifier="ProfileViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4t5-YO-UoQ" customClass="ProfileViewController" customModule="KingJohnnie" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ehT-Tf-2bq">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="itK-zR-z11">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="6N5-i2-hCi">
+                                <rect key="frame" x="0.0" y="87" width="390" height="723"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="4t5-YO-UoQ" id="84D-5f-oJe"/>
+                                    <outlet property="delegate" destination="4t5-YO-UoQ" id="fbB-mi-hEh"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="adG-ws-OC1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="itK-zR-z11" firstAttribute="leading" secondItem="adG-ws-OC1" secondAttribute="leading" id="3ld-VF-QSj"/>
+                            <constraint firstItem="adG-ws-OC1" firstAttribute="bottom" secondItem="6N5-i2-hCi" secondAttribute="bottom" id="8BU-eg-N6z"/>
+                            <constraint firstItem="itK-zR-z11" firstAttribute="trailing" secondItem="adG-ws-OC1" secondAttribute="trailing" id="Wej-Xd-sct"/>
+                            <constraint firstItem="adG-ws-OC1" firstAttribute="trailing" secondItem="6N5-i2-hCi" secondAttribute="trailing" id="Xw7-yc-63T"/>
+                            <constraint firstItem="itK-zR-z11" firstAttribute="top" secondItem="ehT-Tf-2bq" secondAttribute="top" id="YdO-12-Z9A"/>
+                            <constraint firstItem="6N5-i2-hCi" firstAttribute="top" secondItem="adG-ws-OC1" secondAttribute="top" constant="40" id="rzZ-at-HVc"/>
+                            <constraint firstItem="6N5-i2-hCi" firstAttribute="leading" secondItem="adG-ws-OC1" secondAttribute="leading" id="v6D-BD-EV9"/>
+                            <constraint firstAttribute="bottom" secondItem="itK-zR-z11" secondAttribute="bottom" id="xeH-8e-1pn"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundImage" destination="itK-zR-z11" id="gmN-Gw-2ip"/>
+                        <outlet property="tableView" destination="6N5-i2-hCi" id="r5J-8p-MBC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cNy-c2-mgo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2127.6923076923076" y="656.87203791469187"/>
         </scene>
         <!-- -->
         <scene sceneID="5Lq-nW-2qq">
@@ -678,7 +720,7 @@ Remember the sequence of lighting items, then tap the items in the same sequence
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wz8-uU-FNx">
-                                <rect key="frame" x="16" y="383.66666666666669" width="358" height="127.99999999999994"/>
+                                <rect key="frame" x="16" y="383.66666666666669" width="358" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="RTg-HP-z3C"/>
                                 </constraints>
