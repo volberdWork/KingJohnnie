@@ -28,6 +28,7 @@ class SettingsTableViewCell: UITableViewCell {
 //        settingsSwitch.isHidden = true
 //        disclosureIcon.isHidden = true
         centralView.backgroundColor = .clear
+        
         self.selectionStyle = .none
         
         

@@ -10,7 +10,6 @@ extension SettingsViewController : UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let buttonIndex = indexPath.row
         let cell = tableView.dequeueReusableCell(withIdentifier: SettingsTableViewCell.reuseIdentifier, for: indexPath) as! SettingsTableViewCell
-        
         cell.backgroundColor = .clear
         cell.configure(model: settingsList[indexPath.row])
         return cell
@@ -25,18 +24,22 @@ extension SettingsViewController: UITableViewDelegate{
         var selectedButton = indexPath.row
         
         switch selectedButton{
-        case 0 :
-        case 1 :
-        case 2 :
-        case 3 :
-        case 4 :
-        case 5 :
-        case 6 :
-        case 7 :
+        case 0 : print(selectedButton)
+        case 1 : print(selectedButton)
+        case 2 : return
+        case 3 : return
+        case 4 : openTermsController()
+        case 5 : print(selectedButton)
+        case 6 : print(selectedButton)
+        case 7 : print(selectedButton)
             
+        default:
+            return
         }
         
     }
     
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
+    }
 }

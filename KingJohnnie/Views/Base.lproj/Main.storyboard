@@ -306,6 +306,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Mox-N6-oAt"/>
+                    <connections>
+                        <outlet property="backgroundImage" destination="wcb-nd-mMW" id="6Nw-sE-td9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n9c-vq-Fyf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

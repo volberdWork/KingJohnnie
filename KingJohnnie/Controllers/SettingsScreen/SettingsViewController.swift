@@ -23,8 +23,16 @@ class SettingsViewController: UIViewController {
         tableView.register(UINib(nibName: "SettingsTableViewCell", bundle: nil), forCellReuseIdentifier: SettingsTableViewCell.reuseIdentifier)
     }
     
+    func openTermsController(){
+        let main = UIStoryboard(name: "Main", bundle: nil)
+        if let vc = main.instantiateViewController(withIdentifier: "TermsViewController") as? TermsViewController  {
+            navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
     private func setupView(){
         backgraundImageConfige(image: Constants.Images.setingsScreenImage)
+        tableView.isScrollEnabled = false
     }
     
     private func backgraundImageConfige(image: String){
