@@ -27,6 +27,16 @@ enum Constants {
         static let homeButtonImage = "homeButtonImage"
         static let losseImage = "losseImage"
         
+        enum icons{
+            static let profileIcon = "profileIcon"
+            static let notificationIcon = "notificationIcon"
+            static let vibrationIcon = "vibrationIcon"
+            static let soundIcon = "soundIcon"
+            static let termsIcon = "termsIcon"
+            static let feedbackIcon = "feedbackIcon"
+            static let rateIcon = "rateIcon"
+            static let removeIcon = "removeIcon"
+        }
     }
     
     enum FontsStrings{

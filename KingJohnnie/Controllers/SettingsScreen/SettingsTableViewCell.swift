@@ -25,9 +25,11 @@ class SettingsTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        settingsSwitch.isHidden = true
-        disclosureIcon.isHidden = true
+//        settingsSwitch.isHidden = true
+//        disclosureIcon.isHidden = true
         centralView.backgroundColor = .clear
+        self.selectionStyle = .none
+        
         
         
     }
