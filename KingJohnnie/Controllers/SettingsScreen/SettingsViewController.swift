@@ -3,11 +3,13 @@ import MessageUI
 
 class SettingsViewController: UIViewController {
 
+    @IBOutlet var tableView: UITableView!
     @IBOutlet var backgraundImage: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupView()
+        tableView.register(UINib(nibName: "SettingsTableViewCell", bundle: nil), forCellReuseIdentifier: SettingsTableViewCell.reuseIdentifier)
     }
     
     private func setupView(){
@@ -28,3 +30,6 @@ class SettingsViewController: UIViewController {
 
 
 }
+
+
+

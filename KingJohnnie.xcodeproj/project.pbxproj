@@ -26,6 +26,9 @@
 		BD19AF502995309E00F4A9B7 /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BD19AF4F2995309E00F4A9B7 /* Inter-Bold.ttf */; };
 		BD19AF542995823C00F4A9B7 /* WinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD19AF532995823C00F4A9B7 /* WinViewController.swift */; };
 		BD19AF562995827000F4A9B7 /* LossViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD19AF552995827000F4A9B7 /* LossViewController.swift */; };
+		BD7317B929978DA90036D2DC /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7317B729978DA90036D2DC /* SettingsTableViewCell.swift */; };
+		BD7317BA29978DA90036D2DC /* SettingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD7317B829978DA90036D2DC /* SettingsTableViewCell.xib */; };
+		BD7317BC299791A70036D2DC /* SettingsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7317BB299791A70036D2DC /* SettingsExtension.swift */; };
 		BDED154E2992F61200E2F03A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDED154D2992F61200E2F03A /* AppDelegate.swift */; };
 		BDED15502992F61200E2F03A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDED154F2992F61200E2F03A /* SceneDelegate.swift */; };
 		BDED15522992F61200E2F03A /* SelectGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDED15512992F61200E2F03A /* SelectGameViewController.swift */; };
@@ -53,6 +56,9 @@
 		BD19AF4F2995309E00F4A9B7 /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.ttf"; sourceTree = "<group>"; };
 		BD19AF532995823C00F4A9B7 /* WinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinViewController.swift; sourceTree = "<group>"; };
 		BD19AF552995827000F4A9B7 /* LossViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LossViewController.swift; sourceTree = "<group>"; };
+		BD7317B729978DA90036D2DC /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		BD7317B829978DA90036D2DC /* SettingsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsTableViewCell.xib; sourceTree = "<group>"; };
+		BD7317BB299791A70036D2DC /* SettingsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsExtension.swift; sourceTree = "<group>"; };
 		BDED154A2992F61200E2F03A /* KingJohnnie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KingJohnnie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDED154D2992F61200E2F03A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BDED154F2992F61200E2F03A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +84,7 @@
 		BD19AF112992FE8A00F4A9B7 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BD7317B629978D350036D2DC /* SettingsScreen */,
 				BDED15512992F61200E2F03A /* SelectGameViewController.swift */,
 				BD19AF552995827000F4A9B7 /* LossViewController.swift */,
 				BD19AF532995823C00F4A9B7 /* WinViewController.swift */,
@@ -85,7 +92,6 @@
 				BD19AF4529944E2400F4A9B7 /* ActiveGameViewController.swift */,
 				BD19AF122992FEAD00F4A9B7 /* GameLoaderViewController.swift */,
 				BD19AF2229930FC500F4A9B7 /* MainGameViewController.swift */,
-				BD19AF242993152300F4A9B7 /* SettingsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -151,6 +157,17 @@
 				BD19AF4F2995309E00F4A9B7 /* Inter-Bold.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		BD7317B629978D350036D2DC /* SettingsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				BD19AF242993152300F4A9B7 /* SettingsViewController.swift */,
+				BD7317BB299791A70036D2DC /* SettingsExtension.swift */,
+				BD7317B729978DA90036D2DC /* SettingsTableViewCell.swift */,
+				BD7317B829978DA90036D2DC /* SettingsTableViewCell.xib */,
+			);
+			path = SettingsScreen;
 			sourceTree = "<group>";
 		};
 		BDED15412992F61200E2F03A = {
@@ -259,6 +276,7 @@
 				BDED155A2992F61400E2F03A /* LaunchScreen.storyboard in Resources */,
 				BDED15572992F61400E2F03A /* Assets.xcassets in Resources */,
 				BDED15552992F61200E2F03A /* Main.storyboard in Resources */,
+				BD7317BA29978DA90036D2DC /* SettingsTableViewCell.xib in Resources */,
 				BD19AF1F29930C3300F4A9B7 /* 92298-loading.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -280,9 +298,11 @@
 				BD19AF4629944E2400F4A9B7 /* ActiveGameViewController.swift in Sources */,
 				BD19AF392993FC0600F4A9B7 /* Extensions.swift in Sources */,
 				BD19AF2329930FC500F4A9B7 /* MainGameViewController.swift in Sources */,
+				BD7317B929978DA90036D2DC /* SettingsTableViewCell.swift in Sources */,
 				BDED154E2992F61200E2F03A /* AppDelegate.swift in Sources */,
 				BD19AF542995823C00F4A9B7 /* WinViewController.swift in Sources */,
 				BD19AF322993CEC800F4A9B7 /* SelectGameCollectionViewCell.swift in Sources */,
+				BD7317BC299791A70036D2DC /* SettingsExtension.swift in Sources */,
 				BD19AF562995827000F4A9B7 /* LossViewController.swift in Sources */,
 				BDED15502992F61200E2F03A /* SceneDelegate.swift in Sources */,
 			);
