@@ -36,6 +36,7 @@ enum Constants {
             static let feedbackIcon = "feedbackIcon"
             static let rateIcon = "rateIcon"
             static let removeIcon = "removeIcon"
+            static let arrowIcon = "arrowIcon"
         }
     }
     
