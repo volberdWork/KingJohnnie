@@ -9,17 +9,25 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-      
+        setupView()
+        tableView.backgroundColor = .clear
     }
     
+    private func setupView(){
+        backgraundImageConfige(image: Constants.Images.setingsScreenImage)
+    }
+    
+    private func backgraundImageConfige(image: String){
+        self.backgroundImage.image = UIImage(named: image)
+        self.backgroundImage.contentMode = .scaleAspectFill
+    }
 
 }
 
 
 extension ProfileViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        0
+        10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

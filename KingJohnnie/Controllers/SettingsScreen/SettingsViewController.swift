@@ -1,5 +1,7 @@
 import UIKit
 import MessageUI
+import StoreKit
+import MessageUI
 
 class SettingsViewController: UIViewController {
     
@@ -20,10 +22,28 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Settings"
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         setupView()
         tableView.register(UINib(nibName: "SettingsTableViewCell", bundle: nil), forCellReuseIdentifier: SettingsTableViewCell.reuseIdentifier)
      
     }
+    
+    func rateAppAction() {
+
+        //check status of user OS
+        if #available(iOS 14.0, *) {
+            //request review in another situation
+                if let sceneNew = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene {
+                    SKStoreReviewController.requestReview(in: sceneNew)
+                }
+
+        } else {
+
+            //request review
+            SKStoreReviewController.requestReview()
+        }
+    }
+
     
     func openTermsController(){
         let main = UIStoryboard(name: "Main", bundle: nil)
@@ -104,3 +124,38 @@ struct SettingsList{
     }
 }
 
+extension SettingsViewController: MFMailComposeViewControllerDelegate {
+    
+    //create converastional windiw
+    func openMessageWindow() {
+        
+        if !MFMailComposeViewController.canSendMail() {
+            print("Mail Service is NOT available")
+            
+            let errorController = UIAlertController(title: "Dear User", message: "Sorry, buy Write To Us Service is temporarily unavailable. Please Try Again Later.", preferredStyle: .actionSheet)
+            let okAction = UIAlertAction(title: "Ok", style: .default)
+            
+            errorController.addAction(okAction)
+            present(errorController, animated: true)
+            
+            return
+            
+        } else {
+            
+            print("Mail Service IS working")
+            
+            let composeController = MFMailComposeViewController()
+            composeController.mailComposeDelegate = self
+
+            // Configure the fields of the interface.
+            composeController.setToRecipients(["stakeYourSkillsFeedback@gmail.com"])
+            composeController.setSubject("Message Subject")
+            composeController.setMessageBody("Message content", isHTML: false)
+
+            self.present(composeController, animated: true, completion: nil)
+            
+        }
+        
+
+    }
+}

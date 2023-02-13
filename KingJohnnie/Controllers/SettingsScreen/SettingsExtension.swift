@@ -31,9 +31,9 @@ extension SettingsViewController: UITableViewDelegate{
         case 2 : return
         case 3 : return
         case 4 : openTermsController()
-        case 5 : print(selectedButton)
-        case 6 : print(selectedButton)
-        case 7 : print(selectedButton)
+        case 5 : openMessageWindow()
+        case 6 : rateAppAction()
+        case 7 : print("")
             
         default:
             return

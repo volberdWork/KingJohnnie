@@ -17,6 +17,11 @@ class MainGameViewController: UIViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+     
+    }
+    
     private func setupView(){
         backgraundImageConfige(image: Constants.Images.mainWinScreenImage)
         self.collectionView.backgroundColor = .clear
@@ -24,6 +29,8 @@ class MainGameViewController: UIViewController {
         playButton.layer.cornerRadius = 10
         gameNameLabel.text = "Lion Light"
         gameNameLabel.font = UIFont(name: Constants.FontsStrings.PhosphatePro, size: 50)
+        
+    
 
         
         
