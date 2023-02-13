@@ -593,18 +593,81 @@ Remember the sequence of lighting items, then tap the items in the same sequence
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DMa-tb-DPb">
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                             </imageView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="V96-EG-MRn">
+                                <rect key="frame" x="0.0" y="227" width="390" height="390"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="390" id="bQ0-gq-hcI"/>
+                                </constraints>
+                                <inset key="scrollIndicatorInsets" minX="50" minY="0.0" maxX="50" maxY="0.0"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Gcp-LG-Wfn">
+                                    <size key="itemSize" width="90" height="90"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="50" minY="0.0" maxX="50" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ActiveGameCollectionViewCell" id="PXJ-It-WYt" customClass="ActiveGameCollectionViewCell" customModule="KingJohnnie" customModuleProvider="target">
+                                        <rect key="frame" x="50" y="0.0" width="80" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="a6l-ke-NgR">
+                                            <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I6r-EW-Sfl">
+                                                    <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YHz-WS-BzD">
+                                                            <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="80" id="VOl-ea-lNO"/>
+                                                                <constraint firstAttribute="width" constant="80" id="dY8-mq-Fr9"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="systemTealColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="YHz-WS-BzD" secondAttribute="trailing" id="56J-c0-zbE"/>
+                                                        <constraint firstItem="YHz-WS-BzD" firstAttribute="leading" secondItem="I6r-EW-Sfl" secondAttribute="leading" id="Mi9-l1-R8x"/>
+                                                        <constraint firstAttribute="bottom" secondItem="YHz-WS-BzD" secondAttribute="bottom" id="N1U-W7-Mot"/>
+                                                        <constraint firstItem="YHz-WS-BzD" firstAttribute="top" secondItem="I6r-EW-Sfl" secondAttribute="top" id="tHD-xk-Att"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="I6r-EW-Sfl" secondAttribute="trailing" id="OiZ-0n-CPx"/>
+                                                <constraint firstItem="I6r-EW-Sfl" firstAttribute="top" secondItem="a6l-ke-NgR" secondAttribute="top" id="Y7E-zy-QW9"/>
+                                                <constraint firstItem="I6r-EW-Sfl" firstAttribute="leading" secondItem="a6l-ke-NgR" secondAttribute="leading" id="YNV-nJ-Hjn"/>
+                                                <constraint firstAttribute="bottom" secondItem="I6r-EW-Sfl" secondAttribute="bottom" id="zWm-gN-Nf7"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="pwx-P1-uDt" id="V7p-2x-U8Y"/>
+                                    <outlet property="delegate" destination="pwx-P1-uDt" id="NP5-dA-WHe"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="akK-Mw-6mn"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="V96-EG-MRn" firstAttribute="centerY" secondItem="pj9-eN-p5W" secondAttribute="centerY" id="21V-nO-2zD"/>
                             <constraint firstAttribute="bottom" secondItem="DMa-tb-DPb" secondAttribute="bottom" id="7ok-ro-DBd"/>
                             <constraint firstItem="DMa-tb-DPb" firstAttribute="top" secondItem="pj9-eN-p5W" secondAttribute="top" id="8ra-De-ZMW"/>
                             <constraint firstItem="DMa-tb-DPb" firstAttribute="leading" secondItem="akK-Mw-6mn" secondAttribute="leading" id="C4g-Po-n53"/>
+                            <constraint firstItem="V96-EG-MRn" firstAttribute="trailing" secondItem="akK-Mw-6mn" secondAttribute="trailing" id="Q2N-AK-GhA"/>
+                            <constraint firstItem="V96-EG-MRn" firstAttribute="leading" secondItem="akK-Mw-6mn" secondAttribute="leading" id="Uxq-dM-iQ7"/>
+                            <constraint firstItem="V96-EG-MRn" firstAttribute="centerX" secondItem="pj9-eN-p5W" secondAttribute="centerX" id="ab8-yE-X76"/>
                             <constraint firstItem="DMa-tb-DPb" firstAttribute="trailing" secondItem="akK-Mw-6mn" secondAttribute="trailing" id="cpl-eY-JUh"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="backgroundImage" destination="DMa-tb-DPb" id="49U-Ea-iAx"/>
+                        <outlet property="collectionView" destination="V96-EG-MRn" id="Xae-Aj-6QI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gcS-RO-KZt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -927,6 +990,9 @@ Remember the sequence of lighting items, then tap the items in the same sequence
         <image name="starLevelIcon" width="11.666666984558105" height="14.333333015441895"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

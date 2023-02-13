@@ -26,6 +26,7 @@
 		BD19AF502995309E00F4A9B7 /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BD19AF4F2995309E00F4A9B7 /* Inter-Bold.ttf */; };
 		BD19AF542995823C00F4A9B7 /* WinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD19AF532995823C00F4A9B7 /* WinViewController.swift */; };
 		BD19AF562995827000F4A9B7 /* LossViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD19AF552995827000F4A9B7 /* LossViewController.swift */; };
+		BD4E35FB299A2D2C00422D10 /* ActiveGameCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4E35FA299A2D2C00422D10 /* ActiveGameCollectionViewCell.swift */; };
 		BD7317B929978DA90036D2DC /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7317B729978DA90036D2DC /* SettingsTableViewCell.swift */; };
 		BD7317BA29978DA90036D2DC /* SettingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD7317B829978DA90036D2DC /* SettingsTableViewCell.xib */; };
 		BD7317BC299791A70036D2DC /* SettingsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7317BB299791A70036D2DC /* SettingsExtension.swift */; };
@@ -57,6 +58,7 @@
 		BD19AF4F2995309E00F4A9B7 /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.ttf"; sourceTree = "<group>"; };
 		BD19AF532995823C00F4A9B7 /* WinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinViewController.swift; sourceTree = "<group>"; };
 		BD19AF552995827000F4A9B7 /* LossViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LossViewController.swift; sourceTree = "<group>"; };
+		BD4E35FA299A2D2C00422D10 /* ActiveGameCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveGameCollectionViewCell.swift; sourceTree = "<group>"; };
 		BD7317B729978DA90036D2DC /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		BD7317B829978DA90036D2DC /* SettingsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsTableViewCell.xib; sourceTree = "<group>"; };
 		BD7317BB299791A70036D2DC /* SettingsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsExtension.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 			children = (
 				BD19AF312993CEC800F4A9B7 /* SelectGameCollectionViewCell.swift */,
 				BD19AF362993E45100F4A9B7 /* LevelCollectionViewCell.swift */,
+				BD4E35FA299A2D2C00422D10 /* ActiveGameCollectionViewCell.swift */,
 			);
 			path = CollectionCells;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 			files = (
 				BD19AF372993E45100F4A9B7 /* LevelCollectionViewCell.swift in Sources */,
 				BD19AF2129930CAB00F4A9B7 /* Constants.swift in Sources */,
+				BD4E35FB299A2D2C00422D10 /* ActiveGameCollectionViewCell.swift in Sources */,
 				BDED15522992F61200E2F03A /* SelectGameViewController.swift in Sources */,
 				BD19AF48299451FE00F4A9B7 /* TermsViewController.swift in Sources */,
 				BD19AF252993152300F4A9B7 /* SettingsViewController.swift in Sources */,

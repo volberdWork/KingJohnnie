@@ -6,6 +6,15 @@ class GameLoaderViewController: UIViewController {
     var loadingAnimation = LottieAnimationView(name: "92298-loading")
     
     @IBOutlet var animationView: UIView!
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
