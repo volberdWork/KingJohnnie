@@ -46,4 +46,8 @@ enum Constants {
         static let InterMedium = "Inter-Medium"
         static let InterBold = "Inter-Bold"
     }
+    
+    enum LottieAnimation{
+        static let loading = "92298-loading"
+    }
 }

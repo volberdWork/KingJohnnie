@@ -27,6 +27,9 @@
 		BD19AF542995823C00F4A9B7 /* WinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD19AF532995823C00F4A9B7 /* WinViewController.swift */; };
 		BD19AF562995827000F4A9B7 /* LossViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD19AF552995827000F4A9B7 /* LossViewController.swift */; };
 		BD4E35FB299A2D2C00422D10 /* ActiveGameCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4E35FA299A2D2C00422D10 /* ActiveGameCollectionViewCell.swift */; };
+		BD4E3600299A53CE00422D10 /* PopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4E35FF299A53CE00422D10 /* PopUp.swift */; };
+		BD4E3603299A5CD700422D10 /* OverLayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4E3601299A5CD700422D10 /* OverLayerView.swift */; };
+		BD4E3604299A5CD700422D10 /* OverLayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD4E3602299A5CD700422D10 /* OverLayerView.xib */; };
 		BD7317B929978DA90036D2DC /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7317B729978DA90036D2DC /* SettingsTableViewCell.swift */; };
 		BD7317BA29978DA90036D2DC /* SettingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD7317B829978DA90036D2DC /* SettingsTableViewCell.xib */; };
 		BD7317BC299791A70036D2DC /* SettingsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7317BB299791A70036D2DC /* SettingsExtension.swift */; };
@@ -59,6 +62,9 @@
 		BD19AF532995823C00F4A9B7 /* WinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinViewController.swift; sourceTree = "<group>"; };
 		BD19AF552995827000F4A9B7 /* LossViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LossViewController.swift; sourceTree = "<group>"; };
 		BD4E35FA299A2D2C00422D10 /* ActiveGameCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveGameCollectionViewCell.swift; sourceTree = "<group>"; };
+		BD4E35FF299A53CE00422D10 /* PopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUp.swift; sourceTree = "<group>"; };
+		BD4E3601299A5CD700422D10 /* OverLayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverLayerView.swift; sourceTree = "<group>"; };
+		BD4E3602299A5CD700422D10 /* OverLayerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OverLayerView.xib; sourceTree = "<group>"; };
 		BD7317B729978DA90036D2DC /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		BD7317B829978DA90036D2DC /* SettingsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsTableViewCell.xib; sourceTree = "<group>"; };
 		BD7317BB299791A70036D2DC /* SettingsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsExtension.swift; sourceTree = "<group>"; };
@@ -88,6 +94,7 @@
 		BD19AF112992FE8A00F4A9B7 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BD4E35FC299A517000422D10 /* PopUps */,
 				BD7317B629978D350036D2DC /* SettingsScreen */,
 				BDED15512992F61200E2F03A /* SelectGameViewController.swift */,
 				BDB20DE5299832E70071981F /* ProfileViewController.swift */,
@@ -141,6 +148,7 @@
 			children = (
 				BD19AF2029930CAB00F4A9B7 /* Constants.swift */,
 				BD19AF3A2993FE5800F4A9B7 /* NotificationManager.swift */,
+				BD4E35FF299A53CE00422D10 /* PopUp.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -163,6 +171,15 @@
 				BD19AF4F2995309E00F4A9B7 /* Inter-Bold.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		BD4E35FC299A517000422D10 /* PopUps */ = {
+			isa = PBXGroup;
+			children = (
+				BD4E3601299A5CD700422D10 /* OverLayerView.swift */,
+				BD4E3602299A5CD700422D10 /* OverLayerView.xib */,
+			);
+			path = PopUps;
 			sourceTree = "<group>";
 		};
 		BD7317B629978D350036D2DC /* SettingsScreen */ = {
@@ -283,6 +300,7 @@
 				BDED15572992F61400E2F03A /* Assets.xcassets in Resources */,
 				BDED15552992F61200E2F03A /* Main.storyboard in Resources */,
 				BD7317BA29978DA90036D2DC /* SettingsTableViewCell.xib in Resources */,
+				BD4E3604299A5CD700422D10 /* OverLayerView.xib in Resources */,
 				BD19AF1F29930C3300F4A9B7 /* 92298-loading.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -294,6 +312,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD4E3603299A5CD700422D10 /* OverLayerView.swift in Sources */,
 				BD19AF372993E45100F4A9B7 /* LevelCollectionViewCell.swift in Sources */,
 				BD19AF2129930CAB00F4A9B7 /* Constants.swift in Sources */,
 				BD4E35FB299A2D2C00422D10 /* ActiveGameCollectionViewCell.swift in Sources */,
@@ -304,6 +323,7 @@
 				BDB20DE6299832E70071981F /* ProfileViewController.swift in Sources */,
 				BD19AF132992FEAD00F4A9B7 /* GameLoaderViewController.swift in Sources */,
 				BD19AF4629944E2400F4A9B7 /* ActiveGameViewController.swift in Sources */,
+				BD4E3600299A53CE00422D10 /* PopUp.swift in Sources */,
 				BD19AF392993FC0600F4A9B7 /* Extensions.swift in Sources */,
 				BD19AF2329930FC500F4A9B7 /* MainGameViewController.swift in Sources */,
 				BD7317B929978DA90036D2DC /* SettingsTableViewCell.swift in Sources */,

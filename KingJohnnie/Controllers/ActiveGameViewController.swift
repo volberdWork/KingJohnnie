@@ -6,6 +6,7 @@ class ActiveGameViewController: UIViewController {
     
     @IBOutlet var collectionView: UICollectionView!
     
+    @IBOutlet var darkView: UIView!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -15,10 +16,16 @@ class ActiveGameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+       
+       
     }
     
     private func setupView(){
         backgraundImageConfige(image: Constants.Images.activeGameScreen)
+        darkView.backgroundColor = .black
+        darkView.alpha = 0.5
+        
+        self.darkView.isHidden = true
     }
     
     private func backgraundImageConfige(image: String){
@@ -29,6 +36,11 @@ class ActiveGameViewController: UIViewController {
     
     
     
+    @IBAction func pressedPauseButon(_ sender: UIButton) {
+       let popUpView = OverLayerView()
+        popUpView.appear(sender: self)
+
+    }
     
 }
 

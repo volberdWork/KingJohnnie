@@ -3,7 +3,7 @@ import Lottie
 
 class GameLoaderViewController: UIViewController {
     @IBOutlet var backGrImage: UIImageView!
-    var loadingAnimation = LottieAnimationView(name: "92298-loading")
+    var loadingAnimation = LottieAnimationView(name: Constants.LottieAnimation.loading)
     
     @IBOutlet var animationView: UIView!
     
@@ -27,18 +27,10 @@ class GameLoaderViewController: UIViewController {
         loadingAnimation.contentMode = .scaleAspectFill
         loadingAnimation.play()
         openSecondControllerAfterTwoSeconds()
-        for family in UIFont.familyNames {
-            print("\(family)")
-
-            for name in UIFont.fontNames(forFamilyName: family) {
-                print("   \(name)")
-            }
-        }
-        
     }
     
     private func openSecondControllerAfterTwoSeconds() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.2) {
             let main = UIStoryboard(name: "Main", bundle: nil)
             if let vc = main.instantiateViewController(withIdentifier: "ActiveGameViewController") as? ActiveGameViewController  {
                 self.navigationController?.pushViewController(vc, animated: true)

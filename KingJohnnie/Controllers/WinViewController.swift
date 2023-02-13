@@ -22,6 +22,7 @@ class WinViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView(model: WinModel())
+        
     }
     
     
