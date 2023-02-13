@@ -1,16 +1,21 @@
+//
+//  OverLayerView.swift
+//  CustomPopUp
+//
+//  Created by Sajjad Sarkoobi on 8.07.2022.
+//
+
 import UIKit
 
 class OverLayerView: UIViewController {
 
-    
-    @IBOutlet var backView: UIView!
-    @IBOutlet var contentView: UIView!
-    
+    //IBOutlets
+    @IBOutlet weak var backView: UIView!
+    @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var doneButton: UIButton!
     @IBAction func doneButtonAction(_ sender: UIButton) {
         hide()
     }
-    
-    
     
     init() {
         super.init(nibName: "OverLayerView", bundle: nil)
@@ -23,27 +28,28 @@ class OverLayerView: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         configView()
     }
     
     private func configView() {
         self.view.backgroundColor = .clear
-        self.backView.backgroundColor = .black.withAlphaComponent(0.6)
+        self.backView.backgroundColor = .black.withAlphaComponent(1)
         self.backView.alpha = 0
-        self.contentView.alpha = 0
+        self.contentView.alpha = 0.9
+        
         self.contentView.layer.cornerRadius = 10
     }
     
     func appear(sender: ActiveGameViewController) {
-        sender.present(self, animated: false) {
+        sender.present(self, animated: true) {
             self.show()
         }
     }
     
     private func show() {
-        UIView.animate(withDuration: 1, delay: 0.2) {
-            self.backView.alpha = 1
+        UIView.animate(withDuration: 0.6, delay: 0) {
+            self.backView.alpha = 0.8
             self.contentView.alpha = 1
         }
     }
