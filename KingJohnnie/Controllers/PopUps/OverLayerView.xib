@@ -61,19 +61,55 @@
                                 <constraint firstAttribute="width" constant="70" id="bDt-qZ-pKm"/>
                             </constraints>
                         </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ehq-33-kGy">
+                            <rect key="frame" x="90" y="232" width="40" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="40" id="69u-Zc-D8u"/>
+                                <constraint firstAttribute="height" constant="40" id="FGn-kp-6Xa"/>
+                            </constraints>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" image="homeButtonImage"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SWQ-Jq-HJ9">
+                            <rect key="frame" x="252" y="232" width="40" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="IHK-bn-62y"/>
+                                <constraint firstAttribute="width" constant="40" id="O2q-wI-6OS"/>
+                                <constraint firstAttribute="height" constant="40" id="X7y-hX-LnS"/>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="egf-8v-v5i"/>
+                            </constraints>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" image="pleyButtonImage"/>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Left    00:15" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZjB-30-fFg">
+                            <rect key="frame" x="16" y="187" width="350" height="25"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="25" id="Vdp-xK-9En"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <constraints>
                         <constraint firstItem="eFf-VU-xwy" firstAttribute="centerX" secondItem="RFc-7r-ept" secondAttribute="centerX" id="5C2-kE-qYF"/>
+                        <constraint firstItem="ZjB-30-fFg" firstAttribute="leading" secondItem="RFc-7r-ept" secondAttribute="leading" constant="16" id="DzG-nN-ds5"/>
+                        <constraint firstAttribute="trailing" secondItem="ZjB-30-fFg" secondAttribute="trailing" constant="16" id="NGe-d9-fCK"/>
                         <constraint firstItem="eFf-VU-xwy" firstAttribute="leading" secondItem="RFc-7r-ept" secondAttribute="leading" constant="20" id="PBl-Vs-NfR"/>
                         <constraint firstItem="pv1-rQ-E0S" firstAttribute="centerX" secondItem="RFc-7r-ept" secondAttribute="centerX" id="Pmw-A6-adt"/>
+                        <constraint firstItem="ehq-33-kGy" firstAttribute="leading" secondItem="RFc-7r-ept" secondAttribute="leading" constant="90" id="QcV-Wh-Vhs"/>
+                        <constraint firstAttribute="trailing" secondItem="SWQ-Jq-HJ9" secondAttribute="trailing" constant="90" id="ZXT-dY-HeT"/>
                         <constraint firstItem="5df-GP-UJE" firstAttribute="leading" secondItem="RFc-7r-ept" secondAttribute="leading" id="bkU-1X-fhF"/>
                         <constraint firstAttribute="trailing" secondItem="5df-GP-UJE" secondAttribute="trailing" id="cpw-RY-399"/>
+                        <constraint firstAttribute="bottom" secondItem="ehq-33-kGy" secondAttribute="bottom" constant="32" id="eTo-3C-pmc"/>
                         <constraint firstItem="eFf-VU-xwy" firstAttribute="top" secondItem="RFc-7r-ept" secondAttribute="top" constant="35" id="ekw-yV-cmn"/>
                         <constraint firstItem="5df-GP-UJE" firstAttribute="top" secondItem="RFc-7r-ept" secondAttribute="top" id="jL2-ke-U0a"/>
+                        <constraint firstItem="ZjB-30-fFg" firstAttribute="top" secondItem="pv1-rQ-E0S" secondAttribute="bottom" constant="16" id="kdX-6p-z6e"/>
                         <constraint firstItem="33C-87-d2I" firstAttribute="leading" secondItem="RFc-7r-ept" secondAttribute="leading" constant="16" id="lBV-6Z-zRh"/>
                         <constraint firstAttribute="trailing" secondItem="eFf-VU-xwy" secondAttribute="trailing" constant="20" id="liT-f3-im5"/>
                         <constraint firstItem="pv1-rQ-E0S" firstAttribute="top" secondItem="eFf-VU-xwy" secondAttribute="bottom" constant="16" id="m05-sU-yKZ"/>
                         <constraint firstAttribute="height" constant="304" id="nuX-K3-KHL"/>
+                        <constraint firstAttribute="bottom" secondItem="SWQ-Jq-HJ9" secondAttribute="bottom" constant="32" id="u19-Uq-zJT"/>
                         <constraint firstItem="33C-87-d2I" firstAttribute="top" secondItem="RFc-7r-ept" secondAttribute="top" constant="16" id="wah-hK-RMg"/>
                         <constraint firstAttribute="bottom" secondItem="5df-GP-UJE" secondAttribute="bottom" id="xH4-58-SWw"/>
                     </constraints>
@@ -93,6 +129,8 @@
     <resources>
         <image name="backButton" width="23" height="23"/>
         <image name="blureView" width="331" height="321"/>
+        <image name="homeButtonImage" width="25" height="24"/>
+        <image name="pleyButtonImage" width="23" height="23"/>
         <systemColor name="systemBrownColor">
             <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

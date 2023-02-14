@@ -40,7 +40,7 @@ class OverLayerView: UIViewController {
         progressView.setProgress(0.0, animated: true)
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [self] in
             
-            progressView.lineWidth = 10
+            progressView.lineWidth = 5
             progressView.tintColor = .yellow
             progressView.startColor = Constants.Colors.orangeColor
             progressView.grooveColor = .brown

@@ -71,7 +71,7 @@ class ActiveGameViewController: UIViewController {
     @IBAction func pressedPauseButon(_ sender: UIButton) {
         let popUpView = OverLayerView()
         popUpView.appear(sender: self)
-        self.timer.invalidate()
+        timer.invalidate()
       
         
     }
