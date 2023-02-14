@@ -23,7 +23,7 @@
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cSv-FG-Fbq" userLabel="backView">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="backgroundColor" systemColor="systemBrownColor"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RFc-7r-ept" userLabel="contentView">
                     <rect key="frame" x="16" y="296" width="382" height="304"/>
@@ -53,6 +53,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
+                    <color key="backgroundColor" red="0.1176470588" green="0.20973122120000001" blue="0.28236263989999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <constraints>
                         <constraint firstItem="eFf-VU-xwy" firstAttribute="centerX" secondItem="RFc-7r-ept" secondAttribute="centerX" id="5C2-kE-qYF"/>
                         <constraint firstItem="eFf-VU-xwy" firstAttribute="leading" secondItem="RFc-7r-ept" secondAttribute="leading" constant="20" id="PBl-Vs-NfR"/>
@@ -82,8 +83,8 @@
     <resources>
         <image name="backButton" width="23" height="23"/>
         <image name="blureView" width="331" height="321"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <systemColor name="systemBrownColor">
+            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemPinkColor">
             <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

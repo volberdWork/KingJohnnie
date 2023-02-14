@@ -24,3 +24,5 @@ class CustomPopUp {
         UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true)
     }
 }
+
+

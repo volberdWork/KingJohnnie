@@ -663,10 +663,31 @@ Remember the sequence of lighting items, then tap the items in the same sequence
                                     <action selector="pressedPauseButon:" destination="pwx-P1-uDt" eventType="touchUpInside" id="fLd-sh-kWJ"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kg5-h8-sbe">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gKH-fx-FhR">
+                                <rect key="frame" x="155" y="63" width="80" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="b3S-5Y-m3f"/>
+                                    <constraint firstAttribute="width" constant="80" id="sH4-ZB-MUw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hUq-LW-QN2" customClass="ALProgressRing" customModule="ALProgressView">
+                                <rect key="frame" x="16" y="119" width="95" height="95"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gearIcon" translatesAutoresizingMaskIntoConstraints="NO" id="wEo-TX-jkJ">
+                                        <rect key="frame" x="16" y="16" width="63" height="63"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="95" id="C6V-ab-Sb6"/>
+                                    <constraint firstItem="wEo-TX-jkJ" firstAttribute="top" secondItem="hUq-LW-QN2" secondAttribute="top" constant="16" id="EWL-CP-JDR"/>
+                                    <constraint firstAttribute="width" constant="95" id="PIM-wi-YBt"/>
+                                    <constraint firstAttribute="bottom" secondItem="wEo-TX-jkJ" secondAttribute="bottom" constant="16" id="W89-xV-Yiy"/>
+                                    <constraint firstItem="wEo-TX-jkJ" firstAttribute="leading" secondItem="hUq-LW-QN2" secondAttribute="leading" constant="16" id="eOj-LH-LCf"/>
+                                    <constraint firstAttribute="trailing" secondItem="wEo-TX-jkJ" secondAttribute="trailing" constant="16" id="oeo-KX-kp5"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="akK-Mw-6mn"/>
@@ -674,20 +695,25 @@ Remember the sequence of lighting items, then tap the items in the same sequence
                         <constraints>
                             <constraint firstItem="fKt-uH-zQ6" firstAttribute="top" secondItem="akK-Mw-6mn" secondAttribute="top" constant="16" id="0AB-Kg-0ai"/>
                             <constraint firstItem="V96-EG-MRn" firstAttribute="centerY" secondItem="pj9-eN-p5W" secondAttribute="centerY" id="21V-nO-2zD"/>
+                            <constraint firstItem="gKH-fx-FhR" firstAttribute="centerX" secondItem="pj9-eN-p5W" secondAttribute="centerX" id="64R-XK-2aU"/>
+                            <constraint firstItem="hUq-LW-QN2" firstAttribute="leading" secondItem="akK-Mw-6mn" secondAttribute="leading" constant="16" id="766-Vc-BEm"/>
                             <constraint firstAttribute="bottom" secondItem="DMa-tb-DPb" secondAttribute="bottom" id="7ok-ro-DBd"/>
                             <constraint firstItem="DMa-tb-DPb" firstAttribute="top" secondItem="pj9-eN-p5W" secondAttribute="top" id="8ra-De-ZMW"/>
                             <constraint firstItem="fKt-uH-zQ6" firstAttribute="leading" secondItem="akK-Mw-6mn" secondAttribute="leading" constant="16" id="Aac-x3-gfW"/>
                             <constraint firstItem="DMa-tb-DPb" firstAttribute="leading" secondItem="akK-Mw-6mn" secondAttribute="leading" id="C4g-Po-n53"/>
+                            <constraint firstItem="gKH-fx-FhR" firstAttribute="top" secondItem="akK-Mw-6mn" secondAttribute="top" constant="16" id="KQC-UR-qvK"/>
                             <constraint firstItem="V96-EG-MRn" firstAttribute="trailing" secondItem="akK-Mw-6mn" secondAttribute="trailing" id="Q2N-AK-GhA"/>
                             <constraint firstItem="V96-EG-MRn" firstAttribute="leading" secondItem="akK-Mw-6mn" secondAttribute="leading" id="Uxq-dM-iQ7"/>
                             <constraint firstItem="V96-EG-MRn" firstAttribute="centerX" secondItem="pj9-eN-p5W" secondAttribute="centerX" id="ab8-yE-X76"/>
                             <constraint firstItem="DMa-tb-DPb" firstAttribute="trailing" secondItem="akK-Mw-6mn" secondAttribute="trailing" id="cpl-eY-JUh"/>
+                            <constraint firstItem="hUq-LW-QN2" firstAttribute="top" secondItem="fKt-uH-zQ6" secondAttribute="bottom" constant="16" id="i8f-vA-x6c"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="backgroundImage" destination="DMa-tb-DPb" id="49U-Ea-iAx"/>
                         <outlet property="collectionView" destination="V96-EG-MRn" id="Xae-Aj-6QI"/>
-                        <outlet property="darkView" destination="Kg5-h8-sbe" id="3b4-a3-K9Y"/>
+                        <outlet property="progressRing" destination="hUq-LW-QN2" id="Zrd-qI-oAX"/>
+                        <outlet property="timerLabel" destination="gKH-fx-FhR" id="SoB-hl-Wuh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gcS-RO-KZt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -806,7 +832,7 @@ Remember the sequence of lighting items, then tap the items in the same sequence
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wz8-uU-FNx">
-                                <rect key="frame" x="16" y="383.66666666666669" width="358" height="127.99999999999994"/>
+                                <rect key="frame" x="16" y="383.66666666666669" width="358" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="RTg-HP-z3C"/>
                                 </constraints>
