@@ -652,6 +652,9 @@ Remember the sequence of lighting items, then tap the items in the same sequence
                                                 <constraint firstAttribute="bottom" secondItem="I6r-EW-Sfl" secondAttribute="bottom" id="zWm-gN-Nf7"/>
                                             </constraints>
                                         </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="cellLabel" destination="YHz-WS-BzD" id="Azm-pJ-XcV"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>

@@ -12,6 +12,8 @@
             <connections>
                 <outlet property="backView" destination="cSv-FG-Fbq" id="fpf-E0-QFW"/>
                 <outlet property="contentView" destination="RFc-7r-ept" id="a7i-g0-Nj8"/>
+                <outlet property="pauseLabel" destination="eFf-VU-xwy" id="wen-52-hTS"/>
+                <outlet property="progressView" destination="pv1-rQ-E0S" id="lDh-Za-AGM"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -52,17 +54,25 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pv1-rQ-E0S" customClass="ALProgressRing" customModule="ALProgressView">
+                            <rect key="frame" x="156" y="101" width="70" height="70"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="70" id="0M2-C3-xqA"/>
+                                <constraint firstAttribute="width" constant="70" id="bDt-qZ-pKm"/>
+                            </constraints>
+                        </view>
                     </subviews>
-                    <color key="backgroundColor" red="0.1176470588" green="0.20973122120000001" blue="0.28236263989999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <constraints>
                         <constraint firstItem="eFf-VU-xwy" firstAttribute="centerX" secondItem="RFc-7r-ept" secondAttribute="centerX" id="5C2-kE-qYF"/>
                         <constraint firstItem="eFf-VU-xwy" firstAttribute="leading" secondItem="RFc-7r-ept" secondAttribute="leading" constant="20" id="PBl-Vs-NfR"/>
+                        <constraint firstItem="pv1-rQ-E0S" firstAttribute="centerX" secondItem="RFc-7r-ept" secondAttribute="centerX" id="Pmw-A6-adt"/>
                         <constraint firstItem="5df-GP-UJE" firstAttribute="leading" secondItem="RFc-7r-ept" secondAttribute="leading" id="bkU-1X-fhF"/>
                         <constraint firstAttribute="trailing" secondItem="5df-GP-UJE" secondAttribute="trailing" id="cpw-RY-399"/>
                         <constraint firstItem="eFf-VU-xwy" firstAttribute="top" secondItem="RFc-7r-ept" secondAttribute="top" constant="35" id="ekw-yV-cmn"/>
                         <constraint firstItem="5df-GP-UJE" firstAttribute="top" secondItem="RFc-7r-ept" secondAttribute="top" id="jL2-ke-U0a"/>
                         <constraint firstItem="33C-87-d2I" firstAttribute="leading" secondItem="RFc-7r-ept" secondAttribute="leading" constant="16" id="lBV-6Z-zRh"/>
                         <constraint firstAttribute="trailing" secondItem="eFf-VU-xwy" secondAttribute="trailing" constant="20" id="liT-f3-im5"/>
+                        <constraint firstItem="pv1-rQ-E0S" firstAttribute="top" secondItem="eFf-VU-xwy" secondAttribute="bottom" constant="16" id="m05-sU-yKZ"/>
                         <constraint firstAttribute="height" constant="304" id="nuX-K3-KHL"/>
                         <constraint firstItem="33C-87-d2I" firstAttribute="top" secondItem="RFc-7r-ept" secondAttribute="top" constant="16" id="wah-hK-RMg"/>
                         <constraint firstAttribute="bottom" secondItem="5df-GP-UJE" secondAttribute="bottom" id="xH4-58-SWw"/>

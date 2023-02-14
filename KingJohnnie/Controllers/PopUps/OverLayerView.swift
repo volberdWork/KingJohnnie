@@ -6,16 +6,21 @@
 //
 
 import UIKit
+import ALProgressView
 
 class OverLayerView: UIViewController {
 
+    @IBOutlet var progressView: ALProgressRing!
     //IBOutlets
     @IBOutlet weak var backView: UIView!
     @IBOutlet weak var contentView: UIView!
+    @IBOutlet var pauseLabel: UILabel!
     @IBOutlet weak var doneButton: UIButton!
     @IBAction func doneButtonAction(_ sender: UIButton) {
         hide()
     }
+    
+    
     
     init() {
         super.init(nibName: "OverLayerView", bundle: nil)
@@ -30,7 +35,23 @@ class OverLayerView: UIViewController {
         super.viewDidLoad()
 
         configView()
+        self.pauseLabel.text = "PAUSE"
+        self.pauseLabel.font = UIFont(name: Constants.FontsStrings.InterBold, size: 30)
+        progressView.setProgress(0.0, animated: true)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [self] in
+            
+            progressView.lineWidth = 10
+            progressView.tintColor = .yellow
+            progressView.startColor = Constants.Colors.orangeColor
+            progressView.grooveColor = .brown
+            progressView.tintColor = .white
+            progressView.endColor = Constants.Colors.orangeColor
+            progressView.setProgress(0.8, animated: true)
+        }
+        
     }
+
+
     
     private func configView() {
         self.view.backgroundColor = .clear

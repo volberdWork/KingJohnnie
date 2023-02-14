@@ -9,6 +9,7 @@ import UIKit
 
 class ActiveGameCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet var cellLabel: UILabel!
     static func nib()-> UINib{
         return UINib(nibName: "ActiveGameCollectionViewCell", bundle: nil)
     }
