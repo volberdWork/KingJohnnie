@@ -24,14 +24,22 @@ class ActiveGameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [self] in
-            progressRing.setProgress(0.0, animated: true)
+        progressRing.setProgress(0.0, animated: true)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) { [self] in
+            timerStart()
             progressRing.lineWidth = 10
             progressRing.tintColor = .yellow
             progressRing.startColor = Constants.Colors.orangeColor
             progressRing.grooveColor = .brown
             progressRing.tintColor = .white
             progressRing.endColor = Constants.Colors.orangeColor
+            progressRing.setProgress(0.8, animated: true)
+            timerStart()
+         
+            
+           
+
+     
         }
         
         
@@ -41,14 +49,15 @@ class ActiveGameViewController: UIViewController {
     
     private func setupView(){
         backgraundImageConfige(image: Constants.Images.activeGameScreen)
-        
+    }
+    
+    private func timerStart(){
         Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
             let minutes = self.time / 60 % 60
             let seconds = self.time % 60
             self.timerLabel.text = String(format:"%02i:%02i", minutes, seconds)
             self.time += 1
         }
-        
     }
     
     private func backgraundImageConfige(image: String){
@@ -63,7 +72,7 @@ class ActiveGameViewController: UIViewController {
         let popUpView = OverLayerView()
         popUpView.appear(sender: self)
         self.timer.invalidate()
-        progressRing.setProgress(0.8, animated: true)
+      
         
     }
     
