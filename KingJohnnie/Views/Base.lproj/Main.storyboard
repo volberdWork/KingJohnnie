@@ -771,6 +771,7 @@ Remember the sequence of lighting items, then tap the items in the same sequence
                     <connections>
                         <outlet property="backgroundImage" destination="DMa-tb-DPb" id="49U-Ea-iAx"/>
                         <outlet property="collectionView" destination="V96-EG-MRn" id="Xae-Aj-6QI"/>
+                        <outlet property="pointsLabel" destination="UFH-AZ-Aob" id="4KN-Bk-7T7"/>
                         <outlet property="progressRing" destination="hUq-LW-QN2" id="Zrd-qI-oAX"/>
                         <outlet property="timerLabel" destination="gKH-fx-FhR" id="SoB-hl-Wuh"/>
                     </connections>
@@ -891,7 +892,7 @@ Remember the sequence of lighting items, then tap the items in the same sequence
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wz8-uU-FNx">
-                                <rect key="frame" x="16" y="383.66666666666669" width="358" height="128"/>
+                                <rect key="frame" x="16" y="383.66666666666669" width="358" height="127.99999999999994"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="RTg-HP-z3C"/>
                                 </constraints>

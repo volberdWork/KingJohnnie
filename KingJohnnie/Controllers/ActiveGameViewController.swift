@@ -4,16 +4,28 @@ import ALProgressView
 class ActiveGameViewController: UIViewController {
     
     @IBOutlet var backgroundImage: UIImageView!
-    
     @IBOutlet var collectionView: UICollectionView!
-    
     @IBOutlet var darkView: UIView!
     
     @IBOutlet var progressRing: ALProgressRing!
-    
     @IBOutlet var timerLabel: UILabel!
-    var time = 0
+    
+    @IBOutlet weak var pointsLabel: UILabel!
+    
+    let globalItemsCount = ["99", "4", "6",
+                            "1", "8", "7",
+                            "21", "55", "33"]
+    
+    var time = 60
     var timer:Timer = Timer()
+    
+    var moveRange = Int()
+    var currentMove = 0
+    var randoms = [Int]()
+    var answerBuffer = [Int]()
+    var progressGoal = 0
+    var progressTarget = 10 //for example only
+    
     
 
     override func viewWillAppear(_ animated: Bool) {
@@ -25,6 +37,11 @@ class ActiveGameViewController: UIViewController {
         super.viewDidLoad()
         setupView()
         progressRing.setProgress(0.0, animated: true)
+        
+        pointsLabel.text = "\(progressGoal) / \(progressTarget)"
+        timerLabel.text = ""
+
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) { [self] in
             timerStart()
             progressRing.lineWidth = 10
@@ -33,17 +50,8 @@ class ActiveGameViewController: UIViewController {
             progressRing.grooveColor = .brown
             progressRing.tintColor = .white
             progressRing.endColor = Constants.Colors.orangeColor
-            progressRing.setProgress(0.8, animated: true)
             
-         
-            
-           
-
-     
         }
-        
-        
-        
         
     }
     
@@ -55,9 +63,19 @@ class ActiveGameViewController: UIViewController {
         self.timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
             let minutes = self.time / 60 % 60
             let seconds = self.time % 60
+            self.time -= 1
             self.timerLabel.text = String(format:"%02i:%02i", minutes, seconds)
-            self.time += 1
+
+            if self.time == 0 {
+                timer.invalidate()
+                //
+                //show win/lose screen
+            }
+            
         }
+        
+        self.collectionView.isUserInteractionEnabled = false
+        self.animateCombination()
     }
     
     private func backgraundImageConfige(image: String){
@@ -66,36 +84,139 @@ class ActiveGameViewController: UIViewController {
         self.collectionView.backgroundColor = .clear
     }
     
-    
-    
     @IBAction func pressedPauseButon(_ sender: UIButton) {
         let popUpView = OverLayerView()
         popUpView.appear(sender: self)
         timer.invalidate()
-      
+    }
+    
+    //MARK: Main Logic
+    private func animateCombination() {
+        moveRange = Int.random(in: 2...3)
+        randoms = Int.getUniqueRandomNumbers(min: 0, max: 8, count: moveRange)
+        print("Randoms", randoms)
+        var timeDelay = 0.0
         
+        for x in randoms {
+            
+            animationForSelection(index: x, delay: timeDelay)
+            timeDelay += 0.3
+            
+            collectionView.isUserInteractionEnabled = true
+        }
+        
+        
+    }
+    
+    func gameChecker(selectedIndex: Int) {
+        
+        //
+        answerBuffer.append(selectedIndex)
+        
+        if answerBuffer[currentMove] == randoms[currentMove] {
+            currentMove += 1
+            print("RIGHT Answer")
+
+            if currentMove == randoms.count {
+                
+                //
+                progressGoal += 1
+                
+                //
+                currentMove = 0
+                moveRange = 0
+                answerBuffer.removeAll()
+                
+                //
+                pointsLabel.text = "\(progressGoal) / \(progressTarget)"
+                progressRing.setProgress(Float(progressGoal) / Float(progressTarget), animated: true)
+                
+                if progressGoal == progressTarget {
+                    //WIN
+                    
+                    timer.invalidate()
+                    //MARK: Show result screen
+                } else {
+                    //
+                    collectionView.isUserInteractionEnabled = false
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: { [self] in
+                        animateCombination()
+                    })
+                }
+            }
+            
+
+        } else {
+            print("WRONG Answer")
+            
+            //
+            currentMove = 0
+            collectionView.isUserInteractionEnabled = false
+            answerBuffer.removeAll()
+
+            //
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: { [self] in
+                animateCombination()
+            })
+        }
+    }
+    
+    func animationForSelection(index: Int, delay: Double) {
+        
+        let cell = collectionView.cellForItem(at: IndexPath(item: index, section: 0)) as! ActiveGameCollectionViewCell
+        
+        UIView.animate(withDuration: 0.5, delay: delay, animations: {
+            cell.transform = .init(scaleX: 0.8, y: 0.8)
+            cell.backgroundColor = UIColor(red: 0.654, green: 0.498, blue: 0.365, alpha: 0.4)
+            
+            cell.cellLabel.textColor = .red
+        },completion: { _ in
+            UIView.animate(withDuration: 0.5, delay: 0.0, animations: {
+                cell.transform = .identity
+                cell.backgroundColor = UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 0.45)
+
+                cell.cellLabel.textColor = .gray
+            })
+        })
+
     }
     
 }
 
 
-extension ActiveGameViewController: UICollectionViewDelegate{
+extension ActiveGameViewController: UICollectionViewDelegate {
     
 }
 
 
 extension ActiveGameViewController : UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 9
+        return globalItemsCount.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ActiveGameCollectionViewCell", for: indexPath) as! ActiveGameCollectionViewCell
-        
-      
-        
+
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        gameChecker(selectedIndex: indexPath.row)
+        animationForSelection(index: indexPath.row, delay: 0.0)
+    }
     
+    
+}
+
+//MARK: Function for gettting random numbers
+extension Int {
+
+    static func getUniqueRandomNumbers(min: Int, max: Int, count: Int) -> [Int] {
+        var set = Set<Int>()
+        while set.count < count {
+            set.insert(Int.random(in: min...max))
+        }
+        return Array(set)
+    }
+
 }
