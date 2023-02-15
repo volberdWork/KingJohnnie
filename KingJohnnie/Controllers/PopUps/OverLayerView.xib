@@ -69,6 +69,9 @@
                             </constraints>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain" image="homeButtonImage"/>
+                            <connections>
+                                <action selector="homeButtonPressed:" destination="-1" eventType="touchUpInside" id="YDK-Hi-FgM"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SWQ-Jq-HJ9">
                             <rect key="frame" x="252" y="232" width="40" height="40"/>

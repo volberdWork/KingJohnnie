@@ -13,7 +13,7 @@ class ActiveGameViewController: UIViewController {
     
     @IBOutlet var timerLabel: UILabel!
     var time = 0
-    var timer = Timer()
+    var timer:Timer = Timer()
     
 
     override func viewWillAppear(_ animated: Bool) {
@@ -34,7 +34,7 @@ class ActiveGameViewController: UIViewController {
             progressRing.tintColor = .white
             progressRing.endColor = Constants.Colors.orangeColor
             progressRing.setProgress(0.8, animated: true)
-            timerStart()
+            
          
             
            
@@ -52,7 +52,7 @@ class ActiveGameViewController: UIViewController {
     }
     
     private func timerStart(){
-        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+        self.timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
             let minutes = self.time / 60 % 60
             let seconds = self.time % 60
             self.timerLabel.text = String(format:"%02i:%02i", minutes, seconds)

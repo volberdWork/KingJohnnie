@@ -17,7 +17,9 @@ class OverLayerView: UIViewController {
     @IBOutlet var pauseLabel: UILabel!
     @IBOutlet weak var doneButton: UIButton!
     @IBAction func doneButtonAction(_ sender: UIButton) {
+        
         hide()
+        
     }
     
     
@@ -84,4 +86,18 @@ class OverLayerView: UIViewController {
             self.removeFromParent()
         }
     }
+    
+    
+    func openSettingController(){
+        let main = UIStoryboard(name: "Main", bundle: nil)
+        if let vc = main.instantiateViewController(withIdentifier: "SettingsViewController") as? SettingsViewController  {
+            navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    @IBAction func homeButtonPressed(_ sender: UIButton) {
+        print("works")
+        
+        
+    }
+    
 }
