@@ -42,6 +42,7 @@
 		BDED15552992F61200E2F03A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDED15532992F61200E2F03A /* Main.storyboard */; };
 		BDED15572992F61400E2F03A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDED15562992F61400E2F03A /* Assets.xcassets */; };
 		BDED155A2992F61400E2F03A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDED15582992F61400E2F03A /* LaunchScreen.storyboard */; };
+		BDFE322C299E5EE800C76709 /* tapSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BDFE322B299E5EE800C76709 /* tapSound.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,7 @@
 		BDED15562992F61400E2F03A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BDED15592992F61400E2F03A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BDED155B2992F61400E2F03A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BDFE322B299E5EE800C76709 /* tapSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tapSound.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +219,7 @@
 		BDED154C2992F61200E2F03A /* KingJohnnie */ = {
 			isa = PBXGroup;
 			children = (
+				BDFE322A299E5ED100C76709 /* Sounds */,
 				BD19AF332993D94300F4A9B7 /* Fonts */,
 				BD19AF2929939DE000F4A9B7 /* Helpers */,
 				BD19AF2829939DCA00F4A9B7 /* Extension */,
@@ -230,6 +233,14 @@
 				BDED155B2992F61400E2F03A /* Info.plist */,
 			);
 			path = KingJohnnie;
+			sourceTree = "<group>";
+		};
+		BDFE322A299E5ED100C76709 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				BDFE322B299E5EE800C76709 /* tapSound.mp3 */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,6 +309,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDFE322C299E5EE800C76709 /* tapSound.mp3 in Resources */,
 				BD19AF2F2993C6C400F4A9B7 /* 95076-loading-dots.json in Resources */,
 				BD19AF4A299513CB00F4A9B7 /* Phosphate.ttf in Resources */,
 				BD4E3608299AA74900422D10 /* OverLayerView.xib in Resources */,

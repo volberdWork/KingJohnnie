@@ -2,11 +2,16 @@ import UIKit
 import MessageUI
 import StoreKit
 import MessageUI
+import AVFoundation
 
 class SettingsViewController: UIViewController {
     
     @IBOutlet var tableView: UITableView!
     @IBOutlet var backgraundImage: UIImageView!
+    
+    var audioPlayer: AVAudioPlayer?
+    
+    
     
     var settingsList: [SettingsList] = [
         SettingsList(leftImageName: Constants.Images.icons.profileIcon, nameText: SettingsList.ButtonNameLabel.profile, rightImageName: Constants.Images.icons.arrowIcon, switchIsHidden: true),
@@ -71,11 +76,36 @@ class SettingsViewController: UIViewController {
         }
     }
     
+    func playSound(){
+        if UserDefaults.standard.bool(forKey: "sound"){
+            audioPlayer?.play()
+        }else{
+            return
+        }
+    }
+    
+    
+    func loadAudio() {
+        guard let path = Bundle.main.path(forResource: "tapSound", ofType: "mp3") else {
+            return
+        }
+        
+        let url = URL(fileURLWithPath: path)
+        
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: url)
+            audioPlayer?.prepareToPlay()
+        } catch {
+            print("Error loading audio file: \(error)")
+        }
+    }
+    
     
     @objc func soundSwitchTapped(sender: UISwitch) {
         if sender.isOn {
             
             UserDefaults.standard.set(true, forKey: "sound")
+            playSound()
           print("Sound On")
            
         } else {
