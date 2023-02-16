@@ -7,7 +7,7 @@ class SettingsViewController: UIViewController {
     
     @IBOutlet var tableView: UITableView!
     @IBOutlet var backgraundImage: UIImageView!
-   
+    
     var settingsList: [SettingsList] = [
         SettingsList(leftImageName: Constants.Images.icons.profileIcon, nameText: SettingsList.ButtonNameLabel.profile, rightImageName: Constants.Images.icons.arrowIcon, switchIsHidden: true),
         SettingsList(leftImageName: Constants.Images.icons.notificationIcon, nameText: SettingsList.ButtonNameLabel.notification, rightImageName: Constants.Images.icons.arrowIcon, switchIsHidden: true),
@@ -25,25 +25,25 @@ class SettingsViewController: UIViewController {
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         setupView()
         tableView.register(UINib(nibName: "SettingsTableViewCell", bundle: nil), forCellReuseIdentifier: SettingsTableViewCell.reuseIdentifier)
-     
+        print(UserDefaults.standard.bool(forKey: "vibrations"))
     }
     
     func rateAppAction() {
-
+        
         //check status of user OS
         if #available(iOS 14.0, *) {
             //request review in another situation
-                if let sceneNew = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene {
-                    SKStoreReviewController.requestReview(in: sceneNew)
-                }
-
+            if let sceneNew = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene {
+                SKStoreReviewController.requestReview(in: sceneNew)
+            }
+            
         } else {
-
+            
             //request review
             SKStoreReviewController.requestReview()
         }
     }
-
+    
     
     func openTermsController(){
         let main = UIStoryboard(name: "Main", bundle: nil)
@@ -56,6 +56,31 @@ class SettingsViewController: UIViewController {
         let main = UIStoryboard(name: "Main", bundle: nil)
         if let vc = main.instantiateViewController(withIdentifier: "ProfileViewController") as? ProfileViewController  {
             navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
+    @objc func vibrationSwitchTapped(sender: UISwitch) {
+        if sender.isOn {
+            
+            UserDefaults.standard.set(true, forKey: "vibrations")
+          print("On")
+            UIDevice.vibrate()
+        } else {
+           print("Off")
+            UserDefaults.standard.set(false, forKey: "vibrations")
+        }
+    }
+    
+    
+    @objc func soundSwitchTapped(sender: UISwitch) {
+        if sender.isOn {
+            
+            UserDefaults.standard.set(true, forKey: "sound")
+          print("Sound On")
+           
+        } else {
+           print("Sound Off")
+            UserDefaults.standard.set(false, forKey: "sound")
         }
     }
     
@@ -87,17 +112,6 @@ class SettingsViewController: UIViewController {
         
     }
     
-    @objc func vibrationSwitchTapped(sender: UISwitch) {
-        if sender.isOn {
-            sender.thumbTintColor = .yellow
-            UserDefaults.standard.set(true, forKey: "vibrations")
-            print(UserDefaults.standard.set(true, forKey: "vibrations"))
-            UIDevice.vibrate()
-        } else {
-            sender.thumbTintColor = .yellow.withAlphaComponent(0.5)
-            UserDefaults.standard.set(false, forKey: "vibrations")
-        }
-    }
     
     
 }
@@ -146,16 +160,16 @@ extension SettingsViewController: MFMailComposeViewControllerDelegate {
             
             let composeController = MFMailComposeViewController()
             composeController.mailComposeDelegate = self
-
+            
             // Configure the fields of the interface.
             composeController.setToRecipients(["stakeYourSkillsFeedback@gmail.com"])
             composeController.setSubject("Message Subject")
             composeController.setMessageBody("Message content", isHTML: false)
-
+            
             self.present(composeController, animated: true, completion: nil)
             
         }
         
-
+        
     }
 }

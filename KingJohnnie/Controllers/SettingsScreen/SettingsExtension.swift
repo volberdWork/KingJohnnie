@@ -11,9 +11,22 @@ extension SettingsViewController : UITableViewDataSource{
         let buttonIndex = indexPath.row
         let cell = tableView.dequeueReusableCell(withIdentifier: SettingsTableViewCell.reuseIdentifier, for: indexPath) as! SettingsTableViewCell
         cell.backgroundColor = .clear
+        cell.configure(model: settingsList[buttonIndex])
+        
+        if buttonIndex == 2{
+            if UserDefaults.standard.bool(forKey: "vibrations"){
+                cell.settingsSwitch.setOn(true, animated: false)
+                
+            } else {
+                cell.settingsSwitch.setOn(false, animated: false)
+            }
+            cell.settingsSwitch.addTarget(self, action: #selector(vibrationSwitchTapped(sender: )), for: .valueChanged)
+        }
         
         
-        cell.configure(model: settingsList[indexPath.row])
+        
+        
+       
         return cell
         
     }
@@ -23,7 +36,7 @@ extension SettingsViewController : UITableViewDataSource{
 
 extension SettingsViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        var selectedButton = indexPath.row
+        let selectedButton = indexPath.row
         
         switch selectedButton{
         case 0 : openProfileController()

@@ -43,6 +43,7 @@ class SettingsTableViewCell: UITableViewCell {
            settingsSwitch.isHidden = true
        } else{
            settingsSwitch.isHidden = false
+          
        }
         
         
