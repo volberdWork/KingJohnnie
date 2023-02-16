@@ -5,29 +5,21 @@ class ActiveGameViewController: UIViewController {
     
     @IBOutlet var backgroundImage: UIImageView!
     @IBOutlet var collectionView: UICollectionView!
-    @IBOutlet var darkView: UIView!
-    
     @IBOutlet var progressRing: ALProgressRing!
     @IBOutlet var timerLabel: UILabel!
-    
     @IBOutlet weak var pointsLabel: UILabel!
-    
     let globalItemsCount = ["99", "4", "6",
                             "1", "8", "7",
                             "21", "55", "33"]
-    
     var time = 60
     var timer:Timer = Timer()
-    
     var moveRange = Int()
     var currentMove = 0
     var randoms = [Int]()
     var answerBuffer = [Int]()
     var progressGoal = 0
-    var progressTarget = 10 //for example only
-    
-    
-
+    var progressTarget = 30 //for example only
+    var customView = UIView()
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
@@ -84,10 +76,49 @@ class ActiveGameViewController: UIViewController {
         self.collectionView.backgroundColor = .clear
     }
     
+    @objc func showPopUp() {
+        
+        self.customView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height))
+        self.customView.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+                view.addSubview(customView)
+           let popUpView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width - 40, height: 200))
+           popUpView.backgroundColor = .white
+           popUpView.layer.cornerRadius = 10
+           
+           let label = UILabel(frame: CGRect(x: 0, y: 0, width: popUpView.frame.width, height: 50))
+           label.text = "PAUSE"
+        label.textColor = .yellow
+           label.textAlignment = .center
+        label.font = UIFont(name: Constants.FontsStrings.InterBold, size: 30)
+        
+           popUpView.addSubview(label)
+           
+           let closeButton = UIButton(type: .system)
+           closeButton.frame = CGRect(x: 16, y: 16, width: 25, height: 25)
+           closeButton.setTitle("x", for: .normal)
+           closeButton.addTarget(self, action: #selector(dismissPopUp), for: .touchUpInside)
+           popUpView.addSubview(closeButton)
+           
+           popUpView.center = view.center
+           customView.addSubview(popUpView)
+       }
+       
+       @objc func dismissPopUp() {
+           for subview in self.customView.subviews {
+               if subview.backgroundColor == .white {
+                   subview.removeFromSuperview()
+               }
+               
+           }
+           customView.isHidden = true
+          timerStart()
+       }
+  
     @IBAction func pressedPauseButon(_ sender: UIButton) {
-        let popUpView = OverLayerView()
-        popUpView.appear(sender: self)
+//        let popUpView = OverLayerView()
+//        popUpView.appear(sender: self)
         timer.invalidate()
+     showPopUp()
     }
     
     //MARK: Main Logic
