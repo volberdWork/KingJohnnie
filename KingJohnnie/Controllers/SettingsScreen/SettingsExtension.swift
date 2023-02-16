@@ -23,6 +23,15 @@ extension SettingsViewController : UITableViewDataSource{
             cell.settingsSwitch.addTarget(self, action: #selector(vibrationSwitchTapped(sender: )), for: .valueChanged)
         }
         
+        if buttonIndex == 3{
+            if UserDefaults.standard.bool(forKey: "sound"){
+                cell.settingsSwitch.setOn(true, animated: false)
+            } else {
+                cell.settingsSwitch.setOn(false, animated: false)
+            }
+            cell.settingsSwitch.addTarget(self, action: #selector(soundSwitchTapped(sender: )), for: .valueChanged)
+        }
+        
         
         
         
