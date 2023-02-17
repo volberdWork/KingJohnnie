@@ -74,6 +74,20 @@ extension SettingsViewController: UITableViewDelegate{
         case 7 : print("")
             playSound()
             makeVibration()
+            let alertController = UIAlertController(title: "Attention", message: "Once deleted, your progress will be completely deleted. Are you sure?", preferredStyle: .alert)
+
+            let yesAction = UIAlertAction(title: "Yes", style: .destructive) { (action) in
+            // видаляємо прогрес
+            }
+
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+                // відміна
+            }
+
+            alertController.addAction(yesAction)
+            alertController.addAction(cancelAction)
+
+            present(alertController, animated: true, completion: nil)
             
         default:
             return

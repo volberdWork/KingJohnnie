@@ -42,6 +42,7 @@ class SelectGameViewController: UIViewController {
     }
     
     private func confiureButton(){
+        
         self.collectionView.backgroundColor = .clear
         self.detailsButton.layer.cornerRadius = 10
         self.detailsButton.layer.borderWidth = 0.5
@@ -88,11 +89,25 @@ class SelectGameViewController: UIViewController {
     
     
     @IBAction func detailsButtonPressed(_ sender: UIButton) {
-        openMaiGamenController()
-        sender.titleLabel?.text = "DETAILS"
-        sender.titleLabel?.font = UIFont(name: Constants.FontsStrings.InterBold, size: 17)
-        SettingsViewController().playSound()
-        SettingsViewController().makeVibration()
+        if pageControl.currentPage == 0{
+            openMaiGamenController()
+            sender.titleLabel?.text = "DETAILS"
+            sender.titleLabel?.font = UIFont(name: Constants.FontsStrings.InterBold, size: 17)
+            SettingsViewController().playSound()
+            SettingsViewController().makeVibration()
+        } else{
+            let alert = UIAlertController(title: "Game Closed",
+                                          message: "This game is closed until Johnnie gives you permission. The permission will be granted after passing level 50 in the royal game.",
+                                          preferredStyle: .alert)
+
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alert.addAction(okAction)
+
+            present(alert, animated: true, completion: nil)
+
+        }
+        
+       
     }
     
     @IBAction func settingButtonPressed(_ sender: UIBarButtonItem) {
@@ -103,28 +118,28 @@ class SelectGameViewController: UIViewController {
 }
 
 
-extension SelectGameViewController: UICollectionViewDataSource{
+extension SelectGameViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UICollectionViewDelegate {
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        collectionArray.count
+        return collectionArray.count
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        pageControl.currentPage = indexPath.row
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SelectGameCollectionViewCell", for: indexPath) as! SelectGameCollectionViewCell
         cell.configure(model: collectionArray[indexPath.row])
-       
-        
         return cell
     }
-    
-    
-}
 
-
-extension SelectGameViewController: UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return  CGSize(width: 331, height: 363)
+        return CGSize(width: 331, height: 363)
+    }
+
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let currentPage = Int(scrollView.contentOffset.x / scrollView.frame.size.width)
+        pageControl.currentPage = currentPage
+    }
+
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        collectionView.isPagingEnabled = true
     }
 }
-

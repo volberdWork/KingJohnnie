@@ -81,6 +81,8 @@ extension MainGameViewController : UICollectionViewDelegate{
         SettingsViewController().makeVibration()
         collectionView.reloadData()
     }
+    
+ 
 }
 
 
@@ -89,4 +91,3 @@ extension MainGameViewController: UICollectionViewDelegateFlowLayout{
         return  CGSize(width: 50, height: 50)
     }
 }
-

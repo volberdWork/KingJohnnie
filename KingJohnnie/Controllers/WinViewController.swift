@@ -1,10 +1,3 @@
-//
-//  WinViewController.swift
-//  KingJohnnie
-//
-//  Created by newAccount on 09.02.2023.
-//
-
 import UIKit
 
 class WinViewController: UIViewController {
