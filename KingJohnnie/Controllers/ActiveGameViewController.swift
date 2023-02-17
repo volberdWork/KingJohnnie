@@ -11,7 +11,7 @@ class ActiveGameViewController: UIViewController {
     let globalItemsCount = ["99", "4", "6",
                             "1", "8", "7",
                             "21", "55", "33"]
-    var time = 5
+    var time = 60
     var timer:Timer = Timer()
     var moveRange = Int()
     var currentMove = 0
@@ -21,6 +21,7 @@ class ActiveGameViewController: UIViewController {
     var progressGoal = 0
     var progressTarget = 10 //for example only
     var customView = UIView()
+    var incorectAnswers = 0
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
@@ -67,7 +68,7 @@ class ActiveGameViewController: UIViewController {
                 let main = UIStoryboard(name: "Main", bundle: nil)
                                 if let vc = main.instantiateViewController(withIdentifier: "LossViewController") as? LossViewController  {
                                     self.navigationController?.pushViewController(vc, animated: true)
-                                    vc.gameStatistic = [WinModel(time: "00:00", correctAnswer: self.progressGoal, incorrectAnswers: 4)]
+                                    vc.gameStatistic = [WinModel(time: "00:00", correctAnswer: self.progressGoal, incorrectAnswers: self.incorectAnswers)]
                                 }
                 self.incrementLossCount()
                
@@ -209,7 +210,7 @@ class ActiveGameViewController: UIViewController {
                     let main = UIStoryboard(name: "Main", bundle: nil)
                                     if let vc = main.instantiateViewController(withIdentifier: "WinViewController") as? WinViewController  {
                                         self.navigationController?.pushViewController(vc, animated: true)
-                                        vc.gameStatistic = [WinModel(time: self.currenTime, correctAnswer: progressGoal, incorrectAnswers: 2)]
+                                        vc.gameStatistic = [WinModel(time: self.currenTime, correctAnswer: progressGoal, incorrectAnswers: self.incorectAnswers)]
                                     }
                 } else {
                     //
@@ -222,6 +223,7 @@ class ActiveGameViewController: UIViewController {
             
             
         } else {
+            self.incorectAnswers += 1
             print("WRONG Answer")
             
            
