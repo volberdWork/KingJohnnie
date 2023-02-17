@@ -34,9 +34,19 @@ class LossViewController: UIViewController {
 
     @IBAction func homeButtonPressed(_ sender: UIButton) {
         print("Home")
+        let main = UIStoryboard(name: "Main", bundle: nil)
+                        if let vc = main.instantiateViewController(withIdentifier: "SelectGameViewController") as? SelectGameViewController  {
+                            self.navigationController?.pushViewController(vc, animated: true)
+                          
+                        }
     }
     
     @IBAction func replayAgainButtonPressed(_ sender: UIButton) {
         print("Replay")
+        let main = UIStoryboard(name: "Main", bundle: nil)
+                        if let vc = main.instantiateViewController(withIdentifier: "ActiveGameViewController") as? ActiveGameViewController  {
+                            self.navigationController?.pushViewController(vc, animated: true)
+                          
+                        }
     }
 }

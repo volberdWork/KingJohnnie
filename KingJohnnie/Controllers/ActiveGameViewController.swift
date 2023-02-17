@@ -11,7 +11,7 @@ class ActiveGameViewController: UIViewController {
     let globalItemsCount = ["99", "4", "6",
                             "1", "8", "7",
                             "21", "55", "33"]
-    var time = 60
+    var time = 5
     var timer:Timer = Timer()
     var moveRange = Int()
     var currentMove = 0
@@ -72,7 +72,7 @@ class ActiveGameViewController: UIViewController {
                 let main = UIStoryboard(name: "Main", bundle: nil)
                                 if let vc = main.instantiateViewController(withIdentifier: "LossViewController") as? LossViewController  {
                                     self.navigationController?.pushViewController(vc, animated: true)
-                                    vc.gameStatistic = [WinModel(time: "00:00", correctAnswer: 4, incorrectAnswers: 4)]
+                                    vc.gameStatistic = [WinModel(time: "00:00", correctAnswer: self.progressGoal, incorrectAnswers: 4)]
                                 }
                
             }
