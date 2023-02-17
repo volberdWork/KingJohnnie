@@ -28,6 +28,8 @@ class ActiveGameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print("Кулькість програшів: \(getLossCount())")
         setupView()
         progressRing.setProgress(0.0, animated: true)
         
@@ -74,6 +76,7 @@ class ActiveGameViewController: UIViewController {
                                     self.navigationController?.pushViewController(vc, animated: true)
                                     vc.gameStatistic = [WinModel(time: "00:00", correctAnswer: self.progressGoal, incorrectAnswers: 4)]
                                 }
+                self.incrementLossCount()
                
             }
             
@@ -81,6 +84,17 @@ class ActiveGameViewController: UIViewController {
         
         self.collectionView.isUserInteractionEnabled = false
         self.animateCombination()
+    }
+    func incrementLossCount() {
+        let defaults = UserDefaults.standard
+        let lossCount = defaults.integer(forKey: "lossCount")
+        defaults.set(lossCount + 1, forKey: "lossCount")
+    }
+    
+    func getLossCount() -> Int {
+        let defaults = UserDefaults.standard
+        let lossCount = defaults.integer(forKey: "lossCount")
+        return lossCount
     }
     
     private func backgraundImageConfige(image: String){

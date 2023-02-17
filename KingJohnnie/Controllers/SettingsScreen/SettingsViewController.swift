@@ -122,7 +122,7 @@ class SettingsViewController: UIViewController {
         }
     }
     
-    
+  
     
   func performNotificationSettings() {
         UIImpactFeedbackGenerator(style: .light).impactOccurred()
