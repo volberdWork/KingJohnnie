@@ -11,7 +11,7 @@ class ActiveGameViewController: UIViewController {
     let globalItemsCount = ["99", "4", "6",
                             "1", "8", "7",
                             "21", "55", "33"]
-    var time = 5
+    var time = 60
     var timer:Timer = Timer()
     var moveRange = Int()
     var currentMove = 0
@@ -30,6 +30,7 @@ class ActiveGameViewController: UIViewController {
         super.viewDidLoad()
         
         print("Кулькість програшів: \(getLossCount())")
+        print("Кулькість виграшів: \(getWinCount())")
         setupView()
         progressRing.setProgress(0.0, animated: true)
         
@@ -61,14 +62,6 @@ class ActiveGameViewController: UIViewController {
             self.time -= 1
             self.timerLabel.text = String(format:"%02i:%02i", minutes, seconds)
             self.currenTime = String(format:"%02i:%02i", minutes, seconds)
-//            if self.progressGoal == self.progressTarget{
-//                timer.invalidate()
-//                let main = UIStoryboard(name: "Main", bundle: nil)
-//                if let vc = main.instantiateViewController(withIdentifier: "WinViewController") as? WinViewController  {
-//                    self.navigationController?.pushViewController(vc, animated: true)
-//                }
-//            }
-            
             if self.time == 0 {
                 timer.invalidate()
                 let main = UIStoryboard(name: "Main", bundle: nil)
@@ -94,6 +87,18 @@ class ActiveGameViewController: UIViewController {
     func getLossCount() -> Int {
         let defaults = UserDefaults.standard
         let lossCount = defaults.integer(forKey: "lossCount")
+        return lossCount
+    }
+    
+    func incrementWinCount() {
+        let defaults = UserDefaults.standard
+        let lossCount = defaults.integer(forKey: "winCount")
+        defaults.set(lossCount + 1, forKey: "winCount")
+    }
+    
+    func getWinCount() -> Int {
+        let defaults = UserDefaults.standard
+        let lossCount = defaults.integer(forKey: "winCount")
         return lossCount
     }
     
@@ -150,8 +155,7 @@ class ActiveGameViewController: UIViewController {
     }
     
     @IBAction func pressedPauseButon(_ sender: UIButton) {
-        //        let popUpView = OverLayerView()
-        //        popUpView.appear(sender: self)
+
         timer.invalidate()
         showPopUp()
         SettingsViewController().playSound()
@@ -201,6 +205,7 @@ class ActiveGameViewController: UIViewController {
                 
                 if progressGoal == progressTarget {
                     timer.invalidate()
+                    incrementWinCount()
                     let main = UIStoryboard(name: "Main", bundle: nil)
                                     if let vc = main.instantiateViewController(withIdentifier: "WinViewController") as? WinViewController  {
                                         self.navigationController?.pushViewController(vc, animated: true)
@@ -219,7 +224,7 @@ class ActiveGameViewController: UIViewController {
         } else {
             print("WRONG Answer")
             
-            //
+           
             currentMove = 0
             collectionView.isUserInteractionEnabled = false
             answerBuffer.removeAll()
