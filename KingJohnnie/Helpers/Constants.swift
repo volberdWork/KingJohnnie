@@ -26,6 +26,7 @@ enum Constants {
         static let winImage = "winImage"
         static let homeButtonImage = "homeButtonImage"
         static let losseImage = "losseImage"
+        static let blureView = "blureView"
         
         enum icons{
             static let profileIcon = "profileIcon"

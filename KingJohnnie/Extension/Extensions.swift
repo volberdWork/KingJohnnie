@@ -4,7 +4,7 @@ import AudioToolbox
 
 extension UIDevice {
     
-    static func vibrate() {
+     func vibrate() {
         AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
     }
     

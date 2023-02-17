@@ -33,7 +33,7 @@ class SettingsViewController: UIViewController {
         print(UserDefaults.standard.bool(forKey: "vibrations"))
     }
     
-    func rateAppAction() {
+     func rateAppAction() {
         
         //check status of user OS
         if #available(iOS 14.0, *) {
@@ -69,16 +69,24 @@ class SettingsViewController: UIViewController {
             
             UserDefaults.standard.set(true, forKey: "vibrations")
           print("On")
-            UIDevice.vibrate()
+            UIDevice().vibrate()
         } else {
            print("Off")
             UserDefaults.standard.set(false, forKey: "vibrations")
         }
     }
     
-    func playSound(){
+   public func playSound(){
         if UserDefaults.standard.bool(forKey: "sound"){
             audioPlayer?.play()
+        }else{
+            return
+        }
+    }
+    
+    public func makeVibration(){
+        if UserDefaults.standard.bool(forKey: "vibrations"){
+            UIDevice().vibrate()
         }else{
             return
         }
@@ -116,7 +124,7 @@ class SettingsViewController: UIViewController {
     
     
     
-    func performNotificationSettings() {
+  func performNotificationSettings() {
         UIImpactFeedbackGenerator(style: .light).impactOccurred()
         
         if let appSettings = URL(string: UIApplication.openSettingsURLString), UIApplication.shared.canOpenURL(appSettings) {
@@ -136,7 +144,6 @@ class SettingsViewController: UIViewController {
     }
     
     @objc func notificationSwitchTapped(sender: UISwitch) {
-        UIDevice.vibrate()
         NotificationManager.requestNotifications()
         
         

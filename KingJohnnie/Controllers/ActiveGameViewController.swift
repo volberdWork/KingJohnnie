@@ -32,7 +32,7 @@ class ActiveGameViewController: UIViewController {
         
         pointsLabel.text = "\(progressGoal) / \(progressTarget)"
         timerLabel.text = ""
-
+        
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) { [self] in
             timerStart()
@@ -57,7 +57,7 @@ class ActiveGameViewController: UIViewController {
             let seconds = self.time % 60
             self.time -= 1
             self.timerLabel.text = String(format:"%02i:%02i", minutes, seconds)
-
+            
             if self.time == 0 {
                 timer.invalidate()
                 //
@@ -80,45 +80,55 @@ class ActiveGameViewController: UIViewController {
         
         self.customView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height))
         self.customView.backgroundColor = UIColor.black.withAlphaComponent(0.5)
-                view.addSubview(customView)
-           let popUpView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width - 40, height: 200))
-           popUpView.backgroundColor = .white
-           popUpView.layer.cornerRadius = 10
-           
-           let label = UILabel(frame: CGRect(x: 0, y: 0, width: popUpView.frame.width, height: 50))
-           label.text = "PAUSE"
-        label.textColor = .yellow
-           label.textAlignment = .center
-        label.font = UIFont(name: Constants.FontsStrings.InterBold, size: 30)
-        
-           popUpView.addSubview(label)
-           
-           let closeButton = UIButton(type: .system)
-           closeButton.frame = CGRect(x: 16, y: 16, width: 25, height: 25)
-           closeButton.setTitle("x", for: .normal)
-           closeButton.addTarget(self, action: #selector(dismissPopUp), for: .touchUpInside)
-           popUpView.addSubview(closeButton)
-           
-           popUpView.center = view.center
-           customView.addSubview(popUpView)
-       }
-       
-       @objc func dismissPopUp() {
-           for subview in self.customView.subviews {
-               if subview.backgroundColor == .white {
-                   subview.removeFromSuperview()
-               }
-               
-           }
-           customView.isHidden = true
-          timerStart()
-       }
-  
+        view.addSubview(customView)
+        let popUpView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width - 40, height: 200))
+        popUpView.backgroundColor = .white
+        popUpView.layer.cornerRadius = 10
+        //
+        //        let imageBackground = UIImage(named: Constants.Images.blureView)
+        //        let background = UIImageView(frame: CGRect(x: 0, y: 0, width: Int(popUpView.frame.size.width), height: Int(popUpView.frame.size.height)))
+        //        background.image = imageBackground
+        //        background.contentMode = .scaleToFill
+        //
+        //           let label = UILabel(frame: CGRect(x: 0, y: 0, width: popUpView.frame.width, height: 50))
+        //           label.text = "PAUSE"
+        //        label.textColor = .yellow
+        //           label.textAlignment = .center
+        //        label.font = UIFont(name: Constants.FontsStrings.InterBold, size: 30)
+        //
+        //           background.addSubview(label)
+        //
+        let closeButton = UIButton()
+        closeButton.frame = CGRect(x: 16, y: 16, width: 25, height: 25)
+        closeButton.setImage(UIImage(named: Constants.Images.icons.backButton), for: .normal)
+        closeButton.addTarget(self, action: #selector(dismissPopUp), for: .touchUpInside)
+        //
+        popUpView.addSubview(closeButton)
+        //        background.center = popUpView.center
+        //        popUpView.addSubview(background)
+        //
+        popUpView.center = view.center
+        customView.addSubview(popUpView)
+    }
+    
+    @objc func dismissPopUp() {
+        for subview in self.customView.subviews {
+            if subview.backgroundColor == .white{
+                subview.removeFromSuperview()
+            }
+            
+        }
+        customView.isHidden = true
+        timerStart()
+    }
+    
     @IBAction func pressedPauseButon(_ sender: UIButton) {
-//        let popUpView = OverLayerView()
-//        popUpView.appear(sender: self)
+        //        let popUpView = OverLayerView()
+        //        popUpView.appear(sender: self)
         timer.invalidate()
-     showPopUp()
+        showPopUp()
+        SettingsViewController().playSound()
+        SettingsViewController().makeVibration()
     }
     
     //MARK: Main Logic
@@ -147,7 +157,7 @@ class ActiveGameViewController: UIViewController {
         if answerBuffer[currentMove] == randoms[currentMove] {
             currentMove += 1
             print("RIGHT Answer")
-
+            
             if currentMove == randoms.count {
                 
                 //
@@ -176,7 +186,7 @@ class ActiveGameViewController: UIViewController {
                 }
             }
             
-
+            
         } else {
             print("WRONG Answer")
             
@@ -184,7 +194,7 @@ class ActiveGameViewController: UIViewController {
             currentMove = 0
             collectionView.isUserInteractionEnabled = false
             answerBuffer.removeAll()
-
+            
             //
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: { [self] in
                 animateCombination()
@@ -205,11 +215,11 @@ class ActiveGameViewController: UIViewController {
             UIView.animate(withDuration: 0.5, delay: 0.0, animations: {
                 cell.transform = .identity
                 cell.backgroundColor = UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 0.45)
-
+                
                 cell.cellLabel.textColor = .gray
             })
         })
-
+        
     }
     
 }
@@ -227,13 +237,15 @@ extension ActiveGameViewController : UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ActiveGameCollectionViewCell", for: indexPath) as! ActiveGameCollectionViewCell
-
+        
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         gameChecker(selectedIndex: indexPath.row)
         animationForSelection(index: indexPath.row, delay: 0.0)
+        SettingsViewController().playSound()
+        SettingsViewController().makeVibration()
     }
     
     
@@ -241,7 +253,7 @@ extension ActiveGameViewController : UICollectionViewDataSource{
 
 //MARK: Function for gettting random numbers
 extension Int {
-
+    
     static func getUniqueRandomNumbers(min: Int, max: Int, count: Int) -> [Int] {
         var set = Set<Int>()
         while set.count < count {
@@ -249,5 +261,5 @@ extension Int {
         }
         return Array(set)
     }
-
+    
 }

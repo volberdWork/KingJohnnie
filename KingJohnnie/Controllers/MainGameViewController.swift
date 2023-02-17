@@ -48,6 +48,8 @@ class MainGameViewController: UIViewController {
     }
     
     @IBAction func playButtonPressed(_ sender: UIButton) {
+        SettingsViewController().playSound()
+        SettingsViewController().makeVibration()
         openVC()
     }
 }
@@ -75,6 +77,8 @@ extension MainGameViewController : UICollectionViewDataSource{
 extension MainGameViewController : UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         currentSelected = indexPath.row
+        SettingsViewController().playSound()
+        SettingsViewController().makeVibration()
         collectionView.reloadData()
     }
 }

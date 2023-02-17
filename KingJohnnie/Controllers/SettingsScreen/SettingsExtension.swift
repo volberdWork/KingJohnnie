@@ -54,13 +54,26 @@ extension SettingsViewController: UITableViewDelegate{
         
         switch selectedButton{
         case 0 : openProfileController()
+            playSound()
+            makeVibration()
         case 1 : performNotificationSettings()
+            playSound()
+            makeVibration()
         case 2 : return
         case 3 : return
         case 4 : openTermsController()
+            playSound()
+            makeVibration()
         case 5 : openMessageWindow()
+            playSound()
+            makeVibration()
         case 6 : rateAppAction()
+            playSound()
+            makeVibration()
+            
         case 7 : print("")
+            playSound()
+            makeVibration()
             
         default:
             return

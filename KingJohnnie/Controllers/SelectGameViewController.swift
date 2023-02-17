@@ -89,10 +89,13 @@ class SelectGameViewController: UIViewController {
         openMaiGamenController()
         sender.titleLabel?.text = "DETAILS"
         sender.titleLabel?.font = UIFont(name: Constants.FontsStrings.InterBold, size: 17)
+        SettingsViewController().playSound()
+        SettingsViewController().makeVibration()
     }
     
     @IBAction func settingButtonPressed(_ sender: UIBarButtonItem) {
-        
+        SettingsViewController().playSound()
+        SettingsViewController().makeVibration()
     }
     
 }
