@@ -11,7 +11,7 @@ class ActiveGameViewController: UIViewController {
     let globalItemsCount = ["99", "4", "6",
                             "1", "8", "7",
                             "21", "55", "33"]
-    var time = 60
+    var time = 5
     var timer:Timer = Timer()
     var moveRange = Int()
     var currentMove = 0

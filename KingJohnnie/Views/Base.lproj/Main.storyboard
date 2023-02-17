@@ -37,7 +37,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DpE-pY-taq">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DpE-pY-taq">
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ya-eR-vDM">
@@ -239,7 +239,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yI6-y5-zCY">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yI6-y5-zCY">
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ISN-WG-Uoh">
@@ -892,7 +892,7 @@ Remember the sequence of lighting items, then tap the items in the same sequence
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wz8-uU-FNx">
-                                <rect key="frame" x="16" y="383.66666666666669" width="358" height="128"/>
+                                <rect key="frame" x="16" y="383.66666666666669" width="358" height="127.99999999999994"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="RTg-HP-z3C"/>
                                 </constraints>
@@ -1036,7 +1036,7 @@ Remember the sequence of lighting items, then tap the items in the same sequence
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J1A-K3-Efb">
-                                <rect key="frame" x="268.66666666666669" y="686.66666666666663" width="41.333333333333314" height="33.333333333333371"/>
+                                <rect key="frame" x="268.66666666666669" y="696.66666666666663" width="41.333333333333314" height="33.333333333333371"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="replyIcon"/>
                                 <connections>
@@ -1063,7 +1063,7 @@ Remember the sequence of lighting items, then tap the items in the same sequence
                             <constraint firstItem="nzr-6y-u43" firstAttribute="top" secondItem="Wxx-8V-BBc" secondAttribute="top" id="Ry7-2Q-thU"/>
                             <constraint firstItem="ggz-td-9hC" firstAttribute="top" secondItem="YNc-ll-U7P" secondAttribute="bottom" constant="16" id="Yb3-rf-eUg"/>
                             <constraint firstAttribute="bottom" secondItem="nzr-6y-u43" secondAttribute="bottom" id="Yzx-ar-Gg3"/>
-                            <constraint firstItem="q8h-Q9-8oi" firstAttribute="bottom" secondItem="J1A-K3-Efb" secondAttribute="bottom" constant="90" id="ZSG-bI-4BT"/>
+                            <constraint firstItem="q8h-Q9-8oi" firstAttribute="bottom" secondItem="J1A-K3-Efb" secondAttribute="bottom" constant="80" id="ZSG-bI-4BT"/>
                             <constraint firstItem="YNc-ll-U7P" firstAttribute="top" secondItem="q8h-Q9-8oi" secondAttribute="top" constant="80" id="aJh-7C-wbM"/>
                             <constraint firstItem="q8h-Q9-8oi" firstAttribute="trailing" secondItem="J1A-K3-Efb" secondAttribute="trailing" constant="80" id="dKD-7B-kVe"/>
                             <constraint firstItem="q8h-Q9-8oi" firstAttribute="trailing" secondItem="ggz-td-9hC" secondAttribute="trailing" constant="75" id="dLa-1X-Ec0"/>
