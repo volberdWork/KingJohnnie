@@ -4,9 +4,11 @@ class SelectGameViewController: UIViewController {
     @IBOutlet var detailsButton: UIButton!
     @IBOutlet var pageControl: UIPageControl!
     @IBOutlet var backgroundImage: UIImageView!
-    
     @IBOutlet var collectionView: UICollectionView!
+    
+    
     var numberOfItemCollectionView = 0
+ 
     
     var collectionArray: [SelectGameCellModel] = [SelectGameCellModel(gameName: "Lion King", owerview: "Improve a lion inside yourself,  ability to hold the info in the mind temporarly ", levelStars: 3),
                                                   SelectGameCellModel(gameName: "Lion Fad", owerview: "Improve a lion inside yourself,  ability to hold the info in the mind temporarly ", levelStars: 2),

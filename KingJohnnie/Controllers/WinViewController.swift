@@ -19,9 +19,11 @@ class WinViewController: UIViewController {
     @IBOutlet var homeButton: UIButton!
     @IBOutlet var backgroundImage: UIImageView!
     
+    var gameStatistic:[WinModel] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupView(model: WinModel())
+        setupView(model: gameStatistic[0])
         
     }
     

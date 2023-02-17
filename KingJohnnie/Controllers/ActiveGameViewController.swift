@@ -15,10 +15,11 @@ class ActiveGameViewController: UIViewController {
     var timer:Timer = Timer()
     var moveRange = Int()
     var currentMove = 0
+    var currenTime = ""
     var randoms = [Int]()
     var answerBuffer = [Int]()
     var progressGoal = 0
-    var progressTarget = 30 //for example only
+    var progressTarget = 10 //for example only
     var customView = UIView()
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -57,11 +58,23 @@ class ActiveGameViewController: UIViewController {
             let seconds = self.time % 60
             self.time -= 1
             self.timerLabel.text = String(format:"%02i:%02i", minutes, seconds)
+            self.currenTime = String(format:"%02i:%02i", minutes, seconds)
+//            if self.progressGoal == self.progressTarget{
+//                timer.invalidate()
+//                let main = UIStoryboard(name: "Main", bundle: nil)
+//                if let vc = main.instantiateViewController(withIdentifier: "WinViewController") as? WinViewController  {
+//                    self.navigationController?.pushViewController(vc, animated: true)
+//                }
+//            }
             
             if self.time == 0 {
                 timer.invalidate()
-                //
-                //show win/lose screen
+                let main = UIStoryboard(name: "Main", bundle: nil)
+                                if let vc = main.instantiateViewController(withIdentifier: "LossViewController") as? LossViewController  {
+                                    self.navigationController?.pushViewController(vc, animated: true)
+                                    vc.gameStatistic = [WinModel(time: "00:00", correctAnswer: 4, incorrectAnswers: 4)]
+                                }
+               
             }
             
         }
@@ -173,10 +186,12 @@ class ActiveGameViewController: UIViewController {
                 progressRing.setProgress(Float(progressGoal) / Float(progressTarget), animated: true)
                 
                 if progressGoal == progressTarget {
-                    //WIN
-                    
                     timer.invalidate()
-                    //MARK: Show result screen
+                    let main = UIStoryboard(name: "Main", bundle: nil)
+                                    if let vc = main.instantiateViewController(withIdentifier: "WinViewController") as? WinViewController  {
+                                        self.navigationController?.pushViewController(vc, animated: true)
+                                        vc.gameStatistic = [WinModel(time: self.currenTime, correctAnswer: progressGoal, incorrectAnswers: 2)]
+                                    }
                 } else {
                     //
                     collectionView.isUserInteractionEnabled = false

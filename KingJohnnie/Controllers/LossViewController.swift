@@ -9,9 +9,12 @@ class LossViewController: UIViewController {
     @IBOutlet var statusImage: UIImageView!
     
     @IBOutlet var correctAnswersLabel: UILabel!
+    
+    var gameStatistic:[WinModel] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupView(model: WinModel())
+        setupView(model: gameStatistic[0])
     }
     
     
