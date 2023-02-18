@@ -1,4 +1,5 @@
 import UIKit
+import AVFAudio
 import ALProgressView
 
 class ActiveGameViewController: UIViewController {
@@ -280,8 +281,8 @@ extension ActiveGameViewController : UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         gameChecker(selectedIndex: indexPath.row)
         animationForSelection(index: indexPath.row, delay: 0.0)
-        SettingsViewController().playSound()
-        SettingsViewController().makeVibration()
+        playSound()
+        makeVibration()
     }
     
     
@@ -299,3 +300,28 @@ extension Int {
     }
     
 }
+
+
+extension UIViewController{
+    
+    var audioPlayer: AVAudioPlayer?
+    
+    public func playSound(){
+         if UserDefaults.standard.bool(forKey: "sound"){
+             audioPlayer?.play()
+         }else{
+             return
+         }
+     }
+    
+    public func makeVibration(){
+        if UserDefaults.standard.bool(forKey: "vibrations"){
+            UIDevice().vibrate()
+        }else{
+            return
+        }
+    }
+}
+
+
+
