@@ -1,5 +1,4 @@
 import UIKit
-import AVFAudio
 import ALProgressView
 
 class ActiveGameViewController: UIViewController {
@@ -12,7 +11,8 @@ class ActiveGameViewController: UIViewController {
     let globalItemsCount = ["99", "4", "6",
                             "1", "8", "7",
                             "21", "55", "33"]
-    var time = 60
+    
+    var time = (UserProgressData.gameLevel * 5) + 40
     var timer:Timer = Timer()
     var moveRange = Int()
     var currentMove = 0
@@ -20,9 +20,10 @@ class ActiveGameViewController: UIViewController {
     var randoms = [Int]()
     var answerBuffer = [Int]()
     var progressGoal = 0
-    var progressTarget = 10 //for example only
+    var progressTarget = (UserProgressData.gameLevel * 3) + 10 //for example only
     var customView = UIView()
-    var incorectAnswers = 0
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
@@ -69,7 +70,7 @@ class ActiveGameViewController: UIViewController {
                 let main = UIStoryboard(name: "Main", bundle: nil)
                                 if let vc = main.instantiateViewController(withIdentifier: "LossViewController") as? LossViewController  {
                                     self.navigationController?.pushViewController(vc, animated: true)
-                                    vc.gameStatistic = [WinModel(time: "00:00", correctAnswer: self.progressGoal, incorrectAnswers: self.incorectAnswers)]
+                                    vc.gameStatistic = [WinModel(time: "00:00", correctAnswer: self.progressGoal, incorrectAnswers: 4)]
                                 }
                 self.incrementLossCount()
                
@@ -208,10 +209,13 @@ class ActiveGameViewController: UIViewController {
                 if progressGoal == progressTarget {
                     timer.invalidate()
                     incrementWinCount()
+                    
+                    UserProgressData.gameLevel += 1
+                    
                     let main = UIStoryboard(name: "Main", bundle: nil)
                                     if let vc = main.instantiateViewController(withIdentifier: "WinViewController") as? WinViewController  {
                                         self.navigationController?.pushViewController(vc, animated: true)
-                                        vc.gameStatistic = [WinModel(time: self.currenTime, correctAnswer: progressGoal, incorrectAnswers: self.incorectAnswers)]
+                                        vc.gameStatistic = [WinModel(time: self.currenTime, correctAnswer: progressGoal, incorrectAnswers: 2)]
                                     }
                 } else {
                     //
@@ -224,7 +228,6 @@ class ActiveGameViewController: UIViewController {
             
             
         } else {
-            self.incorectAnswers += 1
             print("WRONG Answer")
             
            
@@ -247,13 +250,13 @@ class ActiveGameViewController: UIViewController {
             cell.transform = .init(scaleX: 0.8, y: 0.8)
             cell.backgroundColor = UIColor(red: 0.654, green: 0.498, blue: 0.365, alpha: 0.4)
             
-            cell.cellLabel.textColor = .red
+            cell.indicatorImageView.image = UIImage(named: "lionActive")
         },completion: { _ in
             UIView.animate(withDuration: 0.5, delay: 0.0, animations: {
                 cell.transform = .identity
                 cell.backgroundColor = UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 0.45)
                 
-                cell.cellLabel.textColor = .gray
+                cell.indicatorImageView.image = UIImage(named: "lionDeactive")
             })
         })
         
@@ -275,18 +278,31 @@ extension ActiveGameViewController : UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ActiveGameCollectionViewCell", for: indexPath) as! ActiveGameCollectionViewCell
         
+        cell.indicatorImageView.image = UIImage(named: "lionDeactive")
+
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         gameChecker(selectedIndex: indexPath.row)
         animationForSelection(index: indexPath.row, delay: 0.0)
-        playSound()
-        makeVibration()
+        SettingsViewController().playSound()
+        SettingsViewController().makeVibration()
     }
     
     
+    
+    
 }
+
+extension ActiveGameViewController : UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.width / 5 - 5, height: collectionView.frame.width / 5 - 5)
+    }
+    
+}
+
 
 //MARK: Function for gettting random numbers
 extension Int {
@@ -300,28 +316,5 @@ extension Int {
     }
     
 }
-
-
-extension UIViewController{
-    
-    var audioPlayer: AVAudioPlayer?
-    
-    public func playSound(){
-         if UserDefaults.standard.bool(forKey: "sound"){
-             audioPlayer?.play()
-         }else{
-             return
-         }
-     }
-    
-    public func makeVibration(){
-        if UserDefaults.standard.bool(forKey: "vibrations"){
-            UIDevice().vibrate()
-        }else{
-            return
-        }
-    }
-}
-
 
 

@@ -8,8 +8,10 @@
 import UIKit
 
 class ActiveGameCollectionViewCell: UICollectionViewCell {
+        
+    @IBOutlet weak var indicatorImageView: UIImageView!
     
-    @IBOutlet var cellLabel: UILabel!
+    
     static func nib()-> UINib{
         return UINib(nibName: "ActiveGameCollectionViewCell", bundle: nil)
     }

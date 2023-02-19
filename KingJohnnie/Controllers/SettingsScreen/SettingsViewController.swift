@@ -9,7 +9,7 @@ class SettingsViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     @IBOutlet var backgraundImage: UIImageView!
     
-  
+    var audioPlayer: AVAudioPlayer?
     
     
     
@@ -49,7 +49,24 @@ class SettingsViewController: UIViewController {
         }
     }
     
+  
     
+    public func playSound(){
+         if UserDefaults.standard.bool(forKey: "sound"){
+             audioPlayer?.play()
+         }else{
+             return
+         }
+     }
+    
+    public func makeVibration(){
+        if UserDefaults.standard.bool(forKey: "vibrations"){
+            UIDevice().vibrate()
+        }else{
+            return
+        }
+    }
+
     func openTermsController(){
         let main = UIStoryboard(name: "Main", bundle: nil)
         if let vc = main.instantiateViewController(withIdentifier: "TermsViewController") as? TermsViewController  {

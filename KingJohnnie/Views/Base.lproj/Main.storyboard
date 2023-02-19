@@ -593,75 +593,6 @@ Remember the sequence of lighting items, then tap the items in the same sequence
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DMa-tb-DPb">
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                             </imageView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="V96-EG-MRn">
-                                <rect key="frame" x="0.0" y="390" width="390" height="390"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="390" id="bQ0-gq-hcI"/>
-                                </constraints>
-                                <inset key="scrollIndicatorInsets" minX="50" minY="0.0" maxX="50" maxY="0.0"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Gcp-LG-Wfn">
-                                    <size key="itemSize" width="90" height="90"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="50" minY="0.0" maxX="50" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ActiveGameCollectionViewCell" id="PXJ-It-WYt" customClass="ActiveGameCollectionViewCell" customModule="KingJohnnie" customModuleProvider="target">
-                                        <rect key="frame" x="50" y="0.0" width="80" height="80"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="a6l-ke-NgR">
-                                            <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I6r-EW-Sfl">
-                                                    <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
-                                                    <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cellBackground" translatesAutoresizingMaskIntoConstraints="NO" id="6yF-os-hpV">
-                                                            <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
-                                                        </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="500" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YHz-WS-BzD">
-                                                            <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="80" id="VOl-ea-lNO"/>
-                                                                <constraint firstAttribute="width" constant="80" id="dY8-mq-Fr9"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <color key="textColor" red="0.44313725490196076" green="0.44313725490196076" blue="0.44313725490196076" alpha="0.79772302488617552" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                                            <nil key="highlightedColor"/>
-                                                            <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <size key="shadowOffset" width="0.0" height="1"/>
-                                                        </label>
-                                                    </subviews>
-                                                    <constraints>
-                                                        <constraint firstAttribute="trailing" secondItem="YHz-WS-BzD" secondAttribute="trailing" id="56J-c0-zbE"/>
-                                                        <constraint firstItem="6yF-os-hpV" firstAttribute="top" secondItem="I6r-EW-Sfl" secondAttribute="top" id="6hI-1e-xRm"/>
-                                                        <constraint firstAttribute="bottom" secondItem="6yF-os-hpV" secondAttribute="bottom" id="C6T-xd-hOO"/>
-                                                        <constraint firstAttribute="trailing" secondItem="6yF-os-hpV" secondAttribute="trailing" id="DwV-N9-5v1"/>
-                                                        <constraint firstItem="YHz-WS-BzD" firstAttribute="leading" secondItem="I6r-EW-Sfl" secondAttribute="leading" id="Mi9-l1-R8x"/>
-                                                        <constraint firstAttribute="bottom" secondItem="YHz-WS-BzD" secondAttribute="bottom" id="N1U-W7-Mot"/>
-                                                        <constraint firstItem="YHz-WS-BzD" firstAttribute="top" secondItem="I6r-EW-Sfl" secondAttribute="top" id="tHD-xk-Att"/>
-                                                        <constraint firstItem="6yF-os-hpV" firstAttribute="leading" secondItem="I6r-EW-Sfl" secondAttribute="leading" id="z5k-rt-njU"/>
-                                                    </constraints>
-                                                </view>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="I6r-EW-Sfl" secondAttribute="trailing" id="OiZ-0n-CPx"/>
-                                                <constraint firstItem="I6r-EW-Sfl" firstAttribute="top" secondItem="a6l-ke-NgR" secondAttribute="top" id="Y7E-zy-QW9"/>
-                                                <constraint firstItem="I6r-EW-Sfl" firstAttribute="leading" secondItem="a6l-ke-NgR" secondAttribute="leading" id="YNV-nJ-Hjn"/>
-                                                <constraint firstAttribute="bottom" secondItem="I6r-EW-Sfl" secondAttribute="bottom" id="zWm-gN-Nf7"/>
-                                            </constraints>
-                                        </collectionViewCellContentView>
-                                        <connections>
-                                            <outlet property="cellLabel" destination="YHz-WS-BzD" id="Azm-pJ-XcV"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                </cells>
-                                <connections>
-                                    <outlet property="dataSource" destination="pwx-P1-uDt" id="V7p-2x-U8Y"/>
-                                    <outlet property="delegate" destination="pwx-P1-uDt" id="NP5-dA-WHe"/>
-                                </connections>
-                            </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fKt-uH-zQ6">
                                 <rect key="frame" x="16" y="63" width="40" height="40"/>
                                 <constraints>
@@ -744,24 +675,86 @@ Remember the sequence of lighting items, then tap the items in the same sequence
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="O4B-vn-GRe">
+                                <rect key="frame" x="0.0" y="390" width="390" height="390"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="390" id="jTE-Qm-E6e"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="390" id="umI-hU-lph"/>
+                                </constraints>
+                                <inset key="scrollIndicatorInsets" minX="50" minY="0.0" maxX="50" maxY="0.0"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="u0V-ly-2bJ">
+                                    <size key="itemSize" width="90" height="90"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="50" minY="0.0" maxX="50" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ActiveGameCollectionViewCell" id="lzj-Sm-IsF" customClass="ActiveGameCollectionViewCell" customModule="KingJohnnie" customModuleProvider="target">
+                                        <rect key="frame" x="50" y="0.0" width="90" height="90"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="CIT-R0-b6K">
+                                            <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4uR-bB-icm">
+                                                    <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cellBackground" translatesAutoresizingMaskIntoConstraints="NO" id="36W-Wf-oKd">
+                                                            <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                                        </imageView>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SYw-KY-rUc">
+                                                            <rect key="frame" x="17" y="17" width="56" height="56"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="SYw-KY-rUc" firstAttribute="height" secondItem="4uR-bB-icm" secondAttribute="height" multiplier="0.625" id="4yY-jT-ojC"/>
+                                                        <constraint firstAttribute="bottom" secondItem="36W-Wf-oKd" secondAttribute="bottom" id="8Qd-rp-aiZ"/>
+                                                        <constraint firstItem="36W-Wf-oKd" firstAttribute="leading" secondItem="4uR-bB-icm" secondAttribute="leading" id="LAa-XA-Duw"/>
+                                                        <constraint firstAttribute="trailing" secondItem="36W-Wf-oKd" secondAttribute="trailing" id="ah0-dR-tHq"/>
+                                                        <constraint firstItem="SYw-KY-rUc" firstAttribute="width" secondItem="4uR-bB-icm" secondAttribute="width" multiplier="0.625" id="kYc-BK-dlA"/>
+                                                        <constraint firstItem="SYw-KY-rUc" firstAttribute="centerX" secondItem="4uR-bB-icm" secondAttribute="centerX" id="rWj-r8-Szl"/>
+                                                        <constraint firstItem="SYw-KY-rUc" firstAttribute="centerY" secondItem="4uR-bB-icm" secondAttribute="centerY" id="s4a-21-ubM"/>
+                                                        <constraint firstItem="36W-Wf-oKd" firstAttribute="top" secondItem="4uR-bB-icm" secondAttribute="top" id="yY8-QH-3iU"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="4uR-bB-icm" firstAttribute="leading" secondItem="CIT-R0-b6K" secondAttribute="leading" id="8rk-n4-Uxg"/>
+                                                <constraint firstAttribute="bottom" secondItem="4uR-bB-icm" secondAttribute="bottom" id="9of-BX-HPh"/>
+                                                <constraint firstItem="4uR-bB-icm" firstAttribute="top" secondItem="CIT-R0-b6K" secondAttribute="top" id="CCx-ca-fIe"/>
+                                                <constraint firstAttribute="trailing" secondItem="4uR-bB-icm" secondAttribute="trailing" id="NsS-0R-gy4"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="90" height="90"/>
+                                        <connections>
+                                            <outlet property="indicatorImageView" destination="SYw-KY-rUc" id="iUG-vc-SPo"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="pwx-P1-uDt" id="2fN-jj-Y2X"/>
+                                    <outlet property="delegate" destination="pwx-P1-uDt" id="eca-Ui-5AS"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="akK-Mw-6mn"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="fKt-uH-zQ6" firstAttribute="top" secondItem="akK-Mw-6mn" secondAttribute="top" constant="16" id="0AB-Kg-0ai"/>
+                            <constraint firstItem="O4B-vn-GRe" firstAttribute="centerX" secondItem="pj9-eN-p5W" secondAttribute="centerX" id="3Re-Cr-6tV"/>
                             <constraint firstItem="hUq-LW-QN2" firstAttribute="leading" secondItem="akK-Mw-6mn" secondAttribute="leading" constant="16" id="766-Vc-BEm"/>
                             <constraint firstAttribute="bottom" secondItem="DMa-tb-DPb" secondAttribute="bottom" id="7ok-ro-DBd"/>
                             <constraint firstItem="DMa-tb-DPb" firstAttribute="top" secondItem="pj9-eN-p5W" secondAttribute="top" id="8ra-De-ZMW"/>
                             <constraint firstItem="fKt-uH-zQ6" firstAttribute="leading" secondItem="akK-Mw-6mn" secondAttribute="leading" constant="16" id="Aac-x3-gfW"/>
                             <constraint firstItem="DMa-tb-DPb" firstAttribute="leading" secondItem="akK-Mw-6mn" secondAttribute="leading" id="C4g-Po-n53"/>
-                            <constraint firstItem="V96-EG-MRn" firstAttribute="trailing" secondItem="akK-Mw-6mn" secondAttribute="trailing" id="Q2N-AK-GhA"/>
+                            <constraint firstItem="akK-Mw-6mn" firstAttribute="bottom" secondItem="O4B-vn-GRe" secondAttribute="bottom" constant="30" id="Ied-J6-TCW"/>
+                            <constraint firstItem="O4B-vn-GRe" firstAttribute="leading" secondItem="akK-Mw-6mn" secondAttribute="leading" id="ONh-Tg-lL3"/>
+                            <constraint firstItem="O4B-vn-GRe" firstAttribute="trailing" secondItem="akK-Mw-6mn" secondAttribute="trailing" id="PVn-mq-XhZ"/>
                             <constraint firstItem="UFH-AZ-Aob" firstAttribute="leading" secondItem="akK-Mw-6mn" secondAttribute="leading" constant="16" id="Sab-gW-QWZ"/>
-                            <constraint firstItem="V96-EG-MRn" firstAttribute="leading" secondItem="akK-Mw-6mn" secondAttribute="leading" id="Uxq-dM-iQ7"/>
-                            <constraint firstItem="V96-EG-MRn" firstAttribute="centerX" secondItem="pj9-eN-p5W" secondAttribute="centerX" id="ab8-yE-X76"/>
                             <constraint firstItem="DMa-tb-DPb" firstAttribute="trailing" secondItem="akK-Mw-6mn" secondAttribute="trailing" id="cpl-eY-JUh"/>
                             <constraint firstItem="lfs-lA-cug" firstAttribute="top" secondItem="akK-Mw-6mn" secondAttribute="top" constant="16" id="dJp-W9-0zi"/>
                             <constraint firstItem="UFH-AZ-Aob" firstAttribute="top" secondItem="hUq-LW-QN2" secondAttribute="bottom" constant="8" id="eTZ-IF-1JS"/>
-                            <constraint firstItem="akK-Mw-6mn" firstAttribute="bottom" secondItem="V96-EG-MRn" secondAttribute="bottom" constant="30" id="fYF-fI-NAr"/>
                             <constraint firstItem="hUq-LW-QN2" firstAttribute="top" secondItem="fKt-uH-zQ6" secondAttribute="bottom" constant="16" id="i8f-vA-x6c"/>
                             <constraint firstItem="99N-1p-Gho" firstAttribute="leading" secondItem="hUq-LW-QN2" secondAttribute="trailing" constant="16" id="jdd-us-DMf"/>
                             <constraint firstItem="99N-1p-Gho" firstAttribute="top" secondItem="lfs-lA-cug" secondAttribute="bottom" constant="16" id="q8I-MB-nBN"/>
@@ -770,7 +763,7 @@ Remember the sequence of lighting items, then tap the items in the same sequence
                     </view>
                     <connections>
                         <outlet property="backgroundImage" destination="DMa-tb-DPb" id="49U-Ea-iAx"/>
-                        <outlet property="collectionView" destination="V96-EG-MRn" id="Xae-Aj-6QI"/>
+                        <outlet property="collectionView" destination="O4B-vn-GRe" id="Uw7-1M-t3S"/>
                         <outlet property="pointsLabel" destination="UFH-AZ-Aob" id="4KN-Bk-7T7"/>
                         <outlet property="progressRing" destination="hUq-LW-QN2" id="Zrd-qI-oAX"/>
                         <outlet property="timerLabel" destination="gKH-fx-FhR" id="SoB-hl-Wuh"/>
@@ -892,7 +885,7 @@ Remember the sequence of lighting items, then tap the items in the same sequence
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wz8-uU-FNx">
-                                <rect key="frame" x="16" y="383.66666666666669" width="358" height="127.99999999999994"/>
+                                <rect key="frame" x="16" y="383.66666666666669" width="358" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="RTg-HP-z3C"/>
                                 </constraints>

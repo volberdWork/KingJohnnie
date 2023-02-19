@@ -36,6 +36,7 @@
 		BD7317BA29978DA90036D2DC /* SettingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD7317B829978DA90036D2DC /* SettingsTableViewCell.xib */; };
 		BD7317BC299791A70036D2DC /* SettingsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7317BB299791A70036D2DC /* SettingsExtension.swift */; };
 		BDB20DE6299832E70071981F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB20DE5299832E70071981F /* ProfileViewController.swift */; };
+		BDD06E0929A2CB2B008A2C4E /* UserProgressData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD06E0829A2CB2B008A2C4E /* UserProgressData.swift */; };
 		BDED154E2992F61200E2F03A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDED154D2992F61200E2F03A /* AppDelegate.swift */; };
 		BDED15502992F61200E2F03A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDED154F2992F61200E2F03A /* SceneDelegate.swift */; };
 		BDED15522992F61200E2F03A /* SelectGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDED15512992F61200E2F03A /* SelectGameViewController.swift */; };
@@ -73,6 +74,7 @@
 		BD7317B829978DA90036D2DC /* SettingsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsTableViewCell.xib; sourceTree = "<group>"; };
 		BD7317BB299791A70036D2DC /* SettingsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsExtension.swift; sourceTree = "<group>"; };
 		BDB20DE5299832E70071981F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		BDD06E0829A2CB2B008A2C4E /* UserProgressData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProgressData.swift; sourceTree = "<group>"; };
 		BDED154A2992F61200E2F03A /* KingJohnnie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KingJohnnie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDED154D2992F61200E2F03A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BDED154F2992F61200E2F03A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 				BDED154F2992F61200E2F03A /* SceneDelegate.swift */,
 				BDED15562992F61400E2F03A /* Assets.xcassets */,
 				BDED155B2992F61400E2F03A /* Info.plist */,
+				BDD06E0829A2CB2B008A2C4E /* UserProgressData.swift */,
 			);
 			path = KingJohnnie;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 				BD19AF372993E45100F4A9B7 /* LevelCollectionViewCell.swift in Sources */,
 				BD19AF2129930CAB00F4A9B7 /* Constants.swift in Sources */,
 				BD4E35FB299A2D2C00422D10 /* ActiveGameCollectionViewCell.swift in Sources */,
+				BDD06E0929A2CB2B008A2C4E /* UserProgressData.swift in Sources */,
 				BDED15522992F61200E2F03A /* SelectGameViewController.swift in Sources */,
 				BD19AF48299451FE00F4A9B7 /* TermsViewController.swift in Sources */,
 				BD4E3607299AA74900422D10 /* OverLayerView.swift in Sources */,
