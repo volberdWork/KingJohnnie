@@ -68,12 +68,12 @@ class ActiveGameViewController: UIViewController {
             if self.time == 0 {
                 timer.invalidate()
                 let main = UIStoryboard(name: "Main", bundle: nil)
-                                if let vc = main.instantiateViewController(withIdentifier: "LossViewController") as? LossViewController  {
-                                    self.navigationController?.pushViewController(vc, animated: true)
-                                    vc.gameStatistic = [WinModel(time: "00:00", correctAnswer: self.progressGoal, incorrectAnswers: 4)]
-                                }
+                if let vc = main.instantiateViewController(withIdentifier: "LossViewController") as? LossViewController  {
+                    self.navigationController?.pushViewController(vc, animated: true)
+                    vc.gameStatistic = [WinModel(time: "00:00", correctAnswer: self.progressGoal, incorrectAnswers: 4)]
+                }
                 self.incrementLossCount()
-               
+                
             }
             
         }
@@ -158,7 +158,7 @@ class ActiveGameViewController: UIViewController {
     }
     
     @IBAction func pressedPauseButon(_ sender: UIButton) {
-
+        
         timer.invalidate()
         showPopUp()
         SettingsViewController().playSound()
@@ -213,10 +213,10 @@ class ActiveGameViewController: UIViewController {
                     UserProgressData.gameLevel += 1
                     
                     let main = UIStoryboard(name: "Main", bundle: nil)
-                                    if let vc = main.instantiateViewController(withIdentifier: "WinViewController") as? WinViewController  {
-                                        self.navigationController?.pushViewController(vc, animated: true)
-                                        vc.gameStatistic = [WinModel(time: self.currenTime, correctAnswer: progressGoal, incorrectAnswers: 2)]
-                                    }
+                    if let vc = main.instantiateViewController(withIdentifier: "WinViewController") as? WinViewController  {
+                        self.navigationController?.pushViewController(vc, animated: true)
+                        vc.gameStatistic = [WinModel(time: self.currenTime, correctAnswer: progressGoal, incorrectAnswers: 2)]
+                    }
                 } else {
                     //
                     collectionView.isUserInteractionEnabled = false
@@ -230,7 +230,7 @@ class ActiveGameViewController: UIViewController {
         } else {
             print("WRONG Answer")
             
-           
+            
             currentMove = 0
             collectionView.isUserInteractionEnabled = false
             answerBuffer.removeAll()
@@ -279,7 +279,7 @@ extension ActiveGameViewController : UICollectionViewDataSource{
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ActiveGameCollectionViewCell", for: indexPath) as! ActiveGameCollectionViewCell
         
         cell.indicatorImageView.image = UIImage(named: "lionDeactive")
-
+        
         return cell
     }
     

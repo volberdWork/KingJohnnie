@@ -9,6 +9,7 @@ import UIKit
 
 class SettingsTableViewCell: UITableViewCell {
     static let reuseIdentifier = String(describing: SettingsTableViewCell.self)
+    
     var toogleHandler: (Bool) -> () = { _ in }
     
     @IBOutlet var centralView: UIView!

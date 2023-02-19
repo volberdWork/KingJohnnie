@@ -18,7 +18,7 @@ class GameLoaderViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       setupView()
+        setupView()
         loadingAnimation.frame = animationView.frame
         self.view.addSubview(loadingAnimation)
         loadingAnimation.center = animationView.center
