@@ -77,7 +77,12 @@ extension SettingsViewController: UITableViewDelegate{
             let alertController = UIAlertController(title: "Attention", message: "Once deleted, your progress will be completely deleted. Are you sure?", preferredStyle: .alert)
 
             let yesAction = UIAlertAction(title: "Yes", style: .destructive) { (action) in
-            // видаляємо прогрес
+                let defaults = UserDefaults.standard
+                let lossCount = defaults.integer(forKey: "lossCount")
+                defaults.set(0, forKey: "lossCount")
+                
+                let winCount = defaults.integer(forKey: "winCount")
+                defaults.set(0, forKey: "winCount")
             }
 
             let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in

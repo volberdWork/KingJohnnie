@@ -17,8 +17,10 @@ class ProfileViewController: UIViewController {
 
         let totalGames = self.winsCount + self.losseCount
         let winPercentage = totalGames > 0 ? self.winsCount / totalGames * 100 : 0
-        gameStatisticsData.append(ProfileStat(winCount: self.winsCount, losseCount: self.losseCount, procentOfWin: winPercentage, cauntOgGames: totalGames))
         
+        if totalGames > 0{
+            gameStatisticsData.append(ProfileStat(winCount: self.winsCount, losseCount: self.losseCount, procentOfWin: winPercentage, cauntOgGames: totalGames))
+        }
         
         self.tableView.reloadData()
         setupView()
