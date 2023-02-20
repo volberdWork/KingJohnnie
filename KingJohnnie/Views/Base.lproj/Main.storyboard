@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WTw-m4-3jZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UsK-X8-alC">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
@@ -677,7 +677,7 @@ Remember the sequence of lighting items, then tap the items in the same sequence
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KsA-we-HC2">
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.79956135528766559" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="O4B-vn-GRe">
                                 <rect key="frame" x="0.0" y="390" width="390" height="390"/>
@@ -932,39 +932,6 @@ Remember the sequence of lighting items, then tap the items in the same sequence
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kAl-nj-JGn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3411" y="-2"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="AJK-Ia-wuJ">
-            <objects>
-                <viewController storyboardIdentifier="ViewController" id="WTw-m4-3jZ" customClass="ViewController" customModule="KingJohnnie" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="1PC-cQ-j5C">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PIL-mx-loG">
-                                <rect key="frame" x="45" y="405" width="300" height="34"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="34" id="LT5-2Z-Sty"/>
-                                    <constraint firstAttribute="width" constant="300" id="OHE-zJ-RZD"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="unR-u4-4Li"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="PIL-mx-loG" firstAttribute="centerY" secondItem="1PC-cQ-j5C" secondAttribute="centerY" id="B5C-NR-c6X"/>
-                            <constraint firstItem="PIL-mx-loG" firstAttribute="centerX" secondItem="1PC-cQ-j5C" secondAttribute="centerX" id="zgi-1W-sj5"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="textField" destination="PIL-mx-loG" id="3zX-uU-468"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cPQ-jU-Zd6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4754" y="218"/>
         </scene>
         <!--Loss View Controller-->
         <scene sceneID="VPJ-xO-ENo">

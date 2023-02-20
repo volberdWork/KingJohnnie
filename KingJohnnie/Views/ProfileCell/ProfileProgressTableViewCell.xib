@@ -40,7 +40,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c53-Ac-LxH" customClass="ALProgressBar" customModule="ALProgressView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c53-Ac-LxH" customClass="ALProgressRing" customModule="ALProgressView">
                                 <rect key="frame" x="38.666666666666657" y="104" width="70" height="70"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Win 15" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wak-Wa-RtV">
@@ -61,7 +61,7 @@
                                     <constraint firstItem="wak-Wa-RtV" firstAttribute="centerX" secondItem="c53-Ac-LxH" secondAttribute="centerX" id="zfH-2f-d9e"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aGU-ZI-6xe" customClass="ALProgressBar" customModule="ALProgressView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aGU-ZI-6xe" customClass="ALProgressRing" customModule="ALProgressView">
                                 <rect key="frame" x="124.66666666666666" y="104" width="70" height="70"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loss 10" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VMO-cu-o8Y">
@@ -84,7 +84,7 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="zBe-Rr-grc"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EDs-je-14g" customClass="ALProgressBar" customModule="ALProgressView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EDs-je-14g" customClass="ALProgressRing" customModule="ALProgressView">
                                 <rect key="frame" x="210.66666666666666" y="104" width="69.999999999999972" height="70"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Win% 50" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4IJ-Xc-iYK">
@@ -139,8 +139,11 @@
             <connections>
                 <outlet property="gameNameLabel" destination="Ks4-Is-W5x" id="AI1-Cx-sJ0"/>
                 <outlet property="levelGameLabel" destination="x8R-lr-GSJ" id="xNB-4o-FPQ"/>
+                <outlet property="lossLabel" destination="VMO-cu-o8Y" id="aZ2-6p-jU8"/>
                 <outlet property="lossProgressView" destination="aGU-ZI-6xe" id="MIq-Jq-mVP"/>
                 <outlet property="procentProgressView" destination="EDs-je-14g" id="ud5-GJ-ynG"/>
+                <outlet property="winLabel" destination="wak-Wa-RtV" id="xCo-Gg-KEu"/>
+                <outlet property="winProcentLabel" destination="4IJ-Xc-iYK" id="Il0-h4-qkn"/>
                 <outlet property="winProgressView" destination="c53-Ac-LxH" id="i0a-OL-thI"/>
             </connections>
             <point key="canvasLocation" x="157.69230769230768" y="81.042654028436019"/>
