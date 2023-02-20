@@ -8,21 +8,23 @@ class ProfileViewController: UIViewController {
     
     var gameStatisticsData: [ProfileStat] = []
     let winsCount = UserDefaults.standard.integer(forKey: "winCount")
-    let losseCount = UserDefaults.standard.integer(forKey: "losseCount")
+    let losseCount = UserDefaults.standard.integer(forKey: "lossCount")
   
 
     override func viewDidLoad() {
         super.viewDidLoad()
-      
+        tableView.register(UINib(nibName: "ProfileProgressTableViewCell", bundle: nil), forCellReuseIdentifier: "ProfileProgressTableViewCell")
+
         let totalGames = self.winsCount + self.losseCount
         let winPercentage = totalGames > 0 ? self.winsCount / totalGames * 100 : 0
         gameStatisticsData.append(ProfileStat(winCount: self.winsCount, losseCount: self.losseCount, procentOfWin: winPercentage, cauntOgGames: totalGames))
-
+        
         
         self.tableView.reloadData()
         setupView()
         tableView.backgroundColor = .clear
         print("\(winPercentage)%")
+        print(totalGames)
 
     }
     
@@ -40,11 +42,14 @@ class ProfileViewController: UIViewController {
 
 extension ProfileViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return gameStatisticsData[0].cauntOgGames
+        return gameStatisticsData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileProgressTableViewCell", for: indexPath) as! ProfileProgressTableViewCell
+        cell.backgroundColor = .clear
+        cell.selectionStyle = .none
+          return cell
     }
     
     

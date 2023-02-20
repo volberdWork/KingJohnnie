@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -20,7 +19,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9NU-fQ-Fgd">
                         <rect key="frame" x="12" y="12" width="319" height="190"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gfh-Sb-fE3">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blureView" translatesAutoresizingMaskIntoConstraints="NO" id="gfh-Sb-fE3">
                                 <rect key="frame" x="0.0" y="0.0" width="319" height="190"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ks4-Is-W5x">
@@ -43,34 +42,72 @@
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c53-Ac-LxH" customClass="ALProgressBar" customModule="ALProgressView">
                                 <rect key="frame" x="38.666666666666657" y="104" width="70" height="70"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Win 15" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wak-Wa-RtV">
+                                        <rect key="frame" x="17.333333333333336" y="20" width="35" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="35" id="KnV-A0-2fL"/>
+                                            <constraint firstAttribute="height" constant="30" id="xbd-QH-vcV"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <constraints>
+                                    <constraint firstItem="wak-Wa-RtV" firstAttribute="centerY" secondItem="c53-Ac-LxH" secondAttribute="centerY" id="3M1-NJ-zOR"/>
                                     <constraint firstAttribute="width" constant="70" id="Jls-xH-raY"/>
                                     <constraint firstAttribute="height" constant="70" id="eaE-7T-zsV"/>
+                                    <constraint firstItem="wak-Wa-RtV" firstAttribute="centerX" secondItem="c53-Ac-LxH" secondAttribute="centerX" id="zfH-2f-d9e"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aGU-ZI-6xe" customClass="ALProgressBar" customModule="ALProgressView">
                                 <rect key="frame" x="124.66666666666666" y="104" width="70" height="70"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loss 10" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VMO-cu-o8Y">
+                                        <rect key="frame" x="17.333333333333343" y="20" width="35" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="gz2-Rq-3Gb"/>
+                                            <constraint firstAttribute="width" constant="35" id="j2g-bq-RA4"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="BqQ-iR-fcO"/>
                                     <constraint firstAttribute="height" constant="70" id="bbC-PU-Fqb"/>
+                                    <constraint firstItem="VMO-cu-o8Y" firstAttribute="centerX" secondItem="aGU-ZI-6xe" secondAttribute="centerX" id="dEO-Yw-t6L"/>
+                                    <constraint firstItem="VMO-cu-o8Y" firstAttribute="centerY" secondItem="aGU-ZI-6xe" secondAttribute="centerY" id="hSw-fz-8fU"/>
                                     <constraint firstAttribute="width" constant="70" id="tjD-kz-wlr"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="zBe-Rr-grc"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EDs-je-14g" customClass="ALProgressBar" customModule="ALProgressView">
                                 <rect key="frame" x="210.66666666666666" y="104" width="69.999999999999972" height="70"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Win% 50" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4IJ-Xc-iYK">
+                                        <rect key="frame" x="17.333333333333343" y="20" width="35" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="RRE-3V-BAE"/>
+                                            <constraint firstAttribute="width" constant="35" id="qBA-I2-7z1"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <constraints>
+                                    <constraint firstItem="4IJ-Xc-iYK" firstAttribute="centerY" secondItem="EDs-je-14g" secondAttribute="centerY" id="0QF-i0-4lx"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="XKa-dT-FI4"/>
                                     <constraint firstAttribute="height" constant="70" id="jMm-7K-khf"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="jmG-3L-49K"/>
+                                    <constraint firstItem="4IJ-Xc-iYK" firstAttribute="centerX" secondItem="EDs-je-14g" secondAttribute="centerX" id="x8g-aA-EmN"/>
                                     <constraint firstAttribute="width" constant="70" id="xwB-dL-CP4"/>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
                         <constraints>
                             <constraint firstItem="Ks4-Is-W5x" firstAttribute="leading" secondItem="9NU-fQ-Fgd" secondAttribute="leading" constant="16" id="Cjb-pZ-RMl"/>
                             <constraint firstItem="aGU-ZI-6xe" firstAttribute="leading" secondItem="c53-Ac-LxH" secondAttribute="trailing" constant="16" id="F94-Zx-fKb"/>
@@ -110,11 +147,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
+        <image name="blureView" width="220.66667175292969" height="214"/>
     </resources>
 </document>
