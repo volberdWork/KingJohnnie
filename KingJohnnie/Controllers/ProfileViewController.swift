@@ -5,12 +5,15 @@ class ProfileViewController: UIViewController {
     @IBOutlet var backgroundImage: UIImageView!
     
     @IBOutlet var tableView: UITableView!
+    var statsDict = UserDefaults.standard.dictionary(forKey: "gameStats")
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
         tableView.backgroundColor = .clear
+        print(statsDict?.count ?? 1000)
+
     }
     
     private func setupView(){
@@ -27,7 +30,7 @@ class ProfileViewController: UIViewController {
 
 extension ProfileViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        10
+        return self.statsDict?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

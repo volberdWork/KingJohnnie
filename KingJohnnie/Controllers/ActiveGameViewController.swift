@@ -34,6 +34,7 @@ class ActiveGameViewController: UIViewController {
         
         print("Кулькість програшів: \(getLossCount())")
         print("Кулькість виграшів: \(getWinCount())")
+  
         setupView()
         progressRing.setProgress(0.0, animated: true)
         
@@ -52,7 +53,16 @@ class ActiveGameViewController: UIViewController {
             
         }
         
+      
+        
     }
+    func saveData(data: [ProfileStat]) {
+        let encoder = JSONEncoder()
+        if let encoded = try? encoder.encode(data) {
+            UserDefaults.standard.set(encoded, forKey: "myData")
+        }
+    }
+
     
     private func setupView(){
         backgraundImageConfige(image: Constants.Images.activeGameScreen)
@@ -318,3 +328,8 @@ extension Int {
 }
 
 
+struct ProfileStat{
+var winCount: Int
+var losseCount: Int
+var procentOfWin: Int
+}
