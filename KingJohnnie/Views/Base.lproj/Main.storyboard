@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UsK-X8-alC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WTw-m4-3jZ">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
@@ -675,6 +675,10 @@ Remember the sequence of lighting items, then tap the items in the same sequence
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KsA-we-HC2">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="O4B-vn-GRe">
                                 <rect key="frame" x="0.0" y="390" width="390" height="390"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -744,6 +748,7 @@ Remember the sequence of lighting items, then tap the items in the same sequence
                             <constraint firstItem="fKt-uH-zQ6" firstAttribute="top" secondItem="akK-Mw-6mn" secondAttribute="top" constant="16" id="0AB-Kg-0ai"/>
                             <constraint firstItem="O4B-vn-GRe" firstAttribute="centerX" secondItem="pj9-eN-p5W" secondAttribute="centerX" id="3Re-Cr-6tV"/>
                             <constraint firstItem="hUq-LW-QN2" firstAttribute="leading" secondItem="akK-Mw-6mn" secondAttribute="leading" constant="16" id="766-Vc-BEm"/>
+                            <constraint firstItem="KsA-we-HC2" firstAttribute="leading" secondItem="akK-Mw-6mn" secondAttribute="leading" id="7nL-k8-AH0"/>
                             <constraint firstAttribute="bottom" secondItem="DMa-tb-DPb" secondAttribute="bottom" id="7ok-ro-DBd"/>
                             <constraint firstItem="DMa-tb-DPb" firstAttribute="top" secondItem="pj9-eN-p5W" secondAttribute="top" id="8ra-De-ZMW"/>
                             <constraint firstItem="fKt-uH-zQ6" firstAttribute="leading" secondItem="akK-Mw-6mn" secondAttribute="leading" constant="16" id="Aac-x3-gfW"/>
@@ -752,11 +757,14 @@ Remember the sequence of lighting items, then tap the items in the same sequence
                             <constraint firstItem="O4B-vn-GRe" firstAttribute="leading" secondItem="akK-Mw-6mn" secondAttribute="leading" id="ONh-Tg-lL3"/>
                             <constraint firstItem="O4B-vn-GRe" firstAttribute="trailing" secondItem="akK-Mw-6mn" secondAttribute="trailing" id="PVn-mq-XhZ"/>
                             <constraint firstItem="UFH-AZ-Aob" firstAttribute="leading" secondItem="akK-Mw-6mn" secondAttribute="leading" constant="16" id="Sab-gW-QWZ"/>
+                            <constraint firstItem="KsA-we-HC2" firstAttribute="trailing" secondItem="akK-Mw-6mn" secondAttribute="trailing" id="Tig-Ii-UZA"/>
                             <constraint firstItem="DMa-tb-DPb" firstAttribute="trailing" secondItem="akK-Mw-6mn" secondAttribute="trailing" id="cpl-eY-JUh"/>
                             <constraint firstItem="lfs-lA-cug" firstAttribute="top" secondItem="akK-Mw-6mn" secondAttribute="top" constant="16" id="dJp-W9-0zi"/>
                             <constraint firstItem="UFH-AZ-Aob" firstAttribute="top" secondItem="hUq-LW-QN2" secondAttribute="bottom" constant="8" id="eTZ-IF-1JS"/>
                             <constraint firstItem="hUq-LW-QN2" firstAttribute="top" secondItem="fKt-uH-zQ6" secondAttribute="bottom" constant="16" id="i8f-vA-x6c"/>
                             <constraint firstItem="99N-1p-Gho" firstAttribute="leading" secondItem="hUq-LW-QN2" secondAttribute="trailing" constant="16" id="jdd-us-DMf"/>
+                            <constraint firstItem="KsA-we-HC2" firstAttribute="top" secondItem="pj9-eN-p5W" secondAttribute="top" id="jvr-Co-GYU"/>
+                            <constraint firstAttribute="bottom" secondItem="KsA-we-HC2" secondAttribute="bottom" id="mzm-TW-cxh"/>
                             <constraint firstItem="99N-1p-Gho" firstAttribute="top" secondItem="lfs-lA-cug" secondAttribute="bottom" constant="16" id="q8I-MB-nBN"/>
                             <constraint firstItem="lfs-lA-cug" firstAttribute="centerX" secondItem="pj9-eN-p5W" secondAttribute="centerX" id="zKX-LF-77M"/>
                         </constraints>
@@ -924,6 +932,39 @@ Remember the sequence of lighting items, then tap the items in the same sequence
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kAl-nj-JGn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3411" y="-2"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="AJK-Ia-wuJ">
+            <objects>
+                <viewController storyboardIdentifier="ViewController" id="WTw-m4-3jZ" customClass="ViewController" customModule="KingJohnnie" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1PC-cQ-j5C">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PIL-mx-loG">
+                                <rect key="frame" x="45" y="405" width="300" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="LT5-2Z-Sty"/>
+                                    <constraint firstAttribute="width" constant="300" id="OHE-zJ-RZD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="unR-u4-4Li"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="PIL-mx-loG" firstAttribute="centerY" secondItem="1PC-cQ-j5C" secondAttribute="centerY" id="B5C-NR-c6X"/>
+                            <constraint firstItem="PIL-mx-loG" firstAttribute="centerX" secondItem="1PC-cQ-j5C" secondAttribute="centerX" id="zgi-1W-sj5"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="textField" destination="PIL-mx-loG" id="3zX-uU-468"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cPQ-jU-Zd6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4754" y="218"/>
         </scene>
         <!--Loss View Controller-->
         <scene sceneID="VPJ-xO-ENo">

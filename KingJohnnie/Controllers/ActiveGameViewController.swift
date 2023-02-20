@@ -21,7 +21,6 @@ class ActiveGameViewController: UIViewController {
     var answerBuffer = [Int]()
     var progressGoal = 0
     var progressTarget = (UserProgressData.gameLevel * 3) + 10 //for example only
-    var customView = UIView()
     
     
     override func viewWillAppear(_ animated: Bool) {
@@ -34,14 +33,10 @@ class ActiveGameViewController: UIViewController {
         
         print("Кулькість програшів: \(getLossCount())")
         print("Кулькість виграшів: \(getWinCount())")
-  
         setupView()
         progressRing.setProgress(0.0, animated: true)
-        
         pointsLabel.text = "\(progressGoal) / \(progressTarget)"
         timerLabel.text = ""
-        
-        
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) { [self] in
             timerStart()
             progressRing.lineWidth = 10
@@ -50,11 +45,7 @@ class ActiveGameViewController: UIViewController {
             progressRing.grooveColor = .brown
             progressRing.tintColor = .white
             progressRing.endColor = Constants.Colors.orangeColor
-            
         }
-        
-      
-        
     }
    
 
@@ -116,56 +107,16 @@ class ActiveGameViewController: UIViewController {
         self.collectionView.backgroundColor = .clear
     }
     
-    @objc func showPopUp() {
-        
-        self.customView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height))
-        self.customView.backgroundColor = UIColor.black.withAlphaComponent(0.5)
-        view.addSubview(customView)
-        let popUpView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width - 40, height: 200))
-        popUpView.backgroundColor = .white
-        popUpView.layer.cornerRadius = 10
-        //
-        //        let imageBackground = UIImage(named: Constants.Images.blureView)
-        //        let background = UIImageView(frame: CGRect(x: 0, y: 0, width: Int(popUpView.frame.size.width), height: Int(popUpView.frame.size.height)))
-        //        background.image = imageBackground
-        //        background.contentMode = .scaleToFill
-        //
-        //           let label = UILabel(frame: CGRect(x: 0, y: 0, width: popUpView.frame.width, height: 50))
-        //           label.text = "PAUSE"
-        //        label.textColor = .yellow
-        //           label.textAlignment = .center
-        //        label.font = UIFont(name: Constants.FontsStrings.InterBold, size: 30)
-        //
-        //           background.addSubview(label)
-        //
-        let closeButton = UIButton()
-        closeButton.frame = CGRect(x: 16, y: 16, width: 25, height: 25)
-        closeButton.setImage(UIImage(named: Constants.Images.icons.backButton), for: .normal)
-        closeButton.addTarget(self, action: #selector(dismissPopUp), for: .touchUpInside)
-        //
-        popUpView.addSubview(closeButton)
-        //        background.center = popUpView.center
-        //        popUpView.addSubview(background)
-        //
-        popUpView.center = view.center
-        customView.addSubview(popUpView)
-    }
+
     
     @objc func dismissPopUp() {
-        for subview in self.customView.subviews {
-            if subview.backgroundColor == .white{
-                subview.removeFromSuperview()
-            }
-            
-        }
-        customView.isHidden = true
         timerStart()
     }
     
     @IBAction func pressedPauseButon(_ sender: UIButton) {
         
         timer.invalidate()
-        showPopUp()
+       
         SettingsViewController().playSound()
         SettingsViewController().makeVibration()
     }
@@ -321,8 +272,6 @@ extension Int {
     }
     
 }
-
-
 struct ProfileStat{
 var winCount: Int
 var losseCount: Int

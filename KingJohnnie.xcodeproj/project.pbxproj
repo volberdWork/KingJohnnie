@@ -39,6 +39,7 @@
 		BDD06E0929A2CB2B008A2C4E /* UserProgressData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD06E0829A2CB2B008A2C4E /* UserProgressData.swift */; };
 		BDD06E1329A352D7008A2C4E /* ProfileProgressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD06E1129A352D7008A2C4E /* ProfileProgressTableViewCell.swift */; };
 		BDD06E1429A352D7008A2C4E /* ProfileProgressTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDD06E1229A352D7008A2C4E /* ProfileProgressTableViewCell.xib */; };
+		BDD06E1629A38849008A2C4E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD06E1529A38849008A2C4E /* ViewController.swift */; };
 		BDED154E2992F61200E2F03A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDED154D2992F61200E2F03A /* AppDelegate.swift */; };
 		BDED15502992F61200E2F03A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDED154F2992F61200E2F03A /* SceneDelegate.swift */; };
 		BDED15522992F61200E2F03A /* SelectGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDED15512992F61200E2F03A /* SelectGameViewController.swift */; };
@@ -79,6 +80,7 @@
 		BDD06E0829A2CB2B008A2C4E /* UserProgressData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProgressData.swift; sourceTree = "<group>"; };
 		BDD06E1129A352D7008A2C4E /* ProfileProgressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileProgressTableViewCell.swift; sourceTree = "<group>"; };
 		BDD06E1229A352D7008A2C4E /* ProfileProgressTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileProgressTableViewCell.xib; sourceTree = "<group>"; };
+		BDD06E1529A38849008A2C4E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BDED154A2992F61200E2F03A /* KingJohnnie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KingJohnnie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDED154D2992F61200E2F03A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BDED154F2992F61200E2F03A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				BD4E35FC299A517000422D10 /* PopUps */,
 				BD7317B629978D350036D2DC /* SettingsScreen */,
 				BDED15512992F61200E2F03A /* SelectGameViewController.swift */,
+				BDD06E1529A38849008A2C4E /* ViewController.swift */,
 				BDB20DE5299832E70071981F /* ProfileViewController.swift */,
 				BD19AF552995827000F4A9B7 /* LossViewController.swift */,
 				BD19AF532995823C00F4A9B7 /* WinViewController.swift */,
@@ -349,6 +352,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDD06E1629A38849008A2C4E /* ViewController.swift in Sources */,
 				BD19AF372993E45100F4A9B7 /* LevelCollectionViewCell.swift in Sources */,
 				BD19AF2129930CAB00F4A9B7 /* Constants.swift in Sources */,
 				BD4E35FB299A2D2C00422D10 /* ActiveGameCollectionViewCell.swift in Sources */,
