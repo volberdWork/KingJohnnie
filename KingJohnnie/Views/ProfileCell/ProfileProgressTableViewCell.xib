@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="214" id="KGk-i7-Jjw" customClass="ProfileProgressTableViewCell" customModule="KingJohnnie" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="343" height="214"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="343" height="214"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9NU-fQ-Fgd">
+                        <rect key="frame" x="12" y="12" width="319" height="190"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gfh-Sb-fE3">
+                                <rect key="frame" x="0.0" y="0.0" width="319" height="190"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ks4-Is-W5x">
+                                <rect key="frame" x="16" y="16" width="287" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="LBf-q1-Hr5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x8R-lr-GSJ">
+                                <rect key="frame" x="16" y="48" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Kbg-lA-IR3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c53-Ac-LxH" customClass="ALProgressBar" customModule="ALProgressView">
+                                <rect key="frame" x="38.666666666666657" y="104" width="70" height="70"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="Jls-xH-raY"/>
+                                    <constraint firstAttribute="height" constant="70" id="eaE-7T-zsV"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aGU-ZI-6xe" customClass="ALProgressBar" customModule="ALProgressView">
+                                <rect key="frame" x="124.66666666666666" y="104" width="70" height="70"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="BqQ-iR-fcO"/>
+                                    <constraint firstAttribute="height" constant="70" id="bbC-PU-Fqb"/>
+                                    <constraint firstAttribute="width" constant="70" id="tjD-kz-wlr"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="zBe-Rr-grc"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EDs-je-14g" customClass="ALProgressBar" customModule="ALProgressView">
+                                <rect key="frame" x="210.66666666666666" y="104" width="69.999999999999972" height="70"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="XKa-dT-FI4"/>
+                                    <constraint firstAttribute="height" constant="70" id="jMm-7K-khf"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="jmG-3L-49K"/>
+                                    <constraint firstAttribute="width" constant="70" id="xwB-dL-CP4"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                        <constraints>
+                            <constraint firstItem="Ks4-Is-W5x" firstAttribute="leading" secondItem="9NU-fQ-Fgd" secondAttribute="leading" constant="16" id="Cjb-pZ-RMl"/>
+                            <constraint firstItem="aGU-ZI-6xe" firstAttribute="leading" secondItem="c53-Ac-LxH" secondAttribute="trailing" constant="16" id="F94-Zx-fKb"/>
+                            <constraint firstItem="gfh-Sb-fE3" firstAttribute="top" secondItem="9NU-fQ-Fgd" secondAttribute="top" id="GA1-vb-0nZ"/>
+                            <constraint firstAttribute="bottom" secondItem="gfh-Sb-fE3" secondAttribute="bottom" id="JEz-Zr-mVZ"/>
+                            <constraint firstItem="aGU-ZI-6xe" firstAttribute="centerX" secondItem="9NU-fQ-Fgd" secondAttribute="centerX" id="X7P-Bu-gxR"/>
+                            <constraint firstAttribute="bottom" secondItem="aGU-ZI-6xe" secondAttribute="bottom" constant="16" id="dwH-5L-q5l"/>
+                            <constraint firstItem="gfh-Sb-fE3" firstAttribute="leading" secondItem="9NU-fQ-Fgd" secondAttribute="leading" id="eDX-CA-7BH"/>
+                            <constraint firstAttribute="height" constant="190" id="fAW-t7-oIk"/>
+                            <constraint firstItem="Ks4-Is-W5x" firstAttribute="top" secondItem="9NU-fQ-Fgd" secondAttribute="top" constant="16" id="gmT-tM-SEr"/>
+                            <constraint firstItem="x8R-lr-GSJ" firstAttribute="leading" secondItem="9NU-fQ-Fgd" secondAttribute="leading" constant="16" id="gt4-cT-d0k"/>
+                            <constraint firstAttribute="bottom" secondItem="EDs-je-14g" secondAttribute="bottom" constant="16" id="j0H-Xu-NCN"/>
+                            <constraint firstItem="EDs-je-14g" firstAttribute="leading" secondItem="aGU-ZI-6xe" secondAttribute="trailing" constant="16" id="jrd-kK-0mA"/>
+                            <constraint firstAttribute="bottom" secondItem="c53-Ac-LxH" secondAttribute="bottom" constant="16" id="lc9-M5-YjH"/>
+                            <constraint firstAttribute="trailing" secondItem="Ks4-Is-W5x" secondAttribute="trailing" constant="16" id="twv-wI-5II"/>
+                            <constraint firstItem="x8R-lr-GSJ" firstAttribute="top" secondItem="Ks4-Is-W5x" secondAttribute="bottom" constant="8" id="wDt-3M-Mrs"/>
+                            <constraint firstAttribute="trailing" secondItem="gfh-Sb-fE3" secondAttribute="trailing" id="zCQ-9N-T70"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="9NU-fQ-Fgd" secondAttribute="bottom" constant="12" id="LLB-Ts-QCL"/>
+                    <constraint firstItem="9NU-fQ-Fgd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="a4C-ee-da7"/>
+                    <constraint firstItem="9NU-fQ-Fgd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="ago-dg-KqG"/>
+                    <constraint firstAttribute="trailing" secondItem="9NU-fQ-Fgd" secondAttribute="trailing" constant="12" id="up5-4l-hmp"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="gameNameLabel" destination="Ks4-Is-W5x" id="AI1-Cx-sJ0"/>
+                <outlet property="levelGameLabel" destination="x8R-lr-GSJ" id="xNB-4o-FPQ"/>
+                <outlet property="lossProgressView" destination="aGU-ZI-6xe" id="MIq-Jq-mVP"/>
+                <outlet property="procentProgressView" destination="EDs-je-14g" id="ud5-GJ-ynG"/>
+                <outlet property="winProgressView" destination="c53-Ac-LxH" id="i0a-OL-thI"/>
+            </connections>
+            <point key="canvasLocation" x="157.69230769230768" y="81.042654028436019"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

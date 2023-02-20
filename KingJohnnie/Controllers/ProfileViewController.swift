@@ -7,18 +7,22 @@ class ProfileViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     
     var gameStatisticsData: [ProfileStat] = []
-    
-    
+    let winsCount = UserDefaults.standard.integer(forKey: "winCount")
+    let losseCount = UserDefaults.standard.integer(forKey: "losseCount")
+  
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        let defaults = UserDefaults.standard
-        var countOfGames = defaults.integer(forKey: "lossCount")+defaults.integer(forKey: "winCount")
-        gameStatisticsData.append(ProfileStat(winCount: 0, losseCount: 0, procentOfWin: 0, cauntOgGames: countOfGames))
-        self.tableView.reloadData()
-        print(countOfGames)
+      
+        let totalGames = self.winsCount + self.losseCount
+        let winPercentage = totalGames > 0 ? self.winsCount / totalGames * 100 : 0
+        gameStatisticsData.append(ProfileStat(winCount: self.winsCount, losseCount: self.losseCount, procentOfWin: winPercentage, cauntOgGames: totalGames))
+
         
+        self.tableView.reloadData()
         setupView()
         tableView.backgroundColor = .clear
+        print("\(winPercentage)%")
 
     }
     

@@ -37,6 +37,8 @@
 		BD7317BC299791A70036D2DC /* SettingsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7317BB299791A70036D2DC /* SettingsExtension.swift */; };
 		BDB20DE6299832E70071981F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB20DE5299832E70071981F /* ProfileViewController.swift */; };
 		BDD06E0929A2CB2B008A2C4E /* UserProgressData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD06E0829A2CB2B008A2C4E /* UserProgressData.swift */; };
+		BDD06E1329A352D7008A2C4E /* ProfileProgressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD06E1129A352D7008A2C4E /* ProfileProgressTableViewCell.swift */; };
+		BDD06E1429A352D7008A2C4E /* ProfileProgressTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDD06E1229A352D7008A2C4E /* ProfileProgressTableViewCell.xib */; };
 		BDED154E2992F61200E2F03A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDED154D2992F61200E2F03A /* AppDelegate.swift */; };
 		BDED15502992F61200E2F03A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDED154F2992F61200E2F03A /* SceneDelegate.swift */; };
 		BDED15522992F61200E2F03A /* SelectGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDED15512992F61200E2F03A /* SelectGameViewController.swift */; };
@@ -75,6 +77,8 @@
 		BD7317BB299791A70036D2DC /* SettingsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsExtension.swift; sourceTree = "<group>"; };
 		BDB20DE5299832E70071981F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		BDD06E0829A2CB2B008A2C4E /* UserProgressData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProgressData.swift; sourceTree = "<group>"; };
+		BDD06E1129A352D7008A2C4E /* ProfileProgressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileProgressTableViewCell.swift; sourceTree = "<group>"; };
+		BDD06E1229A352D7008A2C4E /* ProfileProgressTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileProgressTableViewCell.xib; sourceTree = "<group>"; };
 		BDED154A2992F61200E2F03A /* KingJohnnie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KingJohnnie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDED154D2992F61200E2F03A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BDED154F2992F61200E2F03A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -129,6 +133,7 @@
 		BD19AF2629938AAE00F4A9B7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BDD06E0A29A3523E008A2C4E /* ProfileCell */,
 				BD19AF302993CEA500F4A9B7 /* CollectionCells */,
 				BDED15532992F61200E2F03A /* Main.storyboard */,
 				BDED15582992F61400E2F03A /* LaunchScreen.storyboard */,
@@ -200,6 +205,15 @@
 				BD7317B829978DA90036D2DC /* SettingsTableViewCell.xib */,
 			);
 			path = SettingsScreen;
+			sourceTree = "<group>";
+		};
+		BDD06E0A29A3523E008A2C4E /* ProfileCell */ = {
+			isa = PBXGroup;
+			children = (
+				BDD06E1129A352D7008A2C4E /* ProfileProgressTableViewCell.swift */,
+				BDD06E1229A352D7008A2C4E /* ProfileProgressTableViewCell.xib */,
+			);
+			path = ProfileCell;
 			sourceTree = "<group>";
 		};
 		BDED15412992F61200E2F03A = {
@@ -314,6 +328,7 @@
 			files = (
 				BDFE322C299E5EE800C76709 /* tapSound.mp3 in Resources */,
 				BD19AF2F2993C6C400F4A9B7 /* 95076-loading-dots.json in Resources */,
+				BDD06E1429A352D7008A2C4E /* ProfileProgressTableViewCell.xib in Resources */,
 				BD19AF4A299513CB00F4A9B7 /* Phosphate.ttf in Resources */,
 				BD4E3608299AA74900422D10 /* OverLayerView.xib in Resources */,
 				BD19AF2D2993C69200F4A9B7 /* 90705-simple-loading.json in Resources */,
@@ -348,6 +363,7 @@
 				BD58AA6F299B8034004C1F48 /* CircularProgressView.swift in Sources */,
 				BD19AF4629944E2400F4A9B7 /* ActiveGameViewController.swift in Sources */,
 				BD4E3600299A53CE00422D10 /* PopUp.swift in Sources */,
+				BDD06E1329A352D7008A2C4E /* ProfileProgressTableViewCell.swift in Sources */,
 				BD19AF392993FC0600F4A9B7 /* Extensions.swift in Sources */,
 				BD19AF2329930FC500F4A9B7 /* MainGameViewController.swift in Sources */,
 				BD7317B929978DA90036D2DC /* SettingsTableViewCell.swift in Sources */,
