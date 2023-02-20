@@ -9,6 +9,8 @@ class MainGameViewController: UIViewController {
     var currentSelected: Int = 6//UserProgressData.gameLevel
     var array: [Int] = []
     
+    @IBOutlet var longOverview: UILabel!
+    var overViewText = ""
     let currentLevel = 6//UserProgressData.gameLevel
     
     override func viewDidLoad() {
@@ -17,7 +19,7 @@ class MainGameViewController: UIViewController {
         for i in 0...99{
             self.array.append(i)
         }
-        
+        longOverview.text = overViewText
         
     }
     

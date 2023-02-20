@@ -10,33 +10,36 @@ class SelectGameViewController: UIViewController {
     var collectionArray: [SelectGameCellModel] = [
         SelectGameCellModel(
             gameName: "KING OF LIGHT",
-            owerview: "This is not a very difficult game that king johnny offers to everyone. A large number of people tried to pass this test, but only a few succeeded. Are you ready to see what this challenge is?",
-            levelStars: 3
+            shortOverview : "This is not a very difficult game that king johnny offers to everyone.",
+            levelStars: 3,
+            longOverView: "A large number of people tried to pass this test, but only a few succeeded. Are you ready to see what this challenge is?"
         ),
         SelectGameCellModel(
             gameName: "MIND MAZE",
-            owerview: "Labyrinths are always more than just a thing. Especially this one Only those who really have deep consciousness passed this labyrinth. Well, let's see what you really are?",
-            levelStars: 2
+            shortOverview: "Labyrinths are always more than just a thing.",
+            levelStars: 2,
+            longOverView: "Especially this one Only those who really have deep consciousness passed this labyrinth. Well, let's see what you really are?"
         ),
         SelectGameCellModel(
             gameName: "LIGHTING STRIKE",
-            owerview: "A lightning strike is an uncontrollable and mystical phenomenon. It used to be. But what is it now? This game will require quick reaction and lightning speed. Let's see if you can beat nature itself?",
-            levelStars: 5
+            shortOverview: "A lightning strike is an uncontrollable and mystical phenomenon. It used to be. But what is it now?",
+            levelStars: 5,
+            longOverView: "This game will require quick reaction and lightning speed. Let's see if you can beat nature itself?"
         ),
         SelectGameCellModel(
             gameName: "WAY OF TRUTH",
-            owerview: "The path of truth is the path of a strong man. Well, here you will have to be honest, first of all - to yourself",
-            levelStars: 4
+            shortOverview: "The path of truth is the path of a strong man.",
+            levelStars: 4,
+            longOverView: "Well, here you will have to be honest, first of all - to yourself"
         ),
         SelectGameCellModel(
             gameName: "RIDDLE OF KING",
-            owerview: "How many secrets does the king have? And so, the moment has come when you got to play with the king himself, if you are lucky - you will become a legend",
-            levelStars: 5
+            shortOverview: "How many secrets does the king have?",
+            levelStars: 5,
+            longOverView: "And so, the moment has come when you got to play with the king himself, if you are lucky - you will become a legend"
         )
     ]
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,6 +77,8 @@ class SelectGameViewController: UIViewController {
         let main = UIStoryboard(name: "Main", bundle: nil)
         if let vc = main.instantiateViewController(withIdentifier: "MainGameViewController") as? MainGameViewController  {
             navigationController?.pushViewController(vc, animated: true)
+            vc.overViewText = self.collectionArray[self.pageControl.currentPage].longOverView
+            
         }
     }
     func openSettingController(){
@@ -87,6 +92,8 @@ class SelectGameViewController: UIViewController {
             openMaiGamenController()
             sender.titleLabel?.text = "DETAILS"
             sender.titleLabel?.font = UIFont(name: Constants.FontsStrings.InterBold, size: 17)
+            
+            // ПЕРЕРОБИТИ!!!!
             SettingsViewController().playSound()
             SettingsViewController().makeVibration()
         } else{

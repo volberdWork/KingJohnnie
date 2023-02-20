@@ -17,7 +17,7 @@ class SelectGameCollectionViewCell: UICollectionViewCell {
         
         gameNameLabel.text = model.gameName
         gameNameLabel.font = UIFont(name: Constants.FontsStrings.PhosphatePro, size: 40)
-        owerViewLabel.text = model.owerview
+         owerViewLabel.text = model.shortOverview
         levelLabel.text = "Difficulty:"
          levelLabel.font = UIFont(name: Constants.FontsStrings.InterBold , size: 15)
          owerViewLabel.font = UIFont(name: Constants.FontsStrings.InterMedium, size: 15)
@@ -41,6 +41,7 @@ class SelectGameCollectionViewCell: UICollectionViewCell {
 
 struct SelectGameCellModel{
     var gameName: String
-    var owerview: String
+    var shortOverview: String
     var levelStars: Int
+    var longOverView: String
 }

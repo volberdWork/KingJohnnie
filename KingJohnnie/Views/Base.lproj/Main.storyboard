@@ -523,6 +523,7 @@ Remember the sequence of lighting items, then tap the items in the same sequence
                         <outlet property="backgraundImage" destination="bk0-ew-Oae" id="GR2-OD-URh"/>
                         <outlet property="collectionView" destination="nYb-PW-76h" id="YHc-39-xfN"/>
                         <outlet property="gameNameLabel" destination="TMq-XD-IPx" id="880-c1-srF"/>
+                        <outlet property="longOverview" destination="oCY-rN-LZo" id="rZ3-39-WMH"/>
                         <outlet property="playButton" destination="hhV-hv-cuv" id="kdt-C9-RJM"/>
                     </connections>
                 </viewController>
