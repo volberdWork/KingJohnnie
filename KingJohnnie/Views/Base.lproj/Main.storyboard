@@ -770,9 +770,21 @@ Remember the sequence of lighting items, then tap the items in the same sequence
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dqk-jp-8Xe" customClass="ALProgressRing" customModule="ALProgressView">
                                                 <rect key="frame" x="144" y="80" width="70" height="70"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zfh-0j-G4U">
+                                                        <rect key="frame" x="16" y="27.666666666666686" width="38" height="15"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="70" id="2CX-un-NdC"/>
+                                                    <constraint firstItem="zfh-0j-G4U" firstAttribute="centerX" secondItem="Dqk-jp-8Xe" secondAttribute="centerX" id="8nM-cn-5Rd"/>
+                                                    <constraint firstItem="zfh-0j-G4U" firstAttribute="centerY" secondItem="Dqk-jp-8Xe" secondAttribute="centerY" id="F2o-kJ-OiT"/>
                                                     <constraint firstAttribute="height" constant="70" id="PMt-93-eGC"/>
+                                                    <constraint firstAttribute="trailing" secondItem="zfh-0j-G4U" secondAttribute="trailing" constant="16" id="f9L-u2-2j5"/>
+                                                    <constraint firstItem="zfh-0j-G4U" firstAttribute="leading" secondItem="Dqk-jp-8Xe" secondAttribute="leading" constant="16" id="sbE-ee-Mie"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cZt-ii-T1V">
@@ -869,6 +881,7 @@ Remember the sequence of lighting items, then tap the items in the same sequence
                     </view>
                     <connections>
                         <outlet property="backgroundImage" destination="DMa-tb-DPb" id="49U-Ea-iAx"/>
+                        <outlet property="blurePointsLabel" destination="zfh-0j-G4U" id="G0r-hO-qB8"/>
                         <outlet property="blureProgressRing" destination="Dqk-jp-8Xe" id="9rb-sC-8f1"/>
                         <outlet property="blureTimeLabel" destination="cZt-ii-T1V" id="VFe-KD-94V"/>
                         <outlet property="blureView" destination="4dV-KW-wLl" id="3DE-LR-UET"/>

@@ -3,6 +3,7 @@ import ALProgressView
 
 class ActiveGameViewController: UIViewController {
     
+    @IBOutlet var blurePointsLabel: UILabel!
     @IBOutlet var blureView: UIView!
     @IBOutlet var leftPointsLabel: UILabel!
     @IBOutlet var backgroundImage: UIImageView!
@@ -143,6 +144,13 @@ class ActiveGameViewController: UIViewController {
         self.pauseLabel.text = "PAUSE"
         pauseLabel.textColor = .white
         pauseLabel.font = UIFont(name: Constants.FontsStrings.InterBold, size: 32)
+        blureTimeLabel.textColor = .white
+        blureTimeLabel.text = "Time left     \(timerLabel.text ?? "00:00")"
+        blureProgressRing.setProgress(Float(progressGoal) / Float(progressTarget), animated: true)
+        blurePointsLabel.text = pointsLabel.text
+        blureProgressRing.lineWidth = 5
+        blureProgressRing.startColor = Constants.Colors.orangeColor
+        blureProgressRing.endColor = Constants.Colors.orangeColor
     }
     
     @IBAction func pressedPauseButon(_ sender: UIButton) {
