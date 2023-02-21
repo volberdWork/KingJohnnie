@@ -3,12 +3,19 @@ import ALProgressView
 
 class ActiveGameViewController: UIViewController {
     
+    @IBOutlet var blureView: UIView!
     @IBOutlet var leftPointsLabel: UILabel!
     @IBOutlet var backgroundImage: UIImageView!
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var progressRing: ALProgressRing!
     @IBOutlet var timerLabel: UILabel!
     @IBOutlet weak var pointsLabel: UILabel!
+    
+    @IBOutlet var pauseLabel: UILabel!
+    @IBOutlet var blureProgressRing: ALProgressRing!
+    @IBOutlet var blureTimeLabel: UILabel!
+    
+    
     let globalItemsCount = ["99", "4", "6",
                             "1", "8", "7",
                             "21", "55", "33"]
@@ -27,6 +34,7 @@ class ActiveGameViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
+        blureView.isHidden = true
     }
     
     override func viewDidLoad() {
@@ -44,7 +52,7 @@ class ActiveGameViewController: UIViewController {
         
         timerLabel.layer.masksToBounds = false
         timerLabel.layer.shadowColor = UIColor.red.cgColor
-        timerLabel.layer.shadowOffset = CGSize(width: 0, height:2 0)
+        timerLabel.layer.shadowOffset = CGSize(width: 0, height: 0)
         timerLabel.layer.shadowOpacity = 1.0
         timerLabel.layer.shadowRadius = 3.0
        
@@ -127,17 +135,24 @@ class ActiveGameViewController: UIViewController {
     }
     
 
-    
     @objc func dismissPopUp() {
         timerStart()
+    }
+    
+    func congigureBlureView(){
+        self.pauseLabel.text = "PAUSE"
+        pauseLabel.textColor = .white
+        pauseLabel.font = UIFont(name: Constants.FontsStrings.InterBold, size: 32)
     }
     
     @IBAction func pressedPauseButon(_ sender: UIButton) {
         
         timer.invalidate()
-       
+        blureView.isHidden = false
+       congigureBlureView()
         SettingsViewController().playSound()
         SettingsViewController().makeVibration()
+        
     }
     
     //MARK: Main Logic
@@ -236,6 +251,19 @@ class ActiveGameViewController: UIViewController {
             })
         })
         
+    }
+    
+    @IBAction func blureCancelButtonPressed(_ sender: UIButton) {
+        blureView.isHidden = true
+        timerStart()
+    }
+    @IBAction func blurePlayButtonPressed(_ sender: UIButton) {
+        blureView.isHidden = true
+        timerStart()
+    }
+    
+    @IBAction func blureHomeButtonPressed(_ sender: UIButton) {
+        navigationController?.popToRootViewController(animated: true)
     }
     
 }
