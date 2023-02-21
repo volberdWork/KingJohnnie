@@ -5,7 +5,7 @@ import UIKit
 
 extension SettingsViewController : UITableViewDataSource{
     
-  
+    
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -40,7 +40,7 @@ extension SettingsViewController : UITableViewDataSource{
         
         
         
-       
+        
         return cell
         
     }
@@ -75,23 +75,19 @@ extension SettingsViewController: UITableViewDelegate{
             playSound()
             makeVibration()
             let alertController = UIAlertController(title: "Attention", message: "Once deleted, your progress will be completely deleted. Are you sure?", preferredStyle: .alert)
-
+            
             let yesAction = UIAlertAction(title: "Yes", style: .destructive) { (action) in
-                let defaults = UserDefaults.standard
-                let lossCount = defaults.integer(forKey: "lossCount")
-                defaults.set(0, forKey: "lossCount")
-                
-                let winCount = defaults.integer(forKey: "winCount")
-                defaults.set(0, forKey: "winCount")
+                self.deleteLossCount()
+                self.deletetWinCount()
             }
-
+            
             let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
                 // відміна
             }
-
+            
             alertController.addAction(yesAction)
             alertController.addAction(cancelAction)
-
+            
             present(alertController, animated: true, completion: nil)
             
         default:

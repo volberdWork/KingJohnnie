@@ -67,6 +67,18 @@ class SettingsViewController: UIViewController {
         }
     }
 
+    func deleteLossCount() {
+        let defaults = UserDefaults.standard
+        defaults.set(0, forKey: "lossCount")
+    }
+    
+   
+    
+    func deletetWinCount() {
+        let defaults = UserDefaults.standard
+        defaults.set(0, forKey: "winCount")
+    }
+    
     func openTermsController(){
         let main = UIStoryboard(name: "Main", bundle: nil)
         if let vc = main.instantiateViewController(withIdentifier: "TermsViewController") as? TermsViewController  {
