@@ -30,7 +30,7 @@ class ProfileProgressTableViewCell: UITableViewCell {
         let formattedNumber = String(format: "%.1f", procentNumber)
         
         winProcentLabel.text = "Win%"+formattedNumber
-        levelGameLabel.text = "Level 12"
+        levelGameLabel.text = "Level \(UserProgressData.gameLevel)"
         levelGameLabel.textColor = .white
         levelGameLabel.font = UIFont(name: Constants.FontsStrings.InterMedium, size: 15)
         
