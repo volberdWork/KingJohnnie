@@ -675,10 +675,6 @@ Remember the sequence of lighting items, then tap the items in the same sequence
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KsA-we-HC2">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.79956135528766559" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="O4B-vn-GRe">
                                 <rect key="frame" x="0.0" y="390" width="390" height="390"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -748,7 +744,6 @@ Remember the sequence of lighting items, then tap the items in the same sequence
                             <constraint firstItem="fKt-uH-zQ6" firstAttribute="top" secondItem="akK-Mw-6mn" secondAttribute="top" constant="16" id="0AB-Kg-0ai"/>
                             <constraint firstItem="O4B-vn-GRe" firstAttribute="centerX" secondItem="pj9-eN-p5W" secondAttribute="centerX" id="3Re-Cr-6tV"/>
                             <constraint firstItem="hUq-LW-QN2" firstAttribute="leading" secondItem="akK-Mw-6mn" secondAttribute="leading" constant="16" id="766-Vc-BEm"/>
-                            <constraint firstItem="KsA-we-HC2" firstAttribute="leading" secondItem="akK-Mw-6mn" secondAttribute="leading" id="7nL-k8-AH0"/>
                             <constraint firstAttribute="bottom" secondItem="DMa-tb-DPb" secondAttribute="bottom" id="7ok-ro-DBd"/>
                             <constraint firstItem="DMa-tb-DPb" firstAttribute="top" secondItem="pj9-eN-p5W" secondAttribute="top" id="8ra-De-ZMW"/>
                             <constraint firstItem="fKt-uH-zQ6" firstAttribute="leading" secondItem="akK-Mw-6mn" secondAttribute="leading" constant="16" id="Aac-x3-gfW"/>
@@ -757,14 +752,11 @@ Remember the sequence of lighting items, then tap the items in the same sequence
                             <constraint firstItem="O4B-vn-GRe" firstAttribute="leading" secondItem="akK-Mw-6mn" secondAttribute="leading" id="ONh-Tg-lL3"/>
                             <constraint firstItem="O4B-vn-GRe" firstAttribute="trailing" secondItem="akK-Mw-6mn" secondAttribute="trailing" id="PVn-mq-XhZ"/>
                             <constraint firstItem="UFH-AZ-Aob" firstAttribute="leading" secondItem="akK-Mw-6mn" secondAttribute="leading" constant="16" id="Sab-gW-QWZ"/>
-                            <constraint firstItem="KsA-we-HC2" firstAttribute="trailing" secondItem="akK-Mw-6mn" secondAttribute="trailing" id="Tig-Ii-UZA"/>
                             <constraint firstItem="DMa-tb-DPb" firstAttribute="trailing" secondItem="akK-Mw-6mn" secondAttribute="trailing" id="cpl-eY-JUh"/>
                             <constraint firstItem="lfs-lA-cug" firstAttribute="top" secondItem="akK-Mw-6mn" secondAttribute="top" constant="16" id="dJp-W9-0zi"/>
                             <constraint firstItem="UFH-AZ-Aob" firstAttribute="top" secondItem="hUq-LW-QN2" secondAttribute="bottom" constant="8" id="eTZ-IF-1JS"/>
                             <constraint firstItem="hUq-LW-QN2" firstAttribute="top" secondItem="fKt-uH-zQ6" secondAttribute="bottom" constant="16" id="i8f-vA-x6c"/>
                             <constraint firstItem="99N-1p-Gho" firstAttribute="leading" secondItem="hUq-LW-QN2" secondAttribute="trailing" constant="16" id="jdd-us-DMf"/>
-                            <constraint firstItem="KsA-we-HC2" firstAttribute="top" secondItem="pj9-eN-p5W" secondAttribute="top" id="jvr-Co-GYU"/>
-                            <constraint firstAttribute="bottom" secondItem="KsA-we-HC2" secondAttribute="bottom" id="mzm-TW-cxh"/>
                             <constraint firstItem="99N-1p-Gho" firstAttribute="top" secondItem="lfs-lA-cug" secondAttribute="bottom" constant="16" id="q8I-MB-nBN"/>
                             <constraint firstItem="lfs-lA-cug" firstAttribute="centerX" secondItem="pj9-eN-p5W" secondAttribute="centerX" id="zKX-LF-77M"/>
                         </constraints>

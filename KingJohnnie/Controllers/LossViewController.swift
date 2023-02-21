@@ -34,11 +34,11 @@ class LossViewController: UIViewController {
 
     @IBAction func homeButtonPressed(_ sender: UIButton) {
         print("Home")
-        let main = UIStoryboard(name: "Main", bundle: nil)
-                        if let vc = main.instantiateViewController(withIdentifier: "SelectGameViewController") as? SelectGameViewController  {
-                            self.navigationController?.pushViewController(vc, animated: true)
-                          
-                        }
+        if let navigationController = self.navigationController {
+            navigationController.popToRootViewController(animated: true)
+            navigationController.navigationBar.isHidden = false
+        }
+
     }
     
     @IBAction func replayAgainButtonPressed(_ sender: UIButton) {

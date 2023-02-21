@@ -37,10 +37,7 @@ class WinViewController: UIViewController {
         print("play")
     }
     @IBAction func homeButtonPressed(_ sender: UIButton) {
-        let main = UIStoryboard(name: "Main", bundle: nil)
-        if let vc = main.instantiateViewController(withIdentifier: "SelectGameViewController") as? SelectGameViewController  {
-            self.navigationController?.pushViewController(vc, animated: true)
-        }
+        navigationController?.popToRootViewController(animated: true)
     }
 }
 

@@ -43,6 +43,9 @@ class SelectGameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+       
+        
         setupView()
         detailsButton.titleLabel?.text = "DETAILS"
         detailsButton.titleLabel?.font = UIFont(name: Constants.FontsStrings.InterBold, size: 17)

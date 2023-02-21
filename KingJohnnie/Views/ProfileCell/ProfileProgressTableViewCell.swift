@@ -14,16 +14,22 @@ class ProfileProgressTableViewCell: UITableViewCell {
     @IBOutlet var winLabel: UILabel!
     var winCount = UserDefaults.standard.integer(forKey: "winCount")
     var lossCount = UserDefaults.standard.integer(forKey: "lossCount")
+    var allGamesCount:Float = 0.0
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.allGamesCount = Float(winCount)+Float(lossCount)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         winLabel.text = "Win   \(winCount)"
         lossLabel.text = "Loss  \(lossCount)"
-        winProcentLabel.text = "Win% \(winCount/(winCount+lossCount)*100)"
+        
+        let procentNumber = (Double(winCount)/Double(allGamesCount))*100.0
+        let formattedNumber = String(format: "%.1f", procentNumber)
+        
+        winProcentLabel.text = "Win%"+formattedNumber
         levelGameLabel.text = "Level 12"
         levelGameLabel.textColor = .white
         levelGameLabel.font = UIFont(name: Constants.FontsStrings.InterMedium, size: 15)
@@ -31,17 +37,19 @@ class ProfileProgressTableViewCell: UITableViewCell {
         winProgressView.lineWidth = 10
         winProgressView.startColor = Constants.Colors.orangeColor
         winProgressView.endColor = Constants.Colors.orangeColor
-        winProgressView.setProgress(Float((winCount/(winCount+lossCount))), animated: true)
+        winProgressView.setProgress(Float(winCount)/allGamesCount, animated: true)
+       
+        
         
         lossProgressView.lineWidth = 10
         lossProgressView.startColor = Constants.Colors.orangeColor
         lossProgressView.endColor = Constants.Colors.orangeColor
-        lossProgressView.setProgress(Float((lossCount/(winCount+lossCount))), animated: true)
+        lossProgressView.setProgress(Float(lossCount)/allGamesCount, animated: true)
         
         procentProgressView.lineWidth = 10
         procentProgressView.startColor = Constants.Colors.orangeColor
         procentProgressView.endColor = Constants.Colors.orangeColor
-        procentProgressView.setProgress(Float((winCount/(winCount+lossCount))), animated: true)
+        procentProgressView.setProgress(Float(winCount)/allGamesCount, animated: true)
         
         gameNameLabel.text = "KING OF LIGHT"
         gameNameLabel.textColor = .white
