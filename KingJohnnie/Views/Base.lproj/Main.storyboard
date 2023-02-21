@@ -764,6 +764,7 @@ Remember the sequence of lighting items, then tap the items in the same sequence
                     <connections>
                         <outlet property="backgroundImage" destination="DMa-tb-DPb" id="49U-Ea-iAx"/>
                         <outlet property="collectionView" destination="O4B-vn-GRe" id="Uw7-1M-t3S"/>
+                        <outlet property="leftPointsLabel" destination="99N-1p-Gho" id="3ai-S1-8o4"/>
                         <outlet property="pointsLabel" destination="UFH-AZ-Aob" id="4KN-Bk-7T7"/>
                         <outlet property="progressRing" destination="hUq-LW-QN2" id="Zrd-qI-oAX"/>
                         <outlet property="timerLabel" destination="gKH-fx-FhR" id="SoB-hl-Wuh"/>

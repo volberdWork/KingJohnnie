@@ -3,6 +3,7 @@ import ALProgressView
 
 class ActiveGameViewController: UIViewController {
     
+    @IBOutlet var leftPointsLabel: UILabel!
     @IBOutlet var backgroundImage: UIImageView!
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var progressRing: ALProgressRing!
@@ -30,10 +31,11 @@ class ActiveGameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         print("Кулькість програшів: \(getLossCount())")
         print("Кулькість виграшів: \(getWinCount())")
+        
         setupView()
+        leftPointsLabel.text = "Good move! Left \(progressTarget-progressGoal) points"
         progressRing.setProgress(0.0, animated: true)
         pointsLabel.text = "\(progressGoal) / \(progressTarget)"
         timerLabel.text = ""
@@ -42,11 +44,10 @@ class ActiveGameViewController: UIViewController {
         
         timerLabel.layer.masksToBounds = false
         timerLabel.layer.shadowColor = UIColor.red.cgColor
-        timerLabel.layer.shadowOffset = CGSize(width: 0, height: 0)
+        timerLabel.layer.shadowOffset = CGSize(width: 0, height:2 0)
         timerLabel.layer.shadowOpacity = 1.0
         timerLabel.layer.shadowRadius = 3.0
-
-
+       
         let strokeTextAttributes = [
             NSAttributedString.Key.strokeColor : UIColor(red: 241/255, green: 195/255, blue: 153/255, alpha: 1),
           NSAttributedString.Key.strokeWidth : -3.0,
@@ -179,6 +180,7 @@ class ActiveGameViewController: UIViewController {
                 //
                 pointsLabel.text = "\(progressGoal) / \(progressTarget)"
                 progressRing.setProgress(Float(progressGoal) / Float(progressTarget), animated: true)
+                leftPointsLabel.text = "Good move! Left \(progressTarget-progressGoal) points"
                 
                 if progressGoal == progressTarget {
                     timer.invalidate()
