@@ -37,7 +37,7 @@ class ActiveGameViewController: UIViewController {
         progressRing.setProgress(0.0, animated: true)
         pointsLabel.text = "\(progressGoal) / \(progressTarget)"
         timerLabel.text = ""
-        timerLabel.textColor = UIColor.white
+        timerLabel.textColor = UIColor(red: 36/255, green: 30/255, blue: 23/255, alpha: 1)
         timerLabel.font = UIFont(name: Constants.FontsStrings.InterBold, size: 20)
         
         timerLabel.layer.masksToBounds = false
@@ -46,12 +46,15 @@ class ActiveGameViewController: UIViewController {
         timerLabel.layer.shadowOpacity = 1.0
         timerLabel.layer.shadowRadius = 3.0
 
-        let strokeTextAttributes: [NSAttributedString.Key: Any] = [
-            .strokeColor : UIColor.yellow,
-            .foregroundColor : UIColor.black,
-            .strokeWidth : -2
+
+        let strokeTextAttributes = [
+            NSAttributedString.Key.strokeColor : UIColor(red: 241/255, green: 195/255, blue: 153/255, alpha: 1),
+          NSAttributedString.Key.strokeWidth : -3.0,
+            NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 26)
         ]
-        timerLabel.attributedText = NSAttributedString(string: "", attributes: strokeTextAttributes)
+          as [NSAttributedString.Key : Any]
+        
+        timerLabel.attributedText = NSAttributedString(string: "00:00", attributes: strokeTextAttributes)
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) { [self] in
             timerStart()
             progressRing.lineWidth = 10
