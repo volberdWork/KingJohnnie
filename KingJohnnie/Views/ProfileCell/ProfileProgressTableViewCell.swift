@@ -23,7 +23,7 @@ class ProfileProgressTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        winLabel.text = "Win   \(winCount)"
+        winLabel.text = "Win     \(winCount)"
         lossLabel.text = "Loss  \(lossCount)"
         
         let procentNumber = (Double(winCount)/Double(allGamesCount))*100.0
