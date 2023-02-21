@@ -36,7 +36,7 @@ class LossViewController: UIViewController {
         print("Home")
         if let navigationController = self.navigationController {
             navigationController.popToRootViewController(animated: true)
-            navigationController.navigationBar.isHidden = false
+            
         }
 
     }
