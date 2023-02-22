@@ -39,7 +39,7 @@ class SelectGameViewController: UIViewController {
             longOverView: "And so, the moment has come when you got to play with the king himself, if you are lucky - you will become a legend"
         )
     ]
-   
+    
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(false, animated: true)
@@ -48,7 +48,7 @@ class SelectGameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       
+        
         
         setupView()
         detailsButton.titleLabel?.text = "DETAILS"
@@ -101,7 +101,7 @@ class SelectGameViewController: UIViewController {
             sender.titleLabel?.text = "DETAILS"
             sender.titleLabel?.font = UIFont(name: Constants.FontsStrings.InterBold, size: 17)
             
-         
+            
             SonundAndVibration().makeVibration()
             SonundAndVibration().playSound()
         } else{
@@ -133,11 +133,11 @@ extension SelectGameViewController: UICollectionViewDelegateFlowLayout, UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-         let width = collectionView.bounds.width - 40
-         let height: CGFloat = 250
-         return CGSize(width: width, height: height)
-     }
-
+        let width = collectionView.bounds.width - 40
+        let height: CGFloat = 250
+        return CGSize(width: width, height: height)
+    }
+    
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let currentPage = Int(scrollView.contentOffset.x / scrollView.frame.size.width)
@@ -155,13 +155,13 @@ extension SelectGameViewController: UICollectionViewDelegateFlowLayout, UICollec
             collectionView.scrollToItem(at: cellToScrollTo, at: .centeredHorizontally, animated: true)
         }
     }
-
- 
-
+    
+    
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 50
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 40
     }

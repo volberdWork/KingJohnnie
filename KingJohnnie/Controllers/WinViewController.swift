@@ -29,8 +29,8 @@ class WinViewController: UIViewController {
         self.timeLabel.text = model.time ?? "0:00"
         self.correctAnswersLabel.text = "\(model.correctAnswer ?? 0)"
         self.incorrectAnswerLabel.text = "\(model.incorrectAnswers ?? 0)"
-       
-
+        
+        
     }
     
     @IBAction func playButtonPressed(_ sender: UIButton) {

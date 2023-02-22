@@ -26,27 +26,27 @@ class LossViewController: UIViewController {
         self.timeLabel.text = model.time ?? "0:00"
         self.correctAnswersLabel.text = "\(model.correctAnswer ?? 0)"
         self.incorrectAnswersLabel.text = "\(model.incorrectAnswers ?? 0)"
-       
-
+        
+        
     }
     
     
-
+    
     @IBAction func homeButtonPressed(_ sender: UIButton) {
         print("Home")
         if let navigationController = self.navigationController {
             navigationController.popToRootViewController(animated: true)
             
         }
-
+        
     }
     
     @IBAction func replayAgainButtonPressed(_ sender: UIButton) {
         print("Replay")
         let main = UIStoryboard(name: "Main", bundle: nil)
-                        if let vc = main.instantiateViewController(withIdentifier: "ActiveGameViewController") as? ActiveGameViewController  {
-                            self.navigationController?.pushViewController(vc, animated: true)
-                          
-                        }
+        if let vc = main.instantiateViewController(withIdentifier: "ActiveGameViewController") as? ActiveGameViewController  {
+            self.navigationController?.pushViewController(vc, animated: true)
+            
+        }
     }
 }

@@ -9,7 +9,7 @@ class SettingsViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     @IBOutlet var backgraundImage: UIImageView!
     
-
+    
     
     
     
@@ -33,7 +33,7 @@ class SettingsViewController: UIViewController {
         print(UserDefaults.standard.bool(forKey: "vibrations"))
     }
     
-     func rateAppAction() {
+    func rateAppAction() {
         
         //check status of user OS
         if #available(iOS 14.0, *) {
@@ -49,16 +49,16 @@ class SettingsViewController: UIViewController {
         }
     }
     
-  
     
-  
-
+    
+    
+    
     func deleteLossCount() {
         let defaults = UserDefaults.standard
         defaults.set(0, forKey: "lossCount")
     }
     
-   
+    
     
     func deletetWinCount() {
         let defaults = UserDefaults.standard
@@ -83,15 +83,15 @@ class SettingsViewController: UIViewController {
         if sender.isOn {
             
             UserDefaults.standard.set(true, forKey: "vibrations")
-          print("On")
+            print("On")
             UIDevice().vibrate()
         } else {
-           print("Off")
+            print("Off")
             UserDefaults.standard.set(false, forKey: "vibrations")
         }
     }
     
-  
+    
     
     
     
@@ -116,19 +116,19 @@ class SettingsViewController: UIViewController {
         if sender.isOn {
             
             UserDefaults.standard.set(true, forKey: "sound")
-        
+            
             SonundAndVibration().playSound()
-          print("Sound On")
-           
+            print("Sound On")
+            
         } else {
-           print("Sound Off")
+            print("Sound Off")
             UserDefaults.standard.set(false, forKey: "sound")
         }
     }
     
-  
     
-  func performNotificationSettings() {
+    
+    func performNotificationSettings() {
         UIImpactFeedbackGenerator(style: .light).impactOccurred()
         
         if let appSettings = URL(string: UIApplication.openSettingsURLString), UIApplication.shared.canOpenURL(appSettings) {

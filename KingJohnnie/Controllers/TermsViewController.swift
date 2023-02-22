@@ -1,7 +1,7 @@
 import UIKit
 
 class TermsViewController: UIViewController {
-
+    
     @IBOutlet var backgroundImage: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -12,5 +12,5 @@ class TermsViewController: UIViewController {
         self.backgroundImage.image = UIImage(named: image)
         self.backgroundImage.contentMode = .scaleAspectFill
     }
-
+    
 }

@@ -26,9 +26,9 @@ class ActiveGameViewController: UIViewController {
         "Fantastic! You're on fire",
         "Well done! You're making it look easy",
         "Bravo! You're a real expert",
-    "Amazing! You're a trivia whiz",
-    "Spot on! You're nailing these answers",
-    "Perfect! You're knocking these questions out of the park"]
+        "Amazing! You're a trivia whiz",
+        "Spot on! You're nailing these answers",
+        "Perfect! You're knocking these questions out of the park"]
     
     let incorrectAnswersArrat = [
         "Don't worry, you'll get the next one",
@@ -247,7 +247,7 @@ class ActiveGameViewController: UIViewController {
                         vc.gameStatistic = [WinModel(time: self.currenTime, correctAnswer: progressGoal, incorrectAnswers: self.wrongAnswers)]
                     }
                 } else {
-                  
+                    
                     collectionView.isUserInteractionEnabled = false
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: { [self] in
                         animateCombination()

@@ -2,7 +2,7 @@ import UIKit
 import ALProgressView
 
 class ProfileProgressTableViewCell: UITableViewCell {
-
+    
     @IBOutlet var procentProgressView: ALProgressRing!
     @IBOutlet var lossProgressView: ALProgressRing!
     @IBOutlet var winProgressView: ALProgressRing!
@@ -12,14 +12,11 @@ class ProfileProgressTableViewCell: UITableViewCell {
     @IBOutlet var winProcentLabel: UILabel!
     @IBOutlet var lossLabel: UILabel!
     @IBOutlet var winLabel: UILabel!
-//    var winCount = UserDefaults.standard.integer(forKey: "winCount")
-//    var lossCount = UserDefaults.standard.integer(forKey: "lossCount")
-//    var allGamesCount:Float = 0.0
     
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
@@ -40,8 +37,6 @@ class ProfileProgressTableViewCell: UITableViewCell {
         winProgressView.startColor = Constants.Colors.orangeColor
         winProgressView.endColor = Constants.Colors.orangeColor
         winProgressView.setProgress(Float(model.winCounts)/Float((model.winCounts + model.lossCount)), animated: true)
-       
-        
         
         lossProgressView.lineWidth = 10
         lossProgressView.startColor = Constants.Colors.orangeColor
@@ -57,9 +52,4 @@ class ProfileProgressTableViewCell: UITableViewCell {
         gameNameLabel.textColor = .white
         gameNameLabel.font = UIFont(name: Constants.FontsStrings.InterBold, size: 20)
     }
-
-    
-  
-    
-    
 }

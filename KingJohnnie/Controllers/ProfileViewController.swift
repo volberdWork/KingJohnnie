@@ -5,7 +5,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet var backgroundImage: UIImageView!
     
     @IBOutlet var tableView: UITableView!
-   
+    
     var gamesStatstics: [ProfileGameStatistic] = [
         ProfileGameStatistic(nameOfGame: "KING OF LIGHT",
                              winCounts: KingOfLightStatistic.winCount,
@@ -32,15 +32,15 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib(nibName: "ProfileProgressTableViewCell", bundle: nil), forCellReuseIdentifier: "ProfileProgressTableViewCell")
-
-      
-     
+        
+        
+        
         
         self.tableView.reloadData()
         setupView()
         tableView.backgroundColor = .clear
-
-
+        
+        
     }
     
     private func setupView(){
@@ -51,7 +51,7 @@ class ProfileViewController: UIViewController {
         self.backgroundImage.image = UIImage(named: image)
         self.backgroundImage.contentMode = .scaleAspectFill
     }
-
+    
 }
 
 
@@ -65,7 +65,7 @@ extension ProfileViewController: UITableViewDataSource{
         cell.backgroundColor = .clear
         cell.selectionStyle = .none
         cell.configureView(model: gamesStatstics[indexPath.row])
-          return cell
+        return cell
     }
     
     
