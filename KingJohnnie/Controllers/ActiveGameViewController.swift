@@ -3,6 +3,8 @@ import ALProgressView
 
 class ActiveGameViewController: UIViewController {
     
+    @IBOutlet var systemBlur: UIVisualEffectView!
+    
     @IBOutlet var blurePointsLabel: UILabel!
     @IBOutlet var blureView: UIView!
     @IBOutlet var leftPointsLabel: UILabel!
@@ -158,6 +160,8 @@ class ActiveGameViewController: UIViewController {
         timer.invalidate()
         blureView.isHidden = false
        congigureBlureView()
+        systemBlur.effect = UIBlurEffect(style: .dark)
+        systemBlur.alpha = 0.8
         SettingsViewController().playSound()
         SettingsViewController().makeVibration()
         

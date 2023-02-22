@@ -6,12 +6,13 @@ class MainGameViewController: UIViewController {
     @IBOutlet var playButton: UIButton!
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var backgraundImage: UIImageView!
-    var currentSelected: Int = 6//UserProgressData.gameLevel
+    var currentSelected: Int = UserProgressData.gameLevel
     var array: [Int] = []
+    var gameLevelName = ""
     
     @IBOutlet var longOverview: UILabel!
     var overViewText = ""
-    let currentLevel = 6//UserProgressData.gameLevel
+    let currentLevel = UserProgressData.gameLevel
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +41,7 @@ class MainGameViewController: UIViewController {
         self.collectionView.backgroundColor = .clear
         playButton.backgroundColor = Constants.Colors.orangeColor
         playButton.layer.cornerRadius = 10
-        gameNameLabel.text = "Lion Light"
+        gameNameLabel.text = gameLevelName
         gameNameLabel.font = UIFont(name: Constants.FontsStrings.PhosphatePro, size: 50)
         
         

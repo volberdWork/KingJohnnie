@@ -85,6 +85,7 @@ class SelectGameViewController: UIViewController {
         if let vc = main.instantiateViewController(withIdentifier: "MainGameViewController") as? MainGameViewController  {
             navigationController?.pushViewController(vc, animated: true)
             vc.overViewText = self.collectionArray[self.pageControl.currentPage].longOverView
+            vc.gameLevelName = self.collectionArray[self.pageControl.currentPage].gameName
             
         }
     }

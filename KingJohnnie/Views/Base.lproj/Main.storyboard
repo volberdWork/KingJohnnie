@@ -740,6 +740,15 @@ Remember the sequence of lighting items, then tap the items in the same sequence
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4dV-KW-wLl">
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                                 <subviews>
+                                    <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lPi-5m-TUV">
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="lHh-sG-r8Z">
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        </view>
+                                        <blurEffect style="regular"/>
+                                    </visualEffectView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FAO-az-P4e">
                                         <rect key="frame" x="16" y="272" width="358" height="300"/>
                                         <subviews>
@@ -841,9 +850,14 @@ Remember the sequence of lighting items, then tap the items in the same sequence
                                             <constraint firstItem="ybO-g5-zNu" firstAttribute="top" secondItem="FAO-az-P4e" secondAttribute="top" constant="20" id="lK5-1s-P1C"/>
                                             <constraint firstAttribute="trailing" secondItem="AdT-ET-lYq" secondAttribute="trailing" id="pjR-9J-0Vw"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="FAO-az-P4e" firstAttribute="leading" secondItem="4dV-KW-wLl" secondAttribute="leading" constant="16" id="BlW-38-1J3"/>
                                     <constraint firstItem="FAO-az-P4e" firstAttribute="centerY" secondItem="4dV-KW-wLl" secondAttribute="centerY" id="UMb-yd-Tf6"/>
@@ -890,6 +904,7 @@ Remember the sequence of lighting items, then tap the items in the same sequence
                         <outlet property="pauseLabel" destination="ybO-g5-zNu" id="eII-gV-U7L"/>
                         <outlet property="pointsLabel" destination="UFH-AZ-Aob" id="4KN-Bk-7T7"/>
                         <outlet property="progressRing" destination="hUq-LW-QN2" id="Zrd-qI-oAX"/>
+                        <outlet property="systemBlur" destination="lPi-5m-TUV" id="CIh-zb-fHY"/>
                         <outlet property="timerLabel" destination="gKH-fx-FhR" id="SoB-hl-Wuh"/>
                     </connections>
                 </viewController>
