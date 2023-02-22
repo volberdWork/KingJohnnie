@@ -133,8 +133,11 @@ extension SelectGameViewController: UICollectionViewDelegateFlowLayout, UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 331, height: 363)
-    }
+         let width = collectionView.bounds.width - 40
+         let height: CGFloat = 250
+         return CGSize(width: width, height: height)
+     }
+
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let currentPage = Int(scrollView.contentOffset.x / scrollView.frame.size.width)
@@ -143,5 +146,23 @@ extension SelectGameViewController: UICollectionViewDelegateFlowLayout, UICollec
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         collectionView.isPagingEnabled = true
+    }
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if !decelerate {
+            let visibleCenterPositionOfScrollView = Float(collectionView.contentOffset.x + (self.collectionView!.bounds.size.width / 2))
+            var indexOfCell = Int(visibleCenterPositionOfScrollView / Float(self.collectionView!.bounds.width))
+            let cellToScrollTo = IndexPath(row: indexOfCell, section: 0)
+            collectionView.scrollToItem(at: cellToScrollTo, at: .centeredHorizontally, animated: true)
+        }
+    }
+
+ 
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 50
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 40
     }
 }
