@@ -45,7 +45,7 @@ class ActiveGameViewController: UIViewController {
                             "1", "8", "7",
                             "21", "55", "33"]
     
-    var time = (UserProgressData.gameLevel * 5) + 40
+    var time = (UserProgressData.gameLevel * 5) + 50
     var timer:Timer = Timer()
     var moveRange = Int()
     var currentMove = 0
@@ -59,6 +59,7 @@ class ActiveGameViewController: UIViewController {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
         blureView.isHidden = true
+        print("Level \(UserProgressData.gameLevel)")
     }
     
     override func viewDidLoad() {
@@ -257,7 +258,7 @@ class ActiveGameViewController: UIViewController {
             let randomIndex = Int.random(in: 0..<self.incorrectAnswersArrat.count)
             self.leftPointsLabel.text = incorrectAnswersArrat[randomIndex]
             UIView.animate(withDuration: 0.7, delay: 0.0, options: [], animations: {
-                self.leftPointsLabel.textColor = .orange
+                self.leftPointsLabel.textColor = .systemRed
                 self.leftPointsLabel.font = UIFont(name: Constants.FontsStrings.InterBold, size: 16)
                 self.leftPointsLabel.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
             }, completion: { _ in
