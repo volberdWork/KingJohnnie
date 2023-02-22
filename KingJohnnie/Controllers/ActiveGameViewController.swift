@@ -18,6 +18,22 @@ class ActiveGameViewController: UIViewController {
     @IBOutlet var blureProgressRing: ALProgressRing!
     @IBOutlet var blureTimeLabel: UILabel!
     
+    let coorrectAnswersArray = [
+        "Great job! You really know your stuff!",
+        "Excellent work! Keep it up!",
+        "That's correct! You're doing great!",
+        "You're a natural at this!",
+        "Fantastic! You're on fire",
+        "Well done! You're making it look easy",
+        "Bravo! You're a real expert"]
+    
+    let incorrectAnswersArrat = [
+        "Don't worry, you'll get the next one",
+        "That was a tough question, don't give up",
+        "It's okay, you're still doing great",
+        "Not quite, but you're close",
+        "You're on the right track, keep trying"]
+    
     
     let globalItemsCount = ["99", "4", "6",
                             "1", "8", "7",
@@ -31,9 +47,7 @@ class ActiveGameViewController: UIViewController {
     var randoms = [Int]()
     var answerBuffer = [Int]()
     var progressGoal = 0
-    var progressTarget = (UserProgressData.gameLevel * 3) + 10 //for example only
-    
-    
+    var progressTarget = (UserProgressData.gameLevel * 3) + 10
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
@@ -46,7 +60,7 @@ class ActiveGameViewController: UIViewController {
         print("Кулькість виграшів: \(getWinCount())")
         
         setupView()
-        leftPointsLabel.text = "Good move! Left \(progressTarget-progressGoal) points"
+        leftPointsLabel.text = "Let's do it!"
         progressRing.setProgress(0.0, animated: true)
         pointsLabel.text = "\(progressGoal) / \(progressTarget)"
         timerLabel.text = ""
@@ -58,13 +72,13 @@ class ActiveGameViewController: UIViewController {
         timerLabel.layer.shadowOffset = CGSize(width: 0, height: 0)
         timerLabel.layer.shadowOpacity = 1.0
         timerLabel.layer.shadowRadius = 3.0
-       
+        
         let strokeTextAttributes = [
             NSAttributedString.Key.strokeColor : UIColor(red: 241/255, green: 195/255, blue: 153/255, alpha: 1),
-          NSAttributedString.Key.strokeWidth : -3.0,
+            NSAttributedString.Key.strokeWidth : -3.0,
             NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 26)
         ]
-          as [NSAttributedString.Key : Any]
+        as [NSAttributedString.Key : Any]
         
         timerLabel.attributedText = NSAttributedString(string: "00:00", attributes: strokeTextAttributes)
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) { [self] in
@@ -77,8 +91,8 @@ class ActiveGameViewController: UIViewController {
             progressRing.endColor = Constants.Colors.orangeColor
         }
     }
-   
-
+    
+    
     
     private func setupView(){
         backgraundImageConfige(image: Constants.Images.activeGameScreen)
@@ -137,7 +151,7 @@ class ActiveGameViewController: UIViewController {
         self.collectionView.backgroundColor = .clear
     }
     
-
+    
     @objc func dismissPopUp() {
         timerStart()
     }
@@ -159,7 +173,7 @@ class ActiveGameViewController: UIViewController {
         
         timer.invalidate()
         blureView.isHidden = false
-       congigureBlureView()
+        congigureBlureView()
         systemBlur.effect = UIBlurEffect(style: .dark)
         systemBlur.alpha = 0.8
         SonundAndVibration().makeVibration()
@@ -194,14 +208,27 @@ class ActiveGameViewController: UIViewController {
             currentMove += 1
             print("RIGHT Answer")
             
+            
             if currentMove == randoms.count {
+                let randomIndex = Int.random(in: 0..<self.coorrectAnswersArray.count)
+                UIView.animate(withDuration: 0.7, delay: 0.0, options: [], animations: {
+                    self.leftPointsLabel.text = self.coorrectAnswersArray[randomIndex]
+                    self.leftPointsLabel.textColor = .systemGreen
+                    self.leftPointsLabel.font = UIFont(name: Constants.FontsStrings.InterBold, size: 16)
+                    self.leftPointsLabel.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
+                }, completion: { _ in
+                    UIView.animate(withDuration: 0.7, delay: 0.0, options: [], animations: {
+                        self.leftPointsLabel.textColor = .white
+                        self.leftPointsLabel.transform = CGAffineTransform.identity
+                        self.leftPointsLabel.font = UIFont(name: Constants.FontsStrings.InterMedium, size: 16)
+                    }, completion: nil)
+                })
                 progressGoal += 1
                 currentMove = 0
                 moveRange = 0
                 answerBuffer.removeAll()
                 pointsLabel.text = "\(progressGoal) / \(progressTarget)"
                 progressRing.setProgress(Float(progressGoal) / Float(progressTarget), animated: true)
-                leftPointsLabel.text = "Good move! Left \(progressTarget-progressGoal) points"
                 if progressGoal == progressTarget {
                     timer.invalidate()
                     incrementWinCount()
@@ -219,7 +246,19 @@ class ActiveGameViewController: UIViewController {
                 }
             }
         } else {
-            print("WRONG Answer")
+            let randomIndex = Int.random(in: 0..<self.incorrectAnswersArrat.count)
+            self.leftPointsLabel.text = incorrectAnswersArrat[randomIndex]
+            UIView.animate(withDuration: 0.7, delay: 0.0, options: [], animations: {
+                self.leftPointsLabel.textColor = .orange
+                self.leftPointsLabel.font = UIFont(name: Constants.FontsStrings.InterBold, size: 16)
+                self.leftPointsLabel.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
+            }, completion: { _ in
+                UIView.animate(withDuration: 0.7, delay: 0.0, options: [], animations: {
+                    self.leftPointsLabel.textColor = .white
+                    self.leftPointsLabel.transform = CGAffineTransform.identity
+                    self.leftPointsLabel.font = UIFont(name: Constants.FontsStrings.InterMedium, size: 16)
+                }, completion: nil)
+            })
             currentMove = 0
             collectionView.isUserInteractionEnabled = false
             answerBuffer.removeAll()
@@ -317,8 +356,8 @@ extension Int {
     
 }
 struct ProfileStat{
-var winCount: Int
-var losseCount: Int
-var procentOfWin: Int
-var cauntOgGames: Int
+    var winCount: Int
+    var losseCount: Int
+    var procentOfWin: Int
+    var cauntOgGames: Int
 }

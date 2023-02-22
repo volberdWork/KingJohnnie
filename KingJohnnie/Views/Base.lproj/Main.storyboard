@@ -656,9 +656,8 @@ Remember the sequence of lighting items, then tap the items in the same sequence
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="99N-1p-Gho">
-                                <rect key="frame" x="127" y="129" width="114" height="62"/>
+                                <rect key="frame" x="127" y="129" width="247" height="62"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="114" id="VPc-9e-Zf4"/>
                                     <constraint firstAttribute="height" constant="62" id="oFU-8s-O2x"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -889,6 +888,7 @@ Remember the sequence of lighting items, then tap the items in the same sequence
                             <constraint firstItem="hUq-LW-QN2" firstAttribute="top" secondItem="fKt-uH-zQ6" secondAttribute="bottom" constant="16" id="i8f-vA-x6c"/>
                             <constraint firstItem="99N-1p-Gho" firstAttribute="leading" secondItem="hUq-LW-QN2" secondAttribute="trailing" constant="16" id="jdd-us-DMf"/>
                             <constraint firstItem="4dV-KW-wLl" firstAttribute="trailing" secondItem="akK-Mw-6mn" secondAttribute="trailing" id="kC4-gJ-NpR"/>
+                            <constraint firstItem="akK-Mw-6mn" firstAttribute="trailing" secondItem="99N-1p-Gho" secondAttribute="trailing" constant="16" id="mW6-T1-1Me"/>
                             <constraint firstItem="99N-1p-Gho" firstAttribute="top" secondItem="lfs-lA-cug" secondAttribute="bottom" constant="16" id="q8I-MB-nBN"/>
                             <constraint firstItem="lfs-lA-cug" firstAttribute="centerX" secondItem="pj9-eN-p5W" secondAttribute="centerX" id="zKX-LF-77M"/>
                         </constraints>
