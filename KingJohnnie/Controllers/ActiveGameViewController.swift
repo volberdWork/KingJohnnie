@@ -25,14 +25,20 @@ class ActiveGameViewController: UIViewController {
         "You're a natural at this!",
         "Fantastic! You're on fire",
         "Well done! You're making it look easy",
-        "Bravo! You're a real expert"]
+        "Bravo! You're a real expert",
+    "Amazing! You're a trivia whiz",
+    "Spot on! You're nailing these answers",
+    "Perfect! You're knocking these questions out of the park"]
     
     let incorrectAnswersArrat = [
         "Don't worry, you'll get the next one",
         "That was a tough question, don't give up",
         "It's okay, you're still doing great",
         "Not quite, but you're close",
-        "You're on the right track, keep trying"]
+        "You're on the right track, keep trying",
+        "Almost there, don't lose hope",
+        "Keep going, you'll get it eventually",
+        "Nice try, you'll do better on the next one"]
     
     
     let globalItemsCount = ["99", "4", "6",
@@ -43,6 +49,7 @@ class ActiveGameViewController: UIViewController {
     var timer:Timer = Timer()
     var moveRange = Int()
     var currentMove = 0
+    var wrongAnswers = 0
     var currenTime = ""
     var randoms = [Int]()
     var answerBuffer = [Int]()
@@ -110,7 +117,7 @@ class ActiveGameViewController: UIViewController {
                 let main = UIStoryboard(name: "Main", bundle: nil)
                 if let vc = main.instantiateViewController(withIdentifier: "LossViewController") as? LossViewController  {
                     self.navigationController?.pushViewController(vc, animated: true)
-                    vc.gameStatistic = [WinModel(time: "00:00", correctAnswer: self.progressGoal, incorrectAnswers: 4)]
+                    vc.gameStatistic = [WinModel(time: "00:00", correctAnswer: self.progressGoal, incorrectAnswers: self.wrongAnswers)]
                 }
                 self.incrementLossCount()
                 
@@ -236,9 +243,10 @@ class ActiveGameViewController: UIViewController {
                     let main = UIStoryboard(name: "Main", bundle: nil)
                     if let vc = main.instantiateViewController(withIdentifier: "WinViewController") as? WinViewController  {
                         self.navigationController?.pushViewController(vc, animated: true)
-                        vc.gameStatistic = [WinModel(time: self.currenTime, correctAnswer: progressGoal, incorrectAnswers: 2)]
+                        vc.gameStatistic = [WinModel(time: self.currenTime, correctAnswer: progressGoal, incorrectAnswers: self.wrongAnswers)]
                     }
                 } else {
+                  
                     collectionView.isUserInteractionEnabled = false
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: { [self] in
                         animateCombination()
@@ -260,6 +268,7 @@ class ActiveGameViewController: UIViewController {
                 }, completion: nil)
             })
             currentMove = 0
+            self.wrongAnswers += 1
             collectionView.isUserInteractionEnabled = false
             answerBuffer.removeAll()
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: { [self] in
