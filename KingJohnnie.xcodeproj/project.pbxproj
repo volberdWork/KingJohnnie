@@ -28,8 +28,6 @@
 		BD19AF562995827000F4A9B7 /* LossViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD19AF552995827000F4A9B7 /* LossViewController.swift */; };
 		BD4E35FB299A2D2C00422D10 /* ActiveGameCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4E35FA299A2D2C00422D10 /* ActiveGameCollectionViewCell.swift */; };
 		BD4E3600299A53CE00422D10 /* PopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4E35FF299A53CE00422D10 /* PopUp.swift */; };
-		BD4E3607299AA74900422D10 /* OverLayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4E3605299AA74800422D10 /* OverLayerView.swift */; };
-		BD4E3608299AA74900422D10 /* OverLayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD4E3606299AA74900422D10 /* OverLayerView.xib */; };
 		BD58AA6F299B8034004C1F48 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD58AA6E299B8034004C1F48 /* CircularProgressView.swift */; };
 		BD58AA72299BA644004C1F48 /* ALProgressView in Frameworks */ = {isa = PBXBuildFile; productRef = BD58AA71299BA644004C1F48 /* ALProgressView */; };
 		BD7317B929978DA90036D2DC /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7317B729978DA90036D2DC /* SettingsTableViewCell.swift */; };
@@ -69,8 +67,6 @@
 		BD19AF552995827000F4A9B7 /* LossViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LossViewController.swift; sourceTree = "<group>"; };
 		BD4E35FA299A2D2C00422D10 /* ActiveGameCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveGameCollectionViewCell.swift; sourceTree = "<group>"; };
 		BD4E35FF299A53CE00422D10 /* PopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUp.swift; sourceTree = "<group>"; };
-		BD4E3605299AA74800422D10 /* OverLayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverLayerView.swift; sourceTree = "<group>"; };
-		BD4E3606299AA74900422D10 /* OverLayerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OverLayerView.xib; sourceTree = "<group>"; };
 		BD58AA6E299B8034004C1F48 /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
 		BD7317B729978DA90036D2DC /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		BD7317B829978DA90036D2DC /* SettingsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsTableViewCell.xib; sourceTree = "<group>"; };
@@ -106,7 +102,6 @@
 		BD19AF112992FE8A00F4A9B7 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				BD4E35FC299A517000422D10 /* PopUps */,
 				BD7317B629978D350036D2DC /* SettingsScreen */,
 				BDED15512992F61200E2F03A /* SelectGameViewController.swift */,
 				BDB20DE5299832E70071981F /* ProfileViewController.swift */,
@@ -178,15 +173,6 @@
 				BD19AF4F2995309E00F4A9B7 /* Inter-Bold.ttf */,
 			);
 			path = Fonts;
-			sourceTree = "<group>";
-		};
-		BD4E35FC299A517000422D10 /* PopUps */ = {
-			isa = PBXGroup;
-			children = (
-				BD4E3605299AA74800422D10 /* OverLayerView.swift */,
-				BD4E3606299AA74900422D10 /* OverLayerView.xib */,
-			);
-			path = PopUps;
 			sourceTree = "<group>";
 		};
 		BD7317B629978D350036D2DC /* SettingsScreen */ = {
@@ -322,7 +308,6 @@
 				BD19AF2F2993C6C400F4A9B7 /* 95076-loading-dots.json in Resources */,
 				BDD06E1429A352D7008A2C4E /* ProfileProgressTableViewCell.xib in Resources */,
 				BD19AF4A299513CB00F4A9B7 /* Phosphate.ttf in Resources */,
-				BD4E3608299AA74900422D10 /* OverLayerView.xib in Resources */,
 				BD19AF2D2993C69200F4A9B7 /* 90705-simple-loading.json in Resources */,
 				BD19AF502995309E00F4A9B7 /* Inter-Bold.ttf in Resources */,
 				BD19AF4C29951B7000F4A9B7 /* Inter-Medium.otf in Resources */,
@@ -347,7 +332,6 @@
 				BDD06E0929A2CB2B008A2C4E /* UserProgressData.swift in Sources */,
 				BDED15522992F61200E2F03A /* SelectGameViewController.swift in Sources */,
 				BD19AF48299451FE00F4A9B7 /* TermsViewController.swift in Sources */,
-				BD4E3607299AA74900422D10 /* OverLayerView.swift in Sources */,
 				BD19AF252993152300F4A9B7 /* SettingsViewController.swift in Sources */,
 				BD19AF3B2993FE5800F4A9B7 /* NotificationManager.swift in Sources */,
 				BDB20DE6299832E70071981F /* ProfileViewController.swift in Sources */,
