@@ -162,8 +162,8 @@ class ActiveGameViewController: UIViewController {
        congigureBlureView()
         systemBlur.effect = UIBlurEffect(style: .dark)
         systemBlur.alpha = 0.8
-        SettingsViewController().playSound()
-        SettingsViewController().makeVibration()
+        SonundAndVibration().makeVibration()
+        SonundAndVibration().playSound()
         
     }
     
@@ -195,50 +195,34 @@ class ActiveGameViewController: UIViewController {
             print("RIGHT Answer")
             
             if currentMove == randoms.count {
-                
-                //
                 progressGoal += 1
-                
-                //
                 currentMove = 0
                 moveRange = 0
                 answerBuffer.removeAll()
-                
-                //
                 pointsLabel.text = "\(progressGoal) / \(progressTarget)"
                 progressRing.setProgress(Float(progressGoal) / Float(progressTarget), animated: true)
                 leftPointsLabel.text = "Good move! Left \(progressTarget-progressGoal) points"
-                
                 if progressGoal == progressTarget {
                     timer.invalidate()
                     incrementWinCount()
-                    
                     UserProgressData.gameLevel += 1
-                    
                     let main = UIStoryboard(name: "Main", bundle: nil)
                     if let vc = main.instantiateViewController(withIdentifier: "WinViewController") as? WinViewController  {
                         self.navigationController?.pushViewController(vc, animated: true)
                         vc.gameStatistic = [WinModel(time: self.currenTime, correctAnswer: progressGoal, incorrectAnswers: 2)]
                     }
                 } else {
-                    //
                     collectionView.isUserInteractionEnabled = false
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: { [self] in
                         animateCombination()
                     })
                 }
             }
-            
-            
         } else {
             print("WRONG Answer")
-            
-            
             currentMove = 0
             collectionView.isUserInteractionEnabled = false
             answerBuffer.removeAll()
-            
-            //
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: { [self] in
                 animateCombination()
             })
@@ -302,8 +286,8 @@ extension ActiveGameViewController : UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         gameChecker(selectedIndex: indexPath.row)
         animationForSelection(index: indexPath.row, delay: 0.0)
-        SettingsViewController().playSound()
-        SettingsViewController().makeVibration()
+        SonundAndVibration().makeVibration()
+        SonundAndVibration().playSound()
     }
     
     

@@ -1,15 +1,15 @@
 import UIKit
+import AVFAudio
 import MessageUI
 import StoreKit
-import MessageUI
-import AVFoundation
+
 
 class SettingsViewController: UIViewController {
     
     @IBOutlet var tableView: UITableView!
     @IBOutlet var backgraundImage: UIImageView!
     
-    var audioPlayer: AVAudioPlayer?
+
     
     
     
@@ -51,21 +51,7 @@ class SettingsViewController: UIViewController {
     
   
     
-    public func playSound(){
-         if UserDefaults.standard.bool(forKey: "sound"){
-             audioPlayer?.play()
-         }else{
-             return
-         }
-     }
-    
-    public func makeVibration(){
-        if UserDefaults.standard.bool(forKey: "vibrations"){
-            UIDevice().vibrate()
-        }else{
-            return
-        }
-    }
+  
 
     func deleteLossCount() {
         let defaults = UserDefaults.standard
@@ -110,6 +96,7 @@ class SettingsViewController: UIViewController {
     
     
     func loadAudio() {
+        var audioPlayer = AVAudioPlayer()
         guard let path = Bundle.main.path(forResource: "tapSound", ofType: "mp3") else {
             return
         }
@@ -118,7 +105,7 @@ class SettingsViewController: UIViewController {
         
         do {
             audioPlayer = try AVAudioPlayer(contentsOf: url)
-            audioPlayer?.prepareToPlay()
+            audioPlayer.prepareToPlay()
         } catch {
             print("Error loading audio file: \(error)")
         }
@@ -129,7 +116,8 @@ class SettingsViewController: UIViewController {
         if sender.isOn {
             
             UserDefaults.standard.set(true, forKey: "sound")
-            playSound()
+        
+            SonundAndVibration().playSound()
           print("Sound On")
            
         } else {

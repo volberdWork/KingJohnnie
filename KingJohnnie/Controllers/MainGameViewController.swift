@@ -59,8 +59,8 @@ class MainGameViewController: UIViewController {
     }
     
     @IBAction func playButtonPressed(_ sender: UIButton) {
-        SettingsViewController().playSound()
-        SettingsViewController().makeVibration()
+        SonundAndVibration().makeVibration()
+        SonundAndVibration().playSound()
         openVC()
     }
 }
@@ -74,22 +74,16 @@ extension MainGameViewController : UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LevelCollectionViewCell", for: indexPath) as! LevelCollectionViewCell
         cell.levelLable.text = "Level \(indexPath.row + 1 )"
-        
-        //
         if indexPath.row <= currentLevel {
-            
             cell.lockImage.image = UIImage(named: "openLockImage")
         } else{
             cell.clearCongigureView()
             cell.lockImage.image = UIImage(named: "closeLockImage")
         }
-        
-        //
         if indexPath.row == currentSelected {
             cell.configureView()
             print("Add selected State")
         }
-        
         return cell
     }
     

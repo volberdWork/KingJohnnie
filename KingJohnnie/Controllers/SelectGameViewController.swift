@@ -101,9 +101,9 @@ class SelectGameViewController: UIViewController {
             sender.titleLabel?.text = "DETAILS"
             sender.titleLabel?.font = UIFont(name: Constants.FontsStrings.InterBold, size: 17)
             
-            // ПЕРЕРОБИТИ!!!!
-            SettingsViewController().playSound()
-            SettingsViewController().makeVibration()
+         
+            SonundAndVibration().makeVibration()
+            SonundAndVibration().playSound()
         } else{
             let alert = UIAlertController(title: "Game Closed",
                                           message: "This game is closed until Johnnie gives you permission. The permission will be granted after passing level 50 in the royal game.",
@@ -115,8 +115,8 @@ class SelectGameViewController: UIViewController {
     }
     
     @IBAction func settingButtonPressed(_ sender: UIBarButtonItem) {
-        SettingsViewController().playSound()
-        SettingsViewController().makeVibration()
+        SonundAndVibration().makeVibration()
+        SonundAndVibration().playSound()
     }
 }
 

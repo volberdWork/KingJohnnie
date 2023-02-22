@@ -9,8 +9,6 @@ class ProfileViewController: UIViewController {
     var gameStatisticsData: [ProfileStat] = []
     let winsCount = UserDefaults.standard.integer(forKey: "winCount")
     let losseCount = UserDefaults.standard.integer(forKey: "lossCount")
-  
-
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib(nibName: "ProfileProgressTableViewCell", bundle: nil), forCellReuseIdentifier: "ProfileProgressTableViewCell")

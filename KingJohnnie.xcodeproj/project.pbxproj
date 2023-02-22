@@ -142,13 +142,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		BD19AF2729939DBE00F4A9B7 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		BD19AF2829939DCA00F4A9B7 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -239,7 +232,6 @@
 				BD19AF332993D94300F4A9B7 /* Fonts */,
 				BD19AF2929939DE000F4A9B7 /* Helpers */,
 				BD19AF2829939DCA00F4A9B7 /* Extension */,
-				BD19AF2729939DBE00F4A9B7 /* Models */,
 				BD19AF172993043100F4A9B7 /* Lottie */,
 				BD19AF2629938AAE00F4A9B7 /* Views */,
 				BD19AF112992FE8A00F4A9B7 /* Controllers */,

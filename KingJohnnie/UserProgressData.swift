@@ -4,7 +4,8 @@
 //
 
 import Foundation
-
+import MessageUI
+import AVFoundation
 
 struct UserProgressData {
     
@@ -20,3 +21,24 @@ struct UserProgressData {
 }
 
 
+
+
+struct SonundAndVibration{
+    
+    public func makeVibration(){
+        if UserDefaults.standard.bool(forKey: "vibrations"){
+            UIDevice().vibrate()
+        }else{
+            return
+        }
+    }
+    
+    public func playSound(){
+         if UserDefaults.standard.bool(forKey: "sound"){
+             AVAudioPlayer().play()
+         }else{
+             return
+         }
+     }
+    
+}

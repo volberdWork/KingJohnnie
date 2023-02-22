@@ -54,26 +54,26 @@ extension SettingsViewController: UITableViewDelegate{
         
         switch selectedButton{
         case 0 : openProfileController()
-            playSound()
-            makeVibration()
+            SonundAndVibration().makeVibration()
+            SonundAndVibration().playSound()
         case 1 : performNotificationSettings()
-            playSound()
-            makeVibration()
+            SonundAndVibration().makeVibration()
+            SonundAndVibration().playSound()
         case 2 : return
         case 3 : return
         case 4 : openTermsController()
-            playSound()
-            makeVibration()
+            SonundAndVibration().makeVibration()
+            SonundAndVibration().playSound()
         case 5 : openMessageWindow()
-            playSound()
-            makeVibration()
+            SonundAndVibration().makeVibration()
+            SonundAndVibration().playSound()
         case 6 : rateAppAction()
-            playSound()
-            makeVibration()
+            SonundAndVibration().makeVibration()
+            SonundAndVibration().playSound()
             
         case 7 : print("")
-            playSound()
-            makeVibration()
+            SonundAndVibration().makeVibration()
+            SonundAndVibration().playSound()
             let alertController = UIAlertController(title: "Attention", message: "Once deleted, your progress will be completely deleted. Are you sure?", preferredStyle: .alert)
             
             let yesAction = UIAlertAction(title: "Yes", style: .destructive) { (action) in
