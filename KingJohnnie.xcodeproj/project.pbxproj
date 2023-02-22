@@ -26,6 +26,10 @@
 		BD19AF502995309E00F4A9B7 /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BD19AF4F2995309E00F4A9B7 /* Inter-Bold.ttf */; };
 		BD19AF542995823C00F4A9B7 /* WinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD19AF532995823C00F4A9B7 /* WinViewController.swift */; };
 		BD19AF562995827000F4A9B7 /* LossViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD19AF552995827000F4A9B7 /* LossViewController.swift */; };
+		BD2B878929A660C600A6D21C /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = BD2B878829A660C600A6D21C /* FirebaseAnalytics */; };
+		BD2B878C29A662E700A6D21C /* OneSignal in Frameworks */ = {isa = PBXBuildFile; productRef = BD2B878B29A662E700A6D21C /* OneSignal */; };
+		BD2B879429A6633B00A6D21C /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2B879329A6633B00A6D21C /* NotificationService.swift */; };
+		BD2B879829A6633B00A6D21C /* OneSignalNotificationServiceExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = BD2B879129A6633B00A6D21C /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		BD4E35FB299A2D2C00422D10 /* ActiveGameCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4E35FA299A2D2C00422D10 /* ActiveGameCollectionViewCell.swift */; };
 		BD4E3600299A53CE00422D10 /* PopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4E35FF299A53CE00422D10 /* PopUp.swift */; };
 		BD58AA6F299B8034004C1F48 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD58AA6E299B8034004C1F48 /* CircularProgressView.swift */; };
@@ -46,6 +50,30 @@
 		BDFE322C299E5EE800C76709 /* tapSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BDFE322B299E5EE800C76709 /* tapSound.mp3 */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		BD2B879629A6633B00A6D21C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BDED15422992F61200E2F03A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BD2B879029A6633B00A6D21C;
+			remoteInfo = OneSignalNotificationServiceExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		BD2B879C29A6633B00A6D21C /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				BD2B879829A6633B00A6D21C /* OneSignalNotificationServiceExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		BD19AF122992FEAD00F4A9B7 /* GameLoaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLoaderViewController.swift; sourceTree = "<group>"; };
 		BD19AF1E29930C3300F4A9B7 /* 92298-loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "92298-loading.json"; sourceTree = "<group>"; };
@@ -65,6 +93,10 @@
 		BD19AF4F2995309E00F4A9B7 /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.ttf"; sourceTree = "<group>"; };
 		BD19AF532995823C00F4A9B7 /* WinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinViewController.swift; sourceTree = "<group>"; };
 		BD19AF552995827000F4A9B7 /* LossViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LossViewController.swift; sourceTree = "<group>"; };
+		BD2B879129A6633B00A6D21C /* OneSignalNotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OneSignalNotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD2B879329A6633B00A6D21C /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		BD2B879529A6633B00A6D21C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BD2B879D29A663AB00A6D21C /* KingJohnnie.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KingJohnnie.entitlements; sourceTree = "<group>"; };
 		BD4E35FA299A2D2C00422D10 /* ActiveGameCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveGameCollectionViewCell.swift; sourceTree = "<group>"; };
 		BD4E35FF299A53CE00422D10 /* PopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUp.swift; sourceTree = "<group>"; };
 		BD58AA6E299B8034004C1F48 /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
@@ -87,12 +119,21 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		BD2B878E29A6633B00A6D21C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BDED15472992F61200E2F03A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				BD19AF162993038000F4A9B7 /* Lottie in Frameworks */,
+				BD2B878C29A662E700A6D21C /* OneSignal in Frameworks */,
 				BD58AA72299BA644004C1F48 /* ALProgressView in Frameworks */,
+				BD2B878929A660C600A6D21C /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,6 +216,15 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		BD2B879229A6633B00A6D21C /* OneSignalNotificationServiceExtension */ = {
+			isa = PBXGroup;
+			children = (
+				BD2B879329A6633B00A6D21C /* NotificationService.swift */,
+				BD2B879529A6633B00A6D21C /* Info.plist */,
+			);
+			path = OneSignalNotificationServiceExtension;
+			sourceTree = "<group>";
+		};
 		BD7317B629978D350036D2DC /* SettingsScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -199,6 +249,7 @@
 			isa = PBXGroup;
 			children = (
 				BDED154C2992F61200E2F03A /* KingJohnnie */,
+				BD2B879229A6633B00A6D21C /* OneSignalNotificationServiceExtension */,
 				BDED154B2992F61200E2F03A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -207,6 +258,7 @@
 			isa = PBXGroup;
 			children = (
 				BDED154A2992F61200E2F03A /* KingJohnnie.app */,
+				BD2B879129A6633B00A6D21C /* OneSignalNotificationServiceExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -214,6 +266,7 @@
 		BDED154C2992F61200E2F03A /* KingJohnnie */ = {
 			isa = PBXGroup;
 			children = (
+				BD2B879D29A663AB00A6D21C /* KingJohnnie.entitlements */,
 				BDFE322A299E5ED100C76709 /* Sounds */,
 				BD19AF332993D94300F4A9B7 /* Fonts */,
 				BD19AF2929939DE000F4A9B7 /* Helpers */,
@@ -241,6 +294,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		BD2B879029A6633B00A6D21C /* OneSignalNotificationServiceExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BD2B879929A6633B00A6D21C /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */;
+			buildPhases = (
+				BD2B878D29A6633B00A6D21C /* Sources */,
+				BD2B878E29A6633B00A6D21C /* Frameworks */,
+				BD2B878F29A6633B00A6D21C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OneSignalNotificationServiceExtension;
+			productName = OneSignalNotificationServiceExtension;
+			productReference = BD2B879129A6633B00A6D21C /* OneSignalNotificationServiceExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		BDED15492992F61200E2F03A /* KingJohnnie */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = BDED155E2992F61400E2F03A /* Build configuration list for PBXNativeTarget "KingJohnnie" */;
@@ -248,15 +318,19 @@
 				BDED15462992F61200E2F03A /* Sources */,
 				BDED15472992F61200E2F03A /* Frameworks */,
 				BDED15482992F61200E2F03A /* Resources */,
+				BD2B879C29A6633B00A6D21C /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				BD2B879729A6633B00A6D21C /* PBXTargetDependency */,
 			);
 			name = KingJohnnie;
 			packageProductDependencies = (
 				BD19AF152993038000F4A9B7 /* Lottie */,
 				BD58AA71299BA644004C1F48 /* ALProgressView */,
+				BD2B878829A660C600A6D21C /* FirebaseAnalytics */,
+				BD2B878B29A662E700A6D21C /* OneSignal */,
 			);
 			productName = KingJohnnie;
 			productReference = BDED154A2992F61200E2F03A /* KingJohnnie.app */;
@@ -272,6 +346,9 @@
 				LastSwiftUpdateCheck = 1400;
 				LastUpgradeCheck = 1400;
 				TargetAttributes = {
+					BD2B879029A6633B00A6D21C = {
+						CreatedOnToolsVersion = 14.0.1;
+					};
 					BDED15492992F61200E2F03A = {
 						CreatedOnToolsVersion = 14.0.1;
 					};
@@ -289,17 +366,27 @@
 			packageReferences = (
 				BD19AF142993038000F4A9B7 /* XCRemoteSwiftPackageReference "lottie-spm" */,
 				BD58AA70299BA644004C1F48 /* XCRemoteSwiftPackageReference "ALProgressView" */,
+				BD2B878729A660C600A6D21C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				BD2B878A29A662E700A6D21C /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */,
 			);
 			productRefGroup = BDED154B2992F61200E2F03A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				BDED15492992F61200E2F03A /* KingJohnnie */,
+				BD2B879029A6633B00A6D21C /* OneSignalNotificationServiceExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		BD2B878F29A6633B00A6D21C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BDED15482992F61200E2F03A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -322,6 +409,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		BD2B878D29A6633B00A6D21C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD2B879429A6633B00A6D21C /* NotificationService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BDED15462992F61200E2F03A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -354,6 +449,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		BD2B879729A6633B00A6D21C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BD2B879029A6633B00A6D21C /* OneSignalNotificationServiceExtension */;
+			targetProxy = BD2B879629A6633B00A6D21C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		BDED15532992F61200E2F03A /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -374,6 +477,56 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		BD2B879A29A6633B00A6D21C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6R59JHT6PY;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = OneSignalNotificationServiceExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = drukstore.KingJohnnie.OneSignalNotificationServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BD2B879B29A6633B00A6D21C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6R59JHT6PY;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = OneSignalNotificationServiceExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = drukstore.KingJohnnie.OneSignalNotificationServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		BDED155C2992F61400E2F03A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -491,11 +644,13 @@
 		BDED155F2992F61400E2F03A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = KingJohnnie/KingJohnnie.entitlements;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6R59JHT6PY;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = KingJohnnie/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -510,6 +665,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = drukstore.KingJohnnie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -519,11 +675,13 @@
 		BDED15602992F61400E2F03A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = KingJohnnie/KingJohnnie.entitlements;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6R59JHT6PY;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = KingJohnnie/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -538,6 +696,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = drukstore.KingJohnnie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -547,6 +706,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		BD2B879929A6633B00A6D21C /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BD2B879A29A6633B00A6D21C /* Debug */,
+				BD2B879B29A6633B00A6D21C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		BDED15452992F61200E2F03A /* Build configuration list for PBXProject "KingJohnnie" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -576,6 +744,22 @@
 				minimumVersion = 4.0.0;
 			};
 		};
+		BD2B878729A660C600A6D21C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.6.0;
+			};
+		};
+		BD2B878A29A662E700A6D21C /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/OneSignal/OneSignal-XCFramework";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 		BD58AA70299BA644004C1F48 /* XCRemoteSwiftPackageReference "ALProgressView" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/alxrguz/ALProgressView";
@@ -591,6 +775,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BD19AF142993038000F4A9B7 /* XCRemoteSwiftPackageReference "lottie-spm" */;
 			productName = Lottie;
+		};
+		BD2B878829A660C600A6D21C /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BD2B878729A660C600A6D21C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		BD2B878B29A662E700A6D21C /* OneSignal */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BD2B878A29A662E700A6D21C /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */;
+			productName = OneSignal;
 		};
 		BD58AA71299BA644004C1F48 /* ALProgressView */ = {
 			isa = XCSwiftPackageProductDependency;
