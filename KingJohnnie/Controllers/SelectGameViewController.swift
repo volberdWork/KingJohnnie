@@ -51,7 +51,8 @@ class SelectGameViewController: UIViewController {
         
         
         setupView()
-        detailsButton.titleLabel?.text = "DETAILS"
+        let attributedText = NSAttributedString(string: "DETAILS", attributes: [NSAttributedString.Key.font: UIFont(name: Constants.FontsStrings.InterBold, size: 17)])
+        detailsButton.setAttributedTitle(attributedText, for: .normal)
         detailsButton.titleLabel?.font = UIFont(name: Constants.FontsStrings.InterBold, size: 17)
         pageControl.numberOfPages = self.collectionArray.count
     }

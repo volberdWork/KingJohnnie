@@ -45,7 +45,7 @@ class ActiveGameViewController: UIViewController {
                             "1", "8", "7",
                             "21", "55", "33"]
     
-    var time = (UserProgressData.gameLevel * 5) + 50
+    var time = (UserProgressData.gameLevel * 5) + 45
     var timer:Timer = Timer()
     var moveRange = Int()
     var currentMove = 0

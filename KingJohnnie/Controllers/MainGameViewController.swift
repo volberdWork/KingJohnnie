@@ -41,6 +41,8 @@ class MainGameViewController: UIViewController {
         self.collectionView.backgroundColor = .clear
         playButton.backgroundColor = Constants.Colors.orangeColor
         playButton.layer.cornerRadius = 10
+        let attributedText = NSAttributedString(string: "PLAY", attributes: [NSAttributedString.Key.font: UIFont(name: Constants.FontsStrings.InterBold, size: 17)])
+        playButton.setAttributedTitle(attributedText, for: .normal)
         gameNameLabel.text = gameLevelName
         gameNameLabel.font = UIFont(name: Constants.FontsStrings.PhosphatePro, size: 50)
         
