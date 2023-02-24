@@ -46,9 +46,4 @@ class GameLoaderViewController: UIViewController {
         self.backGrImage.image = UIImage(named: image)
         self.backGrImage.contentMode = .scaleAspectFill
     }
-    
-    
-    
-    
-    
 }

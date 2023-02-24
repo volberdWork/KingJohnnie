@@ -149,8 +149,6 @@ class SettingsViewController: UIViewController {
     
     @objc func notificationSwitchTapped(sender: UISwitch) {
         NotificationManager.requestNotifications()
-        
-        
     }
     
     
